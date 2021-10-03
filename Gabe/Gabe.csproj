@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{270F4FE9-27D4-47E7-81F3-2AFB0CE56F68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gabe</RootNamespace>
+    <AssemblyName>Gabe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Gabe.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gabe_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gabe_Splash.Designer.cs">
+      <DependentUpon>Gabe_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Title.Designer.cs">
+      <DependentUpon>Login_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm.cs" />
+    <Compile Include="MDI_Gabe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Gabe.Designer.cs">
+      <DependentUpon>MDI_Gabe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Gabe_Splash.resx">
+      <DependentUpon>Gabe_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Title.resx">
+      <DependentUpon>Login_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Gabe.resx">
+      <DependentUpon>MDI_Gabe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eFramework\eFramework.csproj">
+      <Project>{1c64fb78-d873-4f73-a4db-cdfd9975e1d2}</Project>
+      <Name>eFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eSecurity\eSecurity.csproj">
+      <Project>{969dd233-458a-4264-b1d6-a397e3237500}</Project>
+      <Name>eSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eSecurity_DTO\eSecurity_DTO.csproj">
+      <Project>{a1f5923d-b8df-4f6f-8ade-af8f1484b695}</Project>
+      <Name>eSecurity_DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\splash.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
