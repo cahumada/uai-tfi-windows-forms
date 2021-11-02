@@ -34,7 +34,11 @@ namespace eSecurity
         #region Propiedades
         public int UsuarioId { get { return _Usuario.UsuarioId; } }
         public int IdiomaId { get { return _Usuario.IdiomaId; } }
-        public string Nik { get { return _Usuario.Nik; } }
+        public string Nik
+        {
+            get { return _Usuario.Nik; }
+            set { _Usuario.Nik = value; }
+        }
         public string Contrasena { get { return _Usuario.Contrasena; } }
         public short Intentos { get { return _Usuario.Intentos; } }
         public bool Bloqueado { get { return _Usuario.Bloqueado; } }
