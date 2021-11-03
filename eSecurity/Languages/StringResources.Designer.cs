@@ -61,6 +61,87 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Nuevo.
+        /// </summary>
+        internal static string GEN001_Btn001 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Modificar.
+        /// </summary>
+        internal static string GEN001_Btn002 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Eliminar.
+        /// </summary>
+        internal static string GEN001_Btn003 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Cerrar.
+        /// </summary>
+        internal static string GEN001_Btn004 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Buscar.
+        /// </summary>
+        internal static string GEN001_Btn005 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Aceptar.
+        /// </summary>
+        internal static string GEN001_Btn006 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ca&amp;ncelar.
+        /// </summary>
+        internal static string GEN001_Btn007 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo es obligatorio.
+        /// </summary>
+        internal static string GEN001_Val001 {
+            get {
+                return ResourceManager.GetString("GEN001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El valor ingresado no es numérico.
+        /// </summary>
+        internal static string GEN001_Val002 {
+            get {
+                return ResourceManager.GetString("GEN001_Val002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &amp;Cancelar.
         /// </summary>
         internal static string Login_BtnCancel {
@@ -219,6 +300,195 @@ namespace eSecurity.Languages {
         internal static string Splash001_MsgBox001 {
             get {
                 return ResourceManager.GetString("Splash001_MsgBox001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mod. &amp;Idioma.
+        /// </summary>
+        internal static string USR001_Btn001 {
+            get {
+                return ResourceManager.GetString("USR001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Des&amp;bloquear.
+        /// </summary>
+        internal static string USR001_Btn002 {
+            get {
+                return ResourceManager.GetString("USR001_Btn002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Con&amp;traseña.
+        /// </summary>
+        internal static string USR001_Btn003 {
+            get {
+                return ResourceManager.GetString("USR001_Btn003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Intentos de bloqueo.
+        /// </summary>
+        internal static string USR001_DgrUsr_cAttemptsBlock {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cAttemptsBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Intentos de acceso erroneos al sistema.
+        /// </summary>
+        internal static string USR001_DgrUsr_cAttemptsBlock_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cAttemptsBlock_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente.
+        /// </summary>
+        internal static string USR001_DgrUsr_cClieName {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cClieName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombres y apellido del cliente.
+        /// </summary>
+        internal static string USR001_DgrUsr_cClieName_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cClieName_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Bloqueado.
+        /// </summary>
+        internal static string USR001_DgrUsr_cIs_Blocked {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cIs_Blocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indica si el usuario se encuentra bloqueado.
+        /// </summary>
+        internal static string USR001_DgrUsr_cIs_Blocked_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cIs_Blocked_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Idioma.
+        /// </summary>
+        internal static string USR001_DgrUsr_cLanguage {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Idioma asociado al usuario.
+        /// </summary>
+        internal static string USR001_DgrUsr_cLanguage_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cLanguage_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Alias.
+        /// </summary>
+        internal static string USR001_DgrUsr_cNik {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cNik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Alias de usuario para ingreso al sistema.
+        /// </summary>
+        internal static string USR001_DgrUsr_cNik_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cNik_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña.
+        /// </summary>
+        internal static string USR001_DgrUsr_cPassword {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña de usuario para ingreso al sistema.
+        /// </summary>
+        internal static string USR001_DgrUsr_cPassword_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cPassword_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario.
+        /// </summary>
+        internal static string USR001_DgrUsr_cUser {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de Usuario.
+        /// </summary>
+        internal static string USR001_DgrUsr_cUser_tt {
+            get {
+                return ResourceManager.GetString("USR001_DgrUsr_cUser_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Usuario.
+        /// </summary>
+        internal static string USR001_Grp01 {
+            get {
+                return ResourceManager.GetString("USR001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuarios.
+        /// </summary>
+        internal static string USR001_Title {
+            get {
+                return ResourceManager.GetString("USR001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar algún usuario.
+        /// </summary>
+        internal static string USR001_Val001 {
+            get {
+                return ResourceManager.GetString("USR001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El usuario seleccionado no se encuentra bloqueado.
+        /// </summary>
+        internal static string USR001_Val002 {
+            get {
+                return ResourceManager.GetString("USR001_Val002", resourceCulture);
             }
         }
     }

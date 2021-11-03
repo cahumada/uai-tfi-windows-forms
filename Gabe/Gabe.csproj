@@ -70,11 +70,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="USR003_Title.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="USR003_Title.Designer.cs">
       <DependentUpon>USR003_Title.cs</DependentUpon>
+=======
+    <Compile Include="USR001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USR001_Title.Designer.cs">
+      <DependentUpon>USR001_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USR002_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USR002_Title.Designer.cs">
+      <DependentUpon>USR002_Title.cs</DependentUpon>
+>>>>>>> 3d6cb7eda789421ac67671884c6a8d56c077f449
     </Compile>
     <EmbeddedResource Include="Gabe_Splash.resx">
       <DependentUpon>Gabe_Splash.cs</DependentUpon>
@@ -95,8 +109,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="USR003_Title.resx">
       <DependentUpon>USR003_Title.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="USR001_Title.resx">
+      <DependentUpon>USR001_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USR002_Title.resx">
+      <DependentUpon>USR002_Title.cs</DependentUpon>
+>>>>>>> 3d6cb7eda789421ac67671884c6a8d56c077f449
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
