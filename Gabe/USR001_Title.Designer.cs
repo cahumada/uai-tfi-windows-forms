@@ -157,6 +157,7 @@ namespace Gabe
             this.Controls.Add(this.GroupBox2);
             this.Name = "USR001_Title";
             this.Text = "USR001_Title";
+            this.Load += new System.EventHandler(this.USR001_Title_Load_1);
             this.USR001_Grp01.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.USR001_DgrUsr)).EndInit();
             this.GroupBox2.ResumeLayout(false);

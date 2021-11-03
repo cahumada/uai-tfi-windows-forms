@@ -73,7 +73,7 @@ namespace Gabe
         {
             DataRow[] _DrFiltrado;
             var _DtCopia = new DataTable();
-            
+
             _DtCopia = _Dt.Clone();
             _DrFiltrado = _Dt.Select("[HijoDe]='" + pId + "'");
 
@@ -118,27 +118,34 @@ namespace Gabe
 
         public void SubMenuClick(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(((ToolStripMenuItem)sender).Tag.ToString()))
+            try
             {
-                var _NombreForm = Assembly.GetExecutingAssembly().FullName + "." + ((ToolStripMenuItem)sender).Tag.ToString();
-
-                Assembly _Assembly;
-                _Assembly = Assembly.GetExecutingAssembly();
-
-                var _Form = new Form();
-                _Form = (Form)_Assembly.CreateInstance(_NombreForm, true, BindingFlags.CreateInstance, null, new object[] { _Usuario.UsuarioId }, null, null);
-
-                if (_Form != null)
+                if (!string.IsNullOrEmpty(((ToolStripMenuItem)sender).Tag.ToString()))
                 {
-                    _Form.MdiParent = this;
-                    _Form.StartPosition = FormStartPosition.CenterScreen;
-                    _Form.MaximizeBox = false;
+                    var nombreForm = "Gabe." + ((ToolStripMenuItem)sender).Tag.ToString();
+                    
+                    var assembly = Assembly.GetExecutingAssembly();
 
-                    _Form.Show();
+                    var form = new Form();
+                    form = (Form)assembly.CreateInstance(nombreForm, true, BindingFlags.CreateInstance, null, new object[] { _Usuario.UsuarioId }, null, null);
+
+                    if (form != null)
+                    {
+                        form.MdiParent = this;
+                        form.StartPosition = FormStartPosition.CenterScreen;
+                        form.MaximizeBox = false;
+
+                        form.Show();
+                    }
+                    else
+                        MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                    MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (Exception exception)
+            {
+                throw;
+            }
+
         }
 
         public void MenuClick(object sender, EventArgs e)

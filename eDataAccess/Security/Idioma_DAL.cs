@@ -74,7 +74,7 @@ namespace eDataAccess.Security
 
             try
             {
-                mDt = Commons.ExecuteDataTable("ObtenerIdioma", CommandType.StoredProcedure, null);
+                mDt = Commons.ExecuteDataTable("ObtenerIdiomas", CommandType.StoredProcedure, null);
 
                 if (mDt != null)
                 {

@@ -26,10 +26,10 @@ namespace eDataAccess.Security
                 mParams.Add((DbParameter)Commons.getNewParameter("bAdmin", DbType.Boolean, pUsuario.Bloqueado));
                 mParams.Add((DbParameter)Commons.getNewParameter("bBloqueado", DbType.Boolean, pUsuario.Bloqueado));
 
-                return Commons.ExecuteNonQuery("AgregarUser", CommandType.StoredProcedure, mParams);
+                return Commons.ExecuteNonQuery("AgregarUsuario", CommandType.StoredProcedure, mParams);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -195,7 +195,7 @@ namespace eDataAccess.Security
 
                 return null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

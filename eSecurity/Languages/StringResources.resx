@@ -261,4 +261,70 @@
   <data name="USR001_Val002" xml:space="preserve">
     <value>El usuario seleccionado no se encuentra bloqueado</value>
   </data>
+  <data name="USR002_ChkBloqued" xml:space="preserve">
+    <value>Bloqueado</value>
+  </data>
+  <data name="USR002_Grp01" xml:space="preserve">
+    <value>Nuevo Usuario</value>
+  </data>
+  <data name="USR002_Grp02" xml:space="preserve">
+    <value>Modificar Usuario</value>
+  </data>
+  <data name="USR002_Grp03" xml:space="preserve">
+    <value>Eliminar Usuario</value>
+  </data>
+  <data name="USR002_Grp04" xml:space="preserve">
+    <value>Consulta Usuario</value>
+  </data>
+  <data name="USR002_Grp05" xml:space="preserve">
+    <value>Modificar Idioma</value>
+  </data>
+  <data name="USR002_Grp06" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+  <data name="USR002_lbl001" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="USR002_lbl002" xml:space="preserve">
+    <value>Cliente:</value>
+  </data>
+  <data name="USR002_lbl003" xml:space="preserve">
+    <value>Intentos de Bloqueo:</value>
+  </data>
+  <data name="USR002_lbl004" xml:space="preserve">
+    <value>Lenguaje:</value>
+  </data>
+  <data name="USR002_Title" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="USR002_Val004" xml:space="preserve">
+    <value>¿Desea confirmar la eliminación del usuario?</value>
+  </data>
+  <data name="USR003_Grp01" xml:space="preserve">
+    <value>Blanquear Contraseña</value>
+  </data>
+  <data name="USR003_lbl001" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="USR003_lbl002" xml:space="preserve">
+    <value>Nueva Contraseña:</value>
+  </data>
+  <data name="USR003_lbl003" xml:space="preserve">
+    <value>Confirmar:</value>
+  </data>
+  <data name="USR003_Val001" xml:space="preserve">
+    <value>La confirmación de la contraseña no coincide</value>
+  </data>
+  <data name="USRCTRL01_Val001" xml:space="preserve">
+    <value>El usuario no existe</value>
+  </data>
+  <data name="USRCTRL01_Val003" xml:space="preserve">
+    <value>El campo usuario es obligatorio</value>
+  </data>
+  <data name="USRL001_Grp01" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="USRL001_Title" xml:space="preserve">
+    <value>Consulta Rápida Usuarios</value>
+  </data>
 </root>
