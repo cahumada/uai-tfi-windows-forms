@@ -37,7 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,13 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="USR003_Title.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="USR003_Title.Designer.cs">
       <DependentUpon>USR003_Title.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="USR001_Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +89,12 @@
     </Compile>
     <Compile Include="USR002_Title.Designer.cs">
       <DependentUpon>USR002_Title.cs</DependentUpon>
->>>>>>> 3d6cb7eda789421ac67671884c6a8d56c077f449
+    </Compile>
+    <Compile Include="USRL001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USRL001_Title.Designer.cs">
+      <DependentUpon>USRL001_Title.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Gabe_Splash.resx">
       <DependentUpon>Gabe_Splash.cs</DependentUpon>
@@ -109,16 +115,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="USR003_Title.resx">
       <DependentUpon>USR003_Title.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="USR001_Title.resx">
       <DependentUpon>USR001_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USR002_Title.resx">
       <DependentUpon>USR002_Title.cs</DependentUpon>
->>>>>>> 3d6cb7eda789421ac67671884c6a8d56c077f449
+    </EmbeddedResource>
+    <EmbeddedResource Include="USRL001_Title.resx">
+      <DependentUpon>USRL001_Title.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

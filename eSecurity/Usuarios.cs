@@ -12,7 +12,7 @@ namespace eSecurity
 {
     public class Usuarios
     {
-        private Usuarios_DTO _Usuario;
+        private Usuarios_DTO _Usuario = new Usuarios_DTO();
 
         #region Contructores
         public Usuarios()
@@ -32,21 +32,58 @@ namespace eSecurity
         #endregion
 
         #region Propiedades
-        public int UsuarioId { get { return _Usuario.UsuarioId; } }
-        public int IdiomaId { get { return _Usuario.IdiomaId; } }
+
+        public int UsuarioId
+        {
+            get => _Usuario.UsuarioId;
+            set => _Usuario.UsuarioId = value;
+        }
+
+        public int IdiomaId
+        {
+            get => _Usuario.IdiomaId;
+            set => _Usuario.IdiomaId = value;
+        }
+
         public string Nik
         {
-            get { return _Usuario.Nik; }
-            set { _Usuario.Nik = value; }
+            get => _Usuario.Nik;
+            set => _Usuario.Nik = value;
         }
-        public string Contrasena { get { return _Usuario.Contrasena; } }
-        public short Intentos { get { return _Usuario.Intentos; } }
-        public bool Bloqueado { get { return _Usuario.Bloqueado; } }
-        public int DVH { get { return _Usuario.DVH; } }
-        public bool Admin { get { return _Usuario.Admin; } }
 
-        public List<UsuarioFamilia> Familias { get { return (new UsuarioFamilia()).ObtenerUsuarioFamilia(UsuarioId); } }
-        public List<UsuarioPatente> Patentes { get { return (new UsuarioPatente()).ObtenerUsuarioPatente(UsuarioId); } }
+        public string Contrasena
+        {
+            get => _Usuario.Contrasena;
+            set => _Usuario.Contrasena = value;
+        }
+
+        public short Intentos
+        {
+            get => _Usuario.Intentos;
+            set => _Usuario.Intentos = value;
+        }
+
+        public bool Bloqueado
+        {
+            get => _Usuario.Bloqueado;
+            set => _Usuario.Bloqueado = value;
+        }
+
+        public int DVH
+        {
+            get => _Usuario.DVH;
+            set => _Usuario.DVH = value;
+        }
+
+        public bool Admin
+        {
+            get => _Usuario.Admin;
+            set => _Usuario.Admin = value;
+        }
+
+        public List<UsuarioFamilia> Familias => (new UsuarioFamilia()).ObtenerUsuarioFamilia(UsuarioId);
+        public List<UsuarioPatente> Patentes => (new UsuarioPatente()).ObtenerUsuarioPatente(UsuarioId);
+
         #endregion
 
         #region Metodos
@@ -91,13 +128,13 @@ namespace eSecurity
             }
         }
 
-        public void Eliminar(Usuarios_DTO pUsuario)
+        public void Eliminar()
         {
             try
             {
                 if (_Usuario.UsuarioId > 0)
                 {
-                    Usuarios_DAL.EliminarUsuario(_Usuario.UsuarioId);
+                    Usuarios_DAL.EliminarUsuario(UsuarioId);
 
                     //TODO
                     //    If mUserFamily.Count > 0 Then
@@ -151,6 +188,18 @@ namespace eSecurity
             }
             catch (Exception)
             {
+            }
+        }
+
+        public void BlanquearContrasena(string pNuevaContrasena)
+        {
+            if (UsuarioId > 0)
+            {
+                string nuevaContrasena = Encrypt.GetHashMD5(pNuevaContrasena);
+
+                Contrasena = nuevaContrasena;
+
+                Usuarios_DAL.BlanquearPassword(UsuarioId, nuevaContrasena);
             }
         }
 

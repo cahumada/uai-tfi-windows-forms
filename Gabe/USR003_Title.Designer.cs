@@ -29,6 +29,7 @@ namespace Gabe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.USR003_Grp01 = new System.Windows.Forms.GroupBox();
             this.USR003_txtCPass = new System.Windows.Forms.TextBox();
             this.USR003_lbl003 = new System.Windows.Forms.Label();
@@ -39,8 +40,10 @@ namespace Gabe
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.GEN001_Btn007 = new System.Windows.Forms.Button();
             this.GEN001_Btn006 = new System.Windows.Forms.Button();
+            this.ErrProv = new System.Windows.Forms.ErrorProvider(this.components);
             this.USR003_Grp01.SuspendLayout();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProv)).BeginInit();
             this.SuspendLayout();
             // 
             // USR003_Grp01
@@ -65,6 +68,7 @@ namespace Gabe
             this.USR003_txtCPass.Size = new System.Drawing.Size(177, 20);
             this.USR003_txtCPass.TabIndex = 9;
             this.USR003_txtCPass.UseSystemPasswordChar = true;
+            this.USR003_txtCPass.Validating += new System.ComponentModel.CancelEventHandler(this.USR003_txtCPass_Validating);
             // 
             // USR003_lbl003
             // 
@@ -82,6 +86,7 @@ namespace Gabe
             this.USR003_txtPass.Size = new System.Drawing.Size(177, 20);
             this.USR003_txtPass.TabIndex = 7;
             this.USR003_txtPass.UseSystemPasswordChar = true;
+            this.USR003_txtPass.Validating += new System.ComponentModel.CancelEventHandler(this.USR003_txtPass_Validating);
             // 
             // USR003_lbl002
             // 
@@ -126,6 +131,7 @@ namespace Gabe
             this.GEN001_Btn007.TabIndex = 1;
             this.GEN001_Btn007.Text = "Cancelar";
             this.GEN001_Btn007.UseVisualStyleBackColor = true;
+            this.GEN001_Btn007.Click += new System.EventHandler(this.GEN001_Btn007_Click);
             // 
             // GEN001_Btn006
             // 
@@ -135,6 +141,11 @@ namespace Gabe
             this.GEN001_Btn006.TabIndex = 0;
             this.GEN001_Btn006.Text = "Aceptar";
             this.GEN001_Btn006.UseVisualStyleBackColor = true;
+            this.GEN001_Btn006.Click += new System.EventHandler(this.GEN001_Btn006_Click);
+            // 
+            // ErrProv
+            // 
+            this.ErrProv.ContainerControl = this;
             // 
             // USR003_Title
             // 
@@ -145,9 +156,11 @@ namespace Gabe
             this.Controls.Add(this.GroupBox1);
             this.Name = "USR003_Title";
             this.Text = "USR003_Title";
+            this.Load += new System.EventHandler(this.USR003_Title_Load);
             this.USR003_Grp01.ResumeLayout(false);
             this.USR003_Grp01.PerformLayout();
             this.GroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,5 +177,6 @@ namespace Gabe
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.Button GEN001_Btn007;
         internal System.Windows.Forms.Button GEN001_Btn006;
+        private System.Windows.Forms.ErrorProvider ErrProv;
     }
 }

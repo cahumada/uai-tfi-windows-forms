@@ -117,10 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Login_BtnCancel" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="Login_BtnOk" xml:space="preserve">
+    <value>&amp;Ok</value>
+  </data>
+  <data name="Login_LblPass" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Login_LblUser" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="Login_Msg001" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
+  <data name="Login_Msg002" xml:space="preserve">
+    <value>You must complete the username and password fields</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MDI_Gabe" xml:space="preserve">
+    <value>Main menu "Gabe"</value>
+  </data>
   <data name="MDI_Gabe_Mnu001" xml:space="preserve">
     <value>Security</value>
   </data>
   <data name="MDI_Gabe_Mnu005" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="Splash001_Msg000" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
+  <data name="Splash001_Msg001" xml:space="preserve">
+    <value>Searching for updates...</value>
+  </data>
+  <data name="Splash001_Msg002" xml:space="preserve">
+    <value>Connectiong to database...</value>
+  </data>
+  <data name="Splash001_Msg003" xml:space="preserve">
+    <value>Verifying system integrity...</value>
+  </data>
+  <data name="Splash001_Msg004" xml:space="preserve">
+    <value>Starting application...</value>
+  </data>
+  <data name="Splash001_MsgBox001" xml:space="preserve">
+    <value>Integrity check failure, see the System Administrator</value>
+  </data>
+  <data name="Splash_BtnCancel" xml:space="preserve">
+    <value>&amp;Cerrar</value>
+  </data>
+  <data name="USR001_Title" xml:space="preserve">
+    <value>User Consulting</value>
   </data>
 </root>

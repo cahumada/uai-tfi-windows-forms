@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace eFramework
 {
-    public class Constantes
+    [Flags]
+    public enum EstadosABM
     {
-        public enum EstadosABM
-        {
-            Nuevo = 1,
-            Modificar = 2,
-            Eliminar = 3,
-            Consulta = 4,
-            CambiarIdioma = 5,
-            Desbloquear = 6,
-            BlanquearClave = 7,
-        }
-
+        Nuevo = 1,
+        Modificar = 2,
+        Eliminar = 3,
+        Consulta = 4,
+        CambiarIdioma = 5,
+        Desbloquear = 6,
+        BlanquearClave = 7,
     }
 }

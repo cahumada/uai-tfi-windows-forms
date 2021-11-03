@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using eFramework;
 
 namespace Gabe
 {
@@ -22,7 +23,179 @@ namespace Gabe
             InitializeComponent();
         }
 
-        private void USR001_Title_Load(object sender, EventArgs e)
+        private void ActualizarOrigen()
+        {
+            USR001_DgrUsr.Rows.Clear();
+
+            foreach (var usuario in new Usuarios().ObtenerUsuario())
+            {
+                USR001_DgrUsr.Rows.Add(usuario.UsuarioId, usuario.Nik, usuario.Intentos, usuario.Bloqueado, usuario.IdiomaId, (new Idioma(usuario.IdiomaId)).Descripcion, usuario.Contrasena);
+            }
+        }
+
+        private void GEN001_Btn004_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void GEN001_Btn001_Click(object sender, EventArgs e)
+        {
+            // Nuevo
+            var form = new USR002_Title(codigoUsuario, null, EstadosABM.Nuevo);
+
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MaximizeBox = false;
+            // No permite expandir el formulario
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+            form.ShowDialog(this);
+
+            ActualizarOrigen();
+
+        }
+
+        private void GEN001_Btn002_Click(object sender, EventArgs e)
+        {
+            // Modificar
+            if (USR001_DgrUsr.SelectedRows.Count > 0)
+            {
+                var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+                var form = new USR002_Title(codigoUsuario, usuario, EstadosABM.Modificar);
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.MaximizeBox = false;
+                // No permite expandir el formulario
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+                form.ShowDialog(this);
+
+                ActualizarOrigen();
+            }
+
+        }
+
+        private void GEN001_Btn003_Click(object sender, EventArgs e)
+        {
+            // Eliminar
+            if (USR001_DgrUsr.SelectedRows.Count > 0)
+            {
+                var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+                var form = new USR002_Title(codigoUsuario, usuario, EstadosABM.Eliminar);
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.MaximizeBox = false;
+                // No permite expandir el formulario
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+                form.ShowDialog(this);
+
+                ActualizarOrigen();
+            }
+            else
+            {
+                MessageBox.Show(Idioma.ObtenerEtiqueta("USR001_Val001"), "Gabe", MessageBoxButtons.OK);
+            }
+
+        }
+
+        private void USR001_Btn002_Click(object sender, EventArgs e)
+        {
+            // Desbloquear
+            if (USR001_DgrUsr.SelectedRows.Count > 0)
+            {
+                // Si está bloqueado
+                if ((bool)USR001_DgrUsr.SelectedRows[0].Cells[3].Value)
+                {
+                    var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+                    var form = new USR002_Title(codigoUsuario, usuario, EstadosABM.Desbloquear);
+
+                    form.StartPosition = FormStartPosition.CenterScreen;
+                    form.MaximizeBox = false;
+                    // No permite expandir el formulario
+                    form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+                    form.ShowDialog(this);
+
+                    ActualizarOrigen();
+                }
+                else
+                {
+                    MessageBox.Show(Idioma.ObtenerEtiqueta("USR001_Val002"), "Gabe", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show(Idioma.ObtenerEtiqueta("USR001_Val001"), "Gabe", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private void USR001_Btn003_Click(object sender, EventArgs e)
+        {
+            // Reset
+            if (USR001_DgrUsr.SelectedRows.Count > 0)
+            {
+                var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+                var form = new USR003_Title(codigoUsuario, usuario, EstadosABM.BlanquearClave);
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.MaximizeBox = false;
+                // No permite expandir el formulario
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+                form.ShowDialog(this);
+
+                ActualizarOrigen();
+            }
+            else
+            {
+                MessageBox.Show(Idioma.ObtenerEtiqueta("USR001_Val001"), "Gabe", MessageBoxButtons.OK);
+            }
+        }
+
+        private void USR001_Btn001_Click(object sender, EventArgs e)
+        {
+            // Modificar Idioma
+            if (USR001_DgrUsr.SelectedRows.Count > 0)
+            {
+                var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+                var form = new USR002_Title(codigoUsuario, usuario, EstadosABM.CambiarIdioma);
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.MaximizeBox = false;
+                // No permite expandir el formulario
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+                form.ShowDialog(this);
+
+                ActualizarOrigen();
+            }
+            else
+            {
+                MessageBox.Show(Idioma.ObtenerEtiqueta("USR001_Val001"), "Gabe", MessageBoxButtons.OK);
+            }
+        }
+
+        private void USR001_DgrUsr_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
+
+            var form = new USR002_Title(codigoUsuario, usuario, EstadosABM.Consulta);
+
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MaximizeBox = false;
+            // No permite expandir el formulario
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+
+            form.ShowDialog(this);
+        }
+
+        private void USR001_Title_Load_1(object sender, EventArgs e)
         {
             USR001_DgrUsr.Columns.Add("USR001_DgrUsr_cUser", "Usuario");
 
@@ -58,159 +231,7 @@ namespace Gabe
                 MasterForm.AplicarIdioma(this);
 
             //Acualizo grilla
-            ChargeDataSource();
-        }
-
-        private void ChargeDataSource()
-        {
-            USR001_DgrUsr.Rows.Clear();
-
-            foreach (var usuario in new Usuarios().ObtenerUsuario())
-            {
-                USR001_DgrUsr.Rows.Add(usuario.UsuarioId, usuario.Nik, usuario.Intentos, usuario.Bloqueado, usuario.IdiomaId, (new Idioma(usuario.IdiomaId)).Descripcion, usuario.Contrasena);
-            }
-        }
-
-        private void GEN001_Btn004_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void GEN001_Btn001_Click(object sender, EventArgs e)
-        {
-            //    'Nuevo
-            //Dim mFrm As New USR002_Title(mUserCode, Nothing, eFramework.ConstantBasic.StatesABM.NewItem)
-
-            //mFrm.StartPosition = FormStartPosition.CenterScreen
-            //mFrm.MaximizeBox = False
-            //'No permite expandir el formulario
-            //mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //mFrm.ShowDialog(Me)
-
-            //ChargeDataSource()
-
-        }
-
-        private void GEN001_Btn002_Click(object sender, EventArgs e)
-        {
-            //    'Modificar
-            //If USR001_DgrUsr.SelectedRows.Count > 0 Then
-            //    Dim mUser As New Users(CType(USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cUser").Value, Int32))
-
-            //    Dim mFrm As New USR002_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.ModifyItem)
-
-            //    mFrm.StartPosition = FormStartPosition.CenterScreen
-            //    mFrm.MaximizeBox = False
-            //    'No permite expandir el formulario
-            //    mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //    mFrm.ShowDialog(Me)
-
-            //    ChargeDataSource()
-            //End If
-        }
-
-        private void GEN001_Btn003_Click(object sender, EventArgs e)
-        {
-            //    'Eliminar
-            //If USR001_DgrUsr.SelectedRows.Count > 0 Then
-            //    Dim mUser As New Users(CType(USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cUser").Value, Int32))
-
-            //    Dim mFrm As New USR002_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.DeleteItem)
-
-            //    mFrm.StartPosition = FormStartPosition.CenterScreen
-            //    mFrm.MaximizeBox = False
-            //    'No permite expandir el formulario
-            //    mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //    mFrm.ShowDialog(Me)
-
-            //    ChargeDataSource()
-            //Else
-            //    MsgBox(Language.ObtenerEtiqueta("USR001_Val001"), MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
-            //End If
-        }
-
-        private void USR001_Btn002_Click(object sender, EventArgs e)
-        {
-            //    'Desbloquear
-            //If USR001_DgrUsr.SelectedRows.Count > 0 Then
-            //    If USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cIs_Blocked").Value Then
-            //        Dim mUser As New Users(CType(USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cUser").Value, Int32))
-
-            //        Dim mFrm As New USR002_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.UnLock)
-
-            //        mFrm.StartPosition = FormStartPosition.CenterScreen
-            //        mFrm.MaximizeBox = False
-            //        'No permite expandir el formulario
-            //        mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //        mFrm.ShowDialog(Me)
-
-            //        ChargeDataSource()
-            //    Else
-            //        MsgBox(Language.ObtenerEtiqueta("USR001_Val002"), MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
-            //    End If
-            //Else
-            //    MsgBox(Language.ObtenerEtiqueta("USR001_Val001"), MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
-            //End If
-        }
-
-        private void USR001_Btn003_Click(object sender, EventArgs e)
-        {
-            //    'Reset
-            //If USR001_DgrUsr.SelectedRows.Count > 0 Then
-            //    Dim mUser As New Users(CType(USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cUser").Value, Int32))
-
-            //    Dim mFrm As New USR003_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.BlankPass)
-
-            //    mFrm.StartPosition = FormStartPosition.CenterScreen
-            //    mFrm.MaximizeBox = False
-            //    'No permite expandir el formulario
-            //    mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //    mFrm.ShowDialog(Me)
-
-            //    ChargeDataSource()
-            //Else
-            //    MsgBox(Language.ObtenerEtiqueta("USR001_Val001"), MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
-            //End If
-        }
-
-        private void USR001_Btn001_Click(object sender, EventArgs e)
-        {
-            //    'Mod Idioma
-            //If USR001_DgrUsr.SelectedRows.Count > 0 Then
-            //    Dim mUser As New Users(CType(USR001_DgrUsr.SelectedRows(0).Cells("USR001_DgrUsr_cUser").Value, Int32))
-
-            //    Dim mFrm As New USR002_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.ChangeLanguage)
-
-            //    mFrm.StartPosition = FormStartPosition.CenterScreen
-            //    mFrm.MaximizeBox = False
-            //    'No permite expandir el formulario
-            //    mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //    mFrm.ShowDialog(Me)
-
-            //    ChargeDataSource()
-            //Else
-            //    MsgBox(Language.ObtenerEtiqueta("USR001_Val001"), MsgBoxStyle.Information + MsgBoxStyle.OkOnly)
-            //End If
-        }
-
-        private void USR001_DgrUsr_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //    Dim mUser As New Users(CType(USR001_DgrUsr.Item("USR001_DgrUsr_cUser", e.RowIndex).Value, Int32))
-
-            //Dim mFrm As New USR002_Title(mUserCode, mUser, eFramework.ConstantBasic.StatesABM.QueryItem)
-
-            //mFrm.StartPosition = FormStartPosition.CenterScreen
-            //mFrm.MaximizeBox = False
-            //'No permite expandir el formulario
-            //mFrm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedSingle
-
-            //mFrm.ShowDialog(Me)
+            ActualizarOrigen();
         }
     }
 }
