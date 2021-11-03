@@ -16,6 +16,27 @@ namespace eSecurity
     {
         private Idioma_DTO _Idioma;
 
+        #region Propiedades
+        public string Descripcion
+        {
+            get { return _Idioma.Descripcion; }
+            set { _Idioma.Descripcion = value; }
+        }
+
+        public int IdiomaId
+        {
+            get { return _Idioma.IdiomaId; }
+            set { _Idioma.IdiomaId = value; }
+        }
+
+        public string DescCorta
+        {
+            get { return _Idioma.DescCorta; }
+            set { _Idioma.DescCorta = value; }
+        }
+
+        #endregion
+
         #region Contructores
         public Idioma()
         {
