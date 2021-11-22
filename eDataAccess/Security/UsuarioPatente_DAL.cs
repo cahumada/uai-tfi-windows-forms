@@ -108,6 +108,24 @@ namespace eDataAccess.Security
             }
         }
 
+        public static bool UsuarioPatenteHabilitada(int pUsuario, int pPatente)
+        {
+            var mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuario));
+                mParams.Add((DbParameter)Commons.getNewParameter("nPatente", DbType.Int32, pPatente));
+
+                return (bool)Commons.ExecuteScalar("UsuarioPatenteHabilitada", CommandType.StoredProcedure, mParams);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private static UsuarioPatente_DTO GetDTODR(DataRow pDr)
         {
             var mDTO = new UsuarioPatente_DTO();

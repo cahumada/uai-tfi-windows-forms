@@ -117,6 +117,138 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BIT001_Btn001" xml:space="preserve">
+    <value>&amp;Depurar</value>
+  </data>
+  <data name="BIT001_Btn002" xml:space="preserve">
+    <value>&amp;Imprimir</value>
+  </data>
+  <data name="BIT001_DgrBit_cCriticality" xml:space="preserve">
+    <value>Criticidad</value>
+  </data>
+  <data name="BIT001_DgrBit_cCriticality_tt" xml:space="preserve">
+    <value>Indicador de criticidad del proceso registrado en la bitacora</value>
+  </data>
+  <data name="BIT001_DgrBit_cEffectDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="BIT001_DgrBit_cEffectDate_tt" xml:space="preserve">
+    <value>Fecha en la que se registro el movimiento en la bitacora</value>
+  </data>
+  <data name="BIT001_DgrBit_cLog" xml:space="preserve">
+    <value>Identificador</value>
+  </data>
+  <data name="BIT001_DgrBit_cLog_tt" xml:space="preserve">
+    <value>Código incremental de la bitacora</value>
+  </data>
+  <data name="BIT001_DgrBit_cNik" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="BIT001_DgrBit_cNik_tt" xml:space="preserve">
+    <value>Usuario asociado al registro de la bitacora</value>
+  </data>
+  <data name="BIT001_DgrBit_cTypMovement" xml:space="preserve">
+    <value>T. Movimiento</value>
+  </data>
+  <data name="BIT001_DgrBit_cTypMovement_tt" xml:space="preserve">
+    <value>Tipo de movimiento asociado a la bitacora</value>
+  </data>
+  <data name="BIT001_Grp01" xml:space="preserve">
+    <value>Busqueda</value>
+  </data>
+  <data name="BIT001_Msg001" xml:space="preserve">
+    <value>¿Confirma la depuración de la Bitacora?</value>
+  </data>
+  <data name="BIT001_Title" xml:space="preserve">
+    <value>Consulta Bitacora</value>
+  </data>
+  <data name="BITR001_Title" xml:space="preserve">
+    <value>Reporte Bitácora</value>
+  </data>
+  <data name="BKP001_Grp01" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="BKP001_LblFiles" xml:space="preserve">
+    <value>Cantidad Archivos</value>
+  </data>
+  <data name="BKP001_LblText" xml:space="preserve">
+    <value>En caso de requerir un respaldo multivolumen debe seleccionar la cantidad de archivos a crear</value>
+  </data>
+  <data name="BKP001_Msg001" xml:space="preserve">
+    <value>El backup se realizó correctamente</value>
+  </data>
+  <data name="BKP001_Title" xml:space="preserve">
+    <value>Backups</value>
+  </data>
+  <data name="BKP001_Val001" xml:space="preserve">
+    <value>Debe indicar una ruta para realizar el backup</value>
+  </data>
+  <data name="DVI001_Btn001" xml:space="preserve">
+    <value>&amp;Recalcular</value>
+  </data>
+  <data name="DVI001_DgrDVI_cId" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="DVI001_DgrDVI_cId_tt" xml:space="preserve">
+    <value>Número secuencial</value>
+  </data>
+  <data name="DVI001_DgrDVI_cTable" xml:space="preserve">
+    <value>Tabla</value>
+  </data>
+  <data name="DVI001_DgrDVI_cTable_tt" xml:space="preserve">
+    <value>Tabla cuya integridad fue violada</value>
+  </data>
+  <data name="DVI001_Grp01" xml:space="preserve">
+    <value>Tablas afectadas</value>
+  </data>
+  <data name="DVI001_Title" xml:space="preserve">
+    <value>Recálcular DV</value>
+  </data>
+  <data name="DVI_Msg001" xml:space="preserve">
+    <value>El recalcúlo de DV finalizó correctamente</value>
+  </data>
+  <data name="DVI_Msg002" xml:space="preserve">
+    <value>Hubo errores recalculando los DV</value>
+  </data>
+  <data name="FAM001_DgrFam_cDescript" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="FAM001_DgrFam_cDescript_tt" xml:space="preserve">
+    <value>Descripción larga</value>
+  </data>
+  <data name="FAM001_DgrFam_cFamily" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="FAM001_DgrFam_cFamily_tt" xml:space="preserve">
+    <value>Código de familia</value>
+  </data>
+  <data name="FAM001_DgrFam_cShort_Desc" xml:space="preserve">
+    <value>Desc. Corta</value>
+  </data>
+  <data name="FAM001_DgrFam_cShort_Desc_tt" xml:space="preserve">
+    <value>Descripción corta</value>
+  </data>
+  <data name="FAM001_Grp02" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="FAM001_Lbl001" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="FAM001_Lbl002" xml:space="preserve">
+    <value>Desc. Corta:</value>
+  </data>
+  <data name="FAM001_Msg001" xml:space="preserve">
+    <value>¿Desea eliminar la familia seleccionada?</value>
+  </data>
+  <data name="FAM001_Title" xml:space="preserve">
+    <value>Familias</value>
+  </data>
+  <data name="FAM001_Val001" xml:space="preserve">
+    <value>La descripción larga debe estar completa</value>
+  </data>
+  <data name="FAM001_Val002" xml:space="preserve">
+    <value>La descripción corta debe estar completa</value>
+  </data>
   <data name="GEN001_Btn001" xml:space="preserve">
     <value>&amp;Nuevo</value>
   </data>
@@ -137,6 +269,42 @@
   </data>
   <data name="GEN001_Btn007" xml:space="preserve">
     <value>Ca&amp;ncelar</value>
+  </data>
+  <data name="GEN001_Btn007_tt" xml:space="preserve">
+    <value>Cancela los cambios solicitados</value>
+  </data>
+  <data name="GEN001_Btn008" xml:space="preserve">
+    <value>&amp;Obtener</value>
+  </data>
+  <data name="GEN001_Btn009" xml:space="preserve">
+    <value>&amp;Limpiar</value>
+  </data>
+  <data name="GEN001_Btn010" xml:space="preserve">
+    <value>&amp;Guardar</value>
+  </data>
+  <data name="GEN001_Btn010_tt" xml:space="preserve">
+    <value>Confirma los cambios solicitados</value>
+  </data>
+  <data name="GEN001_Btn011" xml:space="preserve">
+    <value>A&amp;gregar</value>
+  </data>
+  <data name="GEN001_Btn012" xml:space="preserve">
+    <value>&amp;Seleccionar</value>
+  </data>
+  <data name="GEN001_Btn013" xml:space="preserve">
+    <value>Con&amp;firmar</value>
+  </data>
+  <data name="GEN001_Btn014" xml:space="preserve">
+    <value>&amp;Imprimir</value>
+  </data>
+  <data name="GEN001_Msg001" xml:space="preserve">
+    <value>¿Desea confirmar los cambios realizados?</value>
+  </data>
+  <data name="GEN001_Msg002" xml:space="preserve">
+    <value>El formulario seleccionado no existe</value>
+  </data>
+  <data name="GEN001_Msg003" xml:space="preserve">
+    <value>Debe seleccionar un cliente válido</value>
   </data>
   <data name="GEN001_Val001" xml:space="preserve">
     <value>El campo es obligatorio</value>
@@ -162,6 +330,9 @@
   <data name="Login_Msg002" xml:space="preserve">
     <value>Debe completar los campos usuario y contraseña</value>
   </data>
+  <data name="Login_Msg003" xml:space="preserve">
+    <value>El usuario se encuentra bloqueado, contacte al administrador del sistema</value>
+  </data>
   <data name="Login_Title" xml:space="preserve">
     <value>Iniciar</value>
   </data>
@@ -172,10 +343,379 @@
     <value>Seguridad</value>
   </data>
   <data name="MDI_Gabe_Mnu002" xml:space="preserve">
-    <value>Usuarios</value>
+    <value>Operación</value>
+  </data>
+  <data name="MDI_Gabe_Mnu003" xml:space="preserve">
+    <value>Mantenimiento</value>
   </data>
   <data name="MDI_Gabe_Mnu005" xml:space="preserve">
     <value>Salir</value>
+  </data>
+  <data name="MDI_Gabe_Mnu007" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="MDI_Gabe_Mnu008" xml:space="preserve">
+    <value>Usuario Familia</value>
+  </data>
+  <data name="MDI_Gabe_Mnu009" xml:space="preserve">
+    <value>Usuario Patente</value>
+  </data>
+  <data name="MDI_Gabe_Mnu010" xml:space="preserve">
+    <value>Consulta Bitacora</value>
+  </data>
+  <data name="MDI_Gabe_Mnu013" xml:space="preserve">
+    <value>Familias</value>
+  </data>
+  <data name="MDI_Gabe_Mnu014" xml:space="preserve">
+    <value>Patentes</value>
+  </data>
+  <data name="MDI_Gabe_Mnu015" xml:space="preserve">
+    <value>Backup's</value>
+  </data>
+  <data name="MDI_Gabe_Mnu016" xml:space="preserve">
+    <value>Restore's</value>
+  </data>
+  <data name="MDI_Gabe_Mnu022" xml:space="preserve">
+    <value>Recálcular DV</value>
+  </data>
+  <data name="PAT001_DgrPat_cDescript" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="PAT001_DgrPat_cDescript_tt" xml:space="preserve">
+    <value>Descripción larga</value>
+  </data>
+  <data name="PAT001_DgrPat_cPatent" xml:space="preserve">
+    <value>Patente</value>
+  </data>
+  <data name="PAT001_DgrPat_cPatent_tt" xml:space="preserve">
+    <value>Código de patente</value>
+  </data>
+  <data name="PAT001_DgrPat_cShort_Desc" xml:space="preserve">
+    <value>Desc. Corta</value>
+  </data>
+  <data name="PAT001_DgrPat_cShort_Desc_tt" xml:space="preserve">
+    <value>Descripción corta</value>
+  </data>
+  <data name="PAT001_Grp02" xml:space="preserve">
+    <value>Patente</value>
+  </data>
+  <data name="PAT001_Lbl001" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="PAT001_Lbl002" xml:space="preserve">
+    <value>Desc. Corta:</value>
+  </data>
+  <data name="PAT001_Msg001" xml:space="preserve">
+    <value>¿Desea eliminar la patente seleccionada?</value>
+  </data>
+  <data name="PAT001_Title" xml:space="preserve">
+    <value>Patentes</value>
+  </data>
+  <data name="PAT001_Val001" xml:space="preserve">
+    <value>La descripción larga debe estar completa</value>
+  </data>
+  <data name="PAT001_Val002" xml:space="preserve">
+    <value>La descripción corta debe estar completa</value>
+  </data>
+  <data name="PED001_Btn001" xml:space="preserve">
+    <value>De&amp;talle</value>
+  </data>
+  <data name="PED001_Btn002" xml:space="preserve">
+    <value>Esta&amp;do</value>
+  </data>
+  <data name="PED001_DgrPed_cClient" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="PED001_DgrPed_cClient_tt" xml:space="preserve">
+    <value>Cliente asociado al pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cDeliveryDate" xml:space="preserve">
+    <value>Fecha Entrega</value>
+  </data>
+  <data name="PED001_DgrPed_cDeliveryDate_tt" xml:space="preserve">
+    <value>Fecha de entrega del pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cOrder" xml:space="preserve">
+    <value>Num Pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cOrderDate" xml:space="preserve">
+    <value>Fecha Pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cOrderDate_tt" xml:space="preserve">
+    <value>Fecha en la cual se realizó el pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cOrder_tt" xml:space="preserve">
+    <value>Número de pedido</value>
+  </data>
+  <data name="PED001_DgrPed_cState" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="PED001_DgrPed_cState_tt" xml:space="preserve">
+    <value>Estado actual del pedido</value>
+  </data>
+  <data name="PED001_DtmDelivDate_tt" xml:space="preserve">
+    <value>Fecha de entrega</value>
+  </data>
+  <data name="PED001_DtmOrdDate_tt" xml:space="preserve">
+    <value>Fecha de pedido</value>
+  </data>
+  <data name="PED001_Grp01" xml:space="preserve">
+    <value>Pedido</value>
+  </data>
+  <data name="PED001_LblClient" xml:space="preserve">
+    <value>Cliente:</value>
+  </data>
+  <data name="PED001_LblDelivDate" xml:space="preserve">
+    <value>Fecha Entrega:</value>
+  </data>
+  <data name="PED001_LblOrdDate" xml:space="preserve">
+    <value>Fecha Pedido:</value>
+  </data>
+  <data name="PED001_LblPriceList" xml:space="preserve">
+    <value>L. Precio:</value>
+  </data>
+  <data name="PED001_Msg001" xml:space="preserve">
+    <value>¿Desea eliminar el pedido seleccionado?</value>
+  </data>
+  <data name="PED001_Msg002" xml:space="preserve">
+    <value>¿Unicamente se pueden eliminar pedidos en estado Pendiente?</value>
+  </data>
+  <data name="PED001_Title" xml:space="preserve">
+    <value>Pedidos</value>
+  </data>
+  <data name="PED001_Title_tt" xml:space="preserve">
+    <value>Formulario para generación de pedidos</value>
+  </data>
+  <data name="PED001_Val001" xml:space="preserve">
+    <value>La fecha de entrega no puede ser anterior a la fecha de pedido</value>
+  </data>
+  <data name="PED001_Val002" xml:space="preserve">
+    <value>El campo cliente es obligatorio</value>
+  </data>
+  <data name="PED001_Val003" xml:space="preserve">
+    <value>El campo lista de precio es obligatorio</value>
+  </data>
+  <data name="PED002_DgrProd_cAmount" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="PED002_DgrProd_cAmount_tt" xml:space="preserve">
+    <value>Cantidad asociada al producto</value>
+  </data>
+  <data name="PED002_DgrProd_cChecked" xml:space="preserve">
+    <value>Sel</value>
+  </data>
+  <data name="PED002_DgrProd_cChecked_tt" xml:space="preserve">
+    <value>Indicador que el item se encuentra seleccionado</value>
+  </data>
+  <data name="PED002_DgrProd_cPrice" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="PED002_DgrProd_cPrice_tt" xml:space="preserve">
+    <value>Precio asociado al producto</value>
+  </data>
+  <data name="PED002_DgrProd_cProducto" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="PED002_DgrProd_cProducto_tt" xml:space="preserve">
+    <value>Producto asociado al articulo</value>
+  </data>
+  <data name="PED002_Msg001" xml:space="preserve">
+    <value>¿Confirma que desea quitar todos los articulos seleccionados?</value>
+  </data>
+  <data name="PED002_Title" xml:space="preserve">
+    <value>Detalle Pedido</value>
+  </data>
+  <data name="PED003_LblStatus" xml:space="preserve">
+    <value>Estado:</value>
+  </data>
+  <data name="PED003_Title" xml:space="preserve">
+    <value>Estado Pedido</value>
+  </data>
+  <data name="PROD001_DgrProd_cCategory" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="PROD001_DgrProd_cCategory_tt" xml:space="preserve">
+    <value>Categoría asociada al producto</value>
+  </data>
+  <data name="PROD001_DgrProd_cDescript" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="PROD001_DgrProd_cDescript_tt" xml:space="preserve">
+    <value>Descripción del producto</value>
+  </data>
+  <data name="PROD001_DgrProd_cEffectDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="PROD001_DgrProd_cEffectDate_tt" xml:space="preserve">
+    <value>Fecha efectiva del producto</value>
+  </data>
+  <data name="PROD001_DgrProd_cModel" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="PROD001_DgrProd_cModel_tt" xml:space="preserve">
+    <value>Tipo de modelo asociado al producto</value>
+  </data>
+  <data name="PROD001_DgrProd_cProduct" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="PROD001_DgrProd_cProduct_tt" xml:space="preserve">
+    <value>Código de producto</value>
+  </data>
+  <data name="PROD001_Grp01" xml:space="preserve">
+    <value>Consulta Producto</value>
+  </data>
+  <data name="PROD001_Title" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="PROD002_Grp01" xml:space="preserve">
+    <value>Nuevo Producto</value>
+  </data>
+  <data name="PROD002_Grp02" xml:space="preserve">
+    <value>Modificar Producto</value>
+  </data>
+  <data name="PROD002_Grp03" xml:space="preserve">
+    <value>Eliminar Producto</value>
+  </data>
+  <data name="PROD002_Grp04" xml:space="preserve">
+    <value>Consulta Producto</value>
+  </data>
+  <data name="PROD002_lbl001" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="PROD002_lbl002" xml:space="preserve">
+    <value>Modelo:</value>
+  </data>
+  <data name="PROD002_lbl003" xml:space="preserve">
+    <value>Categoria:</value>
+  </data>
+  <data name="PROD002_lbl004" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="PROD002_lbl005" xml:space="preserve">
+    <value>Imagen:</value>
+  </data>
+  <data name="PROD002_Title" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="PRODL001_Title" xml:space="preserve">
+    <value>Consulta Rápida Productos</value>
+  </data>
+  <data name="PRODL_Grp01" xml:space="preserve">
+    <value>Productos</value>
+  </data>
+  <data name="REC001_DgrOrd_cAmount" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="REC001_DgrOrd_cAmount_tt" xml:space="preserve">
+    <value>Cantidad asociada al articulo</value>
+  </data>
+  <data name="REC001_DgrOrd_cItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="REC001_DgrOrd_cItem_tt" xml:space="preserve">
+    <value>Número consecutivo indicador de línea</value>
+  </data>
+  <data name="REC001_DgrOrd_cPrice" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="REC001_DgrOrd_cPrice_tt" xml:space="preserve">
+    <value>Precio asociado al articulo</value>
+  </data>
+  <data name="REC001_DgrOrd_cProducto" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="REC001_DgrOrd_cProducto_tt" xml:space="preserve">
+    <value>Código de producto asocado al articulo</value>
+  </data>
+  <data name="REC001_Grp03" xml:space="preserve">
+    <value>Remito</value>
+  </data>
+  <data name="REC001_LblMod_Pay" xml:space="preserve">
+    <value>Forma de Pago:</value>
+  </data>
+  <data name="REC001_LblObserv" xml:space="preserve">
+    <value>Observación:</value>
+  </data>
+  <data name="REC001_LblOrder" xml:space="preserve">
+    <value>Pedido:</value>
+  </data>
+  <data name="REC001_LblTotal" xml:space="preserve">
+    <value>Total:</value>
+  </data>
+  <data name="REC001_LblTotSub" xml:space="preserve">
+    <value>Sub Total:</value>
+  </data>
+  <data name="REC001_Msg001" xml:space="preserve">
+    <value>El Pedido ingresado no existe</value>
+  </data>
+  <data name="REC001_Msg002" xml:space="preserve">
+    <value>Se generó el Remito N°</value>
+  </data>
+  <data name="REC001_Title" xml:space="preserve">
+    <value>Alta Remito</value>
+  </data>
+  <data name="REC001_Val001" xml:space="preserve">
+    <value>El campo Forma de Pago es obligatorio</value>
+  </data>
+  <data name="REC001_Val002" xml:space="preserve">
+    <value>El campo Observación es obligatorio</value>
+  </data>
+  <data name="REC002_DgrRec_cClient" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="REC002_DgrRec_cClient_tt" xml:space="preserve">
+    <value>Nombre de cliente</value>
+  </data>
+  <data name="REC002_DgrRec_cModPay" xml:space="preserve">
+    <value>F. Pago</value>
+  </data>
+  <data name="REC002_DgrRec_cModPay_tt" xml:space="preserve">
+    <value>Forma de pago</value>
+  </data>
+  <data name="REC002_DgrRec_cReceipt" xml:space="preserve">
+    <value>Remito</value>
+  </data>
+  <data name="REC002_DgrRec_cReceiptDate" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="REC002_DgrRec_cReceiptDate_tt" xml:space="preserve">
+    <value>Fecha del remito</value>
+  </data>
+  <data name="REC002_DgrRec_cReceipt_tt" xml:space="preserve">
+    <value>Número de remito</value>
+  </data>
+  <data name="REC002_DgrRec_cTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="REC002_DgrRec_cTotal_tt" xml:space="preserve">
+    <value>Importe total del remito</value>
+  </data>
+  <data name="REC002_Grp01" xml:space="preserve">
+    <value>Remitos</value>
+  </data>
+  <data name="REC002_Title" xml:space="preserve">
+    <value>Impresión Remito</value>
+  </data>
+  <data name="RECR001_Title" xml:space="preserve">
+    <value>Imprimir Remito</value>
+  </data>
+  <data name="RST001_Grp01" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="RST001_LblFiles" xml:space="preserve">
+    <value>Cantidad Archivos</value>
+  </data>
+  <data name="RST001_LblText" xml:space="preserve">
+    <value>En caso de requerir la restauración de un respaldo multivolumen debe seleccionar la cantidad de archivos a restaurar</value>
+  </data>
+  <data name="RST001_Msg001" xml:space="preserve">
+    <value>La restauración se realizó correctamente, el sistema se cerrará</value>
+  </data>
+  <data name="RST001_Title" xml:space="preserve">
+    <value>Restore's</value>
+  </data>
+  <data name="RST001_Val001" xml:space="preserve">
+    <value>Debe indicar una ruta para realizar la restauración</value>
   </data>
   <data name="Splash001_Msg000" xml:space="preserve">
     <value>Inicializando...</value>
@@ -195,8 +735,32 @@
   <data name="Splash001_MsgBox001" xml:space="preserve">
     <value>Error de Verificación de integridad, consulte al Administrador del Sistema</value>
   </data>
+  <data name="Splash001_MsgBox002" xml:space="preserve">
+    <value>El sistema ya se encuentra abierto</value>
+  </data>
   <data name="Splash_BtnCancel" xml:space="preserve">
     <value>&amp;Cerrar</value>
+  </data>
+  <data name="Test001_Btn001" xml:space="preserve">
+    <value>Cargar FliPat</value>
+  </data>
+  <data name="Test001_Btn002" xml:space="preserve">
+    <value>Agregar FliaPat</value>
+  </data>
+  <data name="Test001_Btn003" xml:space="preserve">
+    <value>Quitar FliaPat</value>
+  </data>
+  <data name="Test001_Btn004" xml:space="preserve">
+    <value>Guardar FliaPat</value>
+  </data>
+  <data name="Test001_Btn005" xml:space="preserve">
+    <value>Refrescar FliaPat</value>
+  </data>
+  <data name="Test001_DataGridView1_cFamily" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="Test001_Title" xml:space="preserve">
+    <value>Prueba 1</value>
   </data>
   <data name="USR001_Btn001" xml:space="preserve">
     <value>Mod. &amp;Idioma</value>
@@ -261,6 +825,9 @@
   <data name="USR001_Val002" xml:space="preserve">
     <value>El usuario seleccionado no se encuentra bloqueado</value>
   </data>
+  <data name="USR002_ChkAdmin" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
   <data name="USR002_ChkBloqued" xml:space="preserve">
     <value>Bloqueado</value>
   </data>
@@ -312,8 +879,77 @@
   <data name="USR003_lbl003" xml:space="preserve">
     <value>Confirmar:</value>
   </data>
+  <data name="USR003_Title" xml:space="preserve">
+    <value>Cambiar Contraseña Usuario</value>
+  </data>
   <data name="USR003_Val001" xml:space="preserve">
     <value>La confirmación de la contraseña no coincide</value>
+  </data>
+  <data name="USR004_DgrFam_cChecked" xml:space="preserve">
+    <value>Seleccionado</value>
+  </data>
+  <data name="USR004_DgrFam_cChecked_tt" xml:space="preserve">
+    <value>Indica que la familia se encuentra agregada o no</value>
+  </data>
+  <data name="USR004_DgrFam_cCodFamily" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="USR004_DgrFam_cCodFamily_tt" xml:space="preserve">
+    <value>Código de familia</value>
+  </data>
+  <data name="USR004_DgrFam_cFamily" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="USR004_DgrFam_cFamily_tt" xml:space="preserve">
+    <value>Descripción de la familia</value>
+  </data>
+  <data name="USR004_Grp01" xml:space="preserve">
+    <value>Seleccionar Usuario</value>
+  </data>
+  <data name="USR004_Title" xml:space="preserve">
+    <value>Usuario Familia</value>
+  </data>
+  <data name="USR004_Val001" xml:space="preserve">
+    <value>Debe elegir algun usuario</value>
+  </data>
+  <data name="USR005_DgrPat_cChecked" xml:space="preserve">
+    <value>Seleccionado</value>
+  </data>
+  <data name="USR005_DgrPat_cChecked_tt" xml:space="preserve">
+    <value>Indica que la patente se encuentra agregada o no</value>
+  </data>
+  <data name="USR005_DgrPat_cCodPatent" xml:space="preserve">
+    <value>Patente</value>
+  </data>
+  <data name="USR005_DgrPat_cCodPatent_tt" xml:space="preserve">
+    <value>Código de patente</value>
+  </data>
+  <data name="USR005_DgrPat_cFamily" xml:space="preserve">
+    <value>Familia</value>
+  </data>
+  <data name="USR005_DgrPat_cFamily_tt" xml:space="preserve">
+    <value>Indicador que la patente proviene de una familia</value>
+  </data>
+  <data name="USR005_DgrPat_cIsDeny" xml:space="preserve">
+    <value>Denegar</value>
+  </data>
+  <data name="USR005_DgrPat_cIsDeny_tt" xml:space="preserve">
+    <value>Indica si la patente se encuentra denegando</value>
+  </data>
+  <data name="USR005_DgrPat_cPatent" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="USR005_DgrPat_cPatent_tt" xml:space="preserve">
+    <value>Descripción de la patente</value>
+  </data>
+  <data name="USR005_Grp01" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="USR005_Title" xml:space="preserve">
+    <value>Usuario Patente</value>
+  </data>
+  <data name="USR005_Val001" xml:space="preserve">
+    <value>Debe elegir algun usuario</value>
   </data>
   <data name="USRCTRL01_Val001" xml:space="preserve">
     <value>El usuario no existe</value>

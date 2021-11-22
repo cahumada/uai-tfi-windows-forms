@@ -49,7 +49,7 @@ namespace Gabe
                 var _Menu = new ToolStripMenuItem(_Etiqueta, null, MenuClick, _Etiqueta);
                 _Menu.DisplayStyle = ToolStripItemDisplayStyle.Text;
                 _Menu.Tag = _Etiqueta;
-                _Menu.Enabled = (_Descripcion == "MDI_Gabe_Mnu005") ? true : false;
+                _Menu.Enabled = (_Descripcion == "MDI_Gabe_Mnu005");
 
                 if (string.IsNullOrEmpty(_Dt.Rows[nPrincipal]["HijoDe"].ToString()))
                 {
@@ -95,7 +95,7 @@ namespace Gabe
                     _SubMenu.Tag = _DtCopia.Rows[nSub]["NombreForm"].ToString();
 
                     //Si es el item del menu "Salir" queda activo
-                    _SubMenu.Enabled = (_Descripcion == "MDI_Gabe_Mnu005") ? true : false;
+                    _SubMenu.Enabled = (_Descripcion == "MDI_Gabe_Mnu005");
 
                     if (!string.IsNullOrEmpty(_DtCopia.Rows[nSub]["PatenteId"].ToString()))
                     {
@@ -138,7 +138,7 @@ namespace Gabe
                         form.Show();
                     }
                     else
-                        MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("GEN001_Msg002"), "Gabe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception exception)
@@ -150,9 +150,20 @@ namespace Gabe
 
         public void MenuClick(object sender, EventArgs e)
         {
-            //Si la opción es Salir
-            if (((ToolStripMenuItem)sender).Tag.ToString() == Idioma.ObtenerEtiqueta("MDI_Gabe_Mnu005"))
+
+            // Si la opción es Salir
+            if (((ToolStripMenuItem) sender).Tag.ToString() == Idioma.ObtenerEtiqueta("MDI_Gabe_Mnu005"))
+            {
                 this.Close();
+
+                MasterForm.CerrarInstacias();
+            }
+
+            // Si la opción es Idioma
+            if (((ToolStripMenuItem)sender).Tag.ToString() == Idioma.ObtenerEtiqueta("MDI_Gabe_Mnu023"))
+            {
+                
+            }
         }
     }
 }

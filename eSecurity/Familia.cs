@@ -10,19 +10,36 @@ namespace eSecurity
 {
     public class Familia
     {
-        private Familia_DTO _Familia;
+        private Familia_DTO _Familia = new Familia_DTO();
 
         #region Propiedades
-        public int FamiliaId { get { return _Familia.FamiliaId; } }
-        public string Descripcion { get { return _Familia.Descripcion; } }
-        public string DescCorta { get { return _Familia.DescCorta; } }
-        public DateTime Fecha { get { return _Familia.Fecha; } }
+        public int FamiliaId { 
+            get { return _Familia.FamiliaId; }
+            set { _Familia.FamiliaId = value; }
+        }
+
+        public string Descripcion
+        {
+            get { return _Familia.Descripcion; } 
+            set { _Familia.Descripcion = value; }
+        }
+
+        public string DescCorta
+        {
+            get { return _Familia.DescCorta; } 
+            set { _Familia.DescCorta = value; }
+        }
+
+        public DateTime Fecha
+        {
+            get { return _Familia.Fecha; } 
+            set { _Familia.Fecha = value; }
+        }
         #endregion
 
         #region Contructores
         public Familia()
         {
-
         }
 
         public Familia(int pId)

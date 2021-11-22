@@ -18,10 +18,9 @@ namespace eDataAccess.Security
             try
             {
 
-                mParams.Add((DbParameter)Commons.getNewParameter("Id_Familia", DbType.Int32, pFamilia.FamiliaId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("Descripcion", DbType.String, pFamilia.Descripcion, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("Desc_Corta", DbType.String, pFamilia.DescCorta, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("Fecha_Sys", DbType.DateTime, pFamilia.Fecha, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pFamilia.FamiliaId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("sDescripcion", DbType.String, pFamilia.Descripcion, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("sDesc_Corta", DbType.String, pFamilia.DescCorta, null, null));
 
                 return Commons.ExecuteNonQuery("AgregarFamilia", CommandType.StoredProcedure, mParams);
 
@@ -39,7 +38,7 @@ namespace eDataAccess.Security
 
             try
             {
-                mParams.Add((DbParameter)Commons.getNewParameter("@nFamilia", DbType.Int32, pId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pId, null, null));
 
                 return Commons.ExecuteNonQuery("EliminarFamilia", CommandType.StoredProcedure, mParams);
 

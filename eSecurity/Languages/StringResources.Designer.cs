@@ -61,6 +61,402 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Depurar.
+        /// </summary>
+        internal static string BIT001_Btn001 {
+            get {
+                return ResourceManager.GetString("BIT001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Imprimir.
+        /// </summary>
+        internal static string BIT001_Btn002 {
+            get {
+                return ResourceManager.GetString("BIT001_Btn002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Criticidad.
+        /// </summary>
+        internal static string BIT001_DgrBit_cCriticality {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cCriticality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indicador de criticidad del proceso registrado en la bitacora.
+        /// </summary>
+        internal static string BIT001_DgrBit_cCriticality_tt {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cCriticality_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha.
+        /// </summary>
+        internal static string BIT001_DgrBit_cEffectDate {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cEffectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha en la que se registro el movimiento en la bitacora.
+        /// </summary>
+        internal static string BIT001_DgrBit_cEffectDate_tt {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cEffectDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Identificador.
+        /// </summary>
+        internal static string BIT001_DgrBit_cLog {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código incremental de la bitacora.
+        /// </summary>
+        internal static string BIT001_DgrBit_cLog_tt {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cLog_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario.
+        /// </summary>
+        internal static string BIT001_DgrBit_cNik {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cNik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario asociado al registro de la bitacora.
+        /// </summary>
+        internal static string BIT001_DgrBit_cNik_tt {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cNik_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a T. Movimiento.
+        /// </summary>
+        internal static string BIT001_DgrBit_cTypMovement {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cTypMovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de movimiento asociado a la bitacora.
+        /// </summary>
+        internal static string BIT001_DgrBit_cTypMovement_tt {
+            get {
+                return ResourceManager.GetString("BIT001_DgrBit_cTypMovement_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Busqueda.
+        /// </summary>
+        internal static string BIT001_Grp01 {
+            get {
+                return ResourceManager.GetString("BIT001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Confirma la depuración de la Bitacora?.
+        /// </summary>
+        internal static string BIT001_Msg001 {
+            get {
+                return ResourceManager.GetString("BIT001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Bitacora.
+        /// </summary>
+        internal static string BIT001_Title {
+            get {
+                return ResourceManager.GetString("BIT001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reporte Bitácora.
+        /// </summary>
+        internal static string BITR001_Title {
+            get {
+                return ResourceManager.GetString("BITR001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ubicación.
+        /// </summary>
+        internal static string BKP001_Grp01 {
+            get {
+                return ResourceManager.GetString("BKP001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad Archivos.
+        /// </summary>
+        internal static string BKP001_LblFiles {
+            get {
+                return ResourceManager.GetString("BKP001_LblFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a En caso de requerir un respaldo multivolumen debe seleccionar la cantidad de archivos a crear.
+        /// </summary>
+        internal static string BKP001_LblText {
+            get {
+                return ResourceManager.GetString("BKP001_LblText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El backup se realizó correctamente.
+        /// </summary>
+        internal static string BKP001_Msg001 {
+            get {
+                return ResourceManager.GetString("BKP001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Backups.
+        /// </summary>
+        internal static string BKP001_Title {
+            get {
+                return ResourceManager.GetString("BKP001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe indicar una ruta para realizar el backup.
+        /// </summary>
+        internal static string BKP001_Val001 {
+            get {
+                return ResourceManager.GetString("BKP001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El recalcúlo de DV finalizó correctamente.
+        /// </summary>
+        internal static string DVI_Msg001 {
+            get {
+                return ResourceManager.GetString("DVI_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hubo errores recalculando los DV.
+        /// </summary>
+        internal static string DVI_Msg002 {
+            get {
+                return ResourceManager.GetString("DVI_Msg002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Recalcular.
+        /// </summary>
+        internal static string DVI001_Btn001 {
+            get {
+                return ResourceManager.GetString("DVI001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a #.
+        /// </summary>
+        internal static string DVI001_DgrDVI_cId {
+            get {
+                return ResourceManager.GetString("DVI001_DgrDVI_cId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número secuencial.
+        /// </summary>
+        internal static string DVI001_DgrDVI_cId_tt {
+            get {
+                return ResourceManager.GetString("DVI001_DgrDVI_cId_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tabla.
+        /// </summary>
+        internal static string DVI001_DgrDVI_cTable {
+            get {
+                return ResourceManager.GetString("DVI001_DgrDVI_cTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tabla cuya integridad fue violada.
+        /// </summary>
+        internal static string DVI001_DgrDVI_cTable_tt {
+            get {
+                return ResourceManager.GetString("DVI001_DgrDVI_cTable_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tablas afectadas.
+        /// </summary>
+        internal static string DVI001_Grp01 {
+            get {
+                return ResourceManager.GetString("DVI001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recálcular DV.
+        /// </summary>
+        internal static string DVI001_Title {
+            get {
+                return ResourceManager.GetString("DVI001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string FAM001_DgrFam_cDescript {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cDescript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción larga.
+        /// </summary>
+        internal static string FAM001_DgrFam_cDescript_tt {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cDescript_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        internal static string FAM001_DgrFam_cFamily {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de familia.
+        /// </summary>
+        internal static string FAM001_DgrFam_cFamily_tt {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cFamily_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desc. Corta.
+        /// </summary>
+        internal static string FAM001_DgrFam_cShort_Desc {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cShort_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción corta.
+        /// </summary>
+        internal static string FAM001_DgrFam_cShort_Desc_tt {
+            get {
+                return ResourceManager.GetString("FAM001_DgrFam_cShort_Desc_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        internal static string FAM001_Grp02 {
+            get {
+                return ResourceManager.GetString("FAM001_Grp02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción:.
+        /// </summary>
+        internal static string FAM001_Lbl001 {
+            get {
+                return ResourceManager.GetString("FAM001_Lbl001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desc. Corta:.
+        /// </summary>
+        internal static string FAM001_Lbl002 {
+            get {
+                return ResourceManager.GetString("FAM001_Lbl002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Desea eliminar la familia seleccionada?.
+        /// </summary>
+        internal static string FAM001_Msg001 {
+            get {
+                return ResourceManager.GetString("FAM001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familias.
+        /// </summary>
+        internal static string FAM001_Title {
+            get {
+                return ResourceManager.GetString("FAM001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descripción larga debe estar completa.
+        /// </summary>
+        internal static string FAM001_Val001 {
+            get {
+                return ResourceManager.GetString("FAM001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descripción corta debe estar completa.
+        /// </summary>
+        internal static string FAM001_Val002 {
+            get {
+                return ResourceManager.GetString("FAM001_Val002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &amp;Nuevo.
         /// </summary>
         internal static string GEN001_Btn001 {
@@ -120,6 +516,114 @@ namespace eSecurity.Languages {
         internal static string GEN001_Btn007 {
             get {
                 return ResourceManager.GetString("GEN001_Btn007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancela los cambios solicitados.
+        /// </summary>
+        internal static string GEN001_Btn007_tt {
+            get {
+                return ResourceManager.GetString("GEN001_Btn007_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Obtener.
+        /// </summary>
+        internal static string GEN001_Btn008 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Limpiar.
+        /// </summary>
+        internal static string GEN001_Btn009 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn009", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Guardar.
+        /// </summary>
+        internal static string GEN001_Btn010 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirma los cambios solicitados.
+        /// </summary>
+        internal static string GEN001_Btn010_tt {
+            get {
+                return ResourceManager.GetString("GEN001_Btn010_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A&amp;gregar.
+        /// </summary>
+        internal static string GEN001_Btn011 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Seleccionar.
+        /// </summary>
+        internal static string GEN001_Btn012 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn012", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Con&amp;firmar.
+        /// </summary>
+        internal static string GEN001_Btn013 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn013", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;Imprimir.
+        /// </summary>
+        internal static string GEN001_Btn014 {
+            get {
+                return ResourceManager.GetString("GEN001_Btn014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Desea confirmar los cambios realizados?.
+        /// </summary>
+        internal static string GEN001_Msg001 {
+            get {
+                return ResourceManager.GetString("GEN001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El formulario seleccionado no existe.
+        /// </summary>
+        internal static string GEN001_Msg002 {
+            get {
+                return ResourceManager.GetString("GEN001_Msg002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe seleccionar un cliente válido.
+        /// </summary>
+        internal static string GEN001_Msg003 {
+            get {
+                return ResourceManager.GetString("GEN001_Msg003", resourceCulture);
             }
         }
         
@@ -196,6 +700,15 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El usuario se encuentra bloqueado, contacte al administrador del sistema.
+        /// </summary>
+        internal static string Login_Msg003 {
+            get {
+                return ResourceManager.GetString("Login_Msg003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar.
         /// </summary>
         internal static string Login_Title {
@@ -223,11 +736,20 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuarios.
+        ///   Busca una cadena traducida similar a Operación.
         /// </summary>
         internal static string MDI_Gabe_Mnu002 {
             get {
                 return ResourceManager.GetString("MDI_Gabe_Mnu002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mantenimiento.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu003 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu003", resourceCulture);
             }
         }
         
@@ -237,6 +759,1104 @@ namespace eSecurity.Languages {
         internal static string MDI_Gabe_Mnu005 {
             get {
                 return ResourceManager.GetString("MDI_Gabe_Mnu005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuarios.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu007 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu007", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario Familia.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu008 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario Patente.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu009 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu009", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Bitacora.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu010 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu010", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familias.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu013 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu013", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Patentes.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu014 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu014", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Backup&apos;s.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu015 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu015", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore&apos;s.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu016 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu016", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recálcular DV.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu022 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu022", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string PAT001_DgrPat_cDescript {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cDescript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción larga.
+        /// </summary>
+        internal static string PAT001_DgrPat_cDescript_tt {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cDescript_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Patente.
+        /// </summary>
+        internal static string PAT001_DgrPat_cPatent {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cPatent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de patente.
+        /// </summary>
+        internal static string PAT001_DgrPat_cPatent_tt {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cPatent_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desc. Corta.
+        /// </summary>
+        internal static string PAT001_DgrPat_cShort_Desc {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cShort_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción corta.
+        /// </summary>
+        internal static string PAT001_DgrPat_cShort_Desc_tt {
+            get {
+                return ResourceManager.GetString("PAT001_DgrPat_cShort_Desc_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Patente.
+        /// </summary>
+        internal static string PAT001_Grp02 {
+            get {
+                return ResourceManager.GetString("PAT001_Grp02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción:.
+        /// </summary>
+        internal static string PAT001_Lbl001 {
+            get {
+                return ResourceManager.GetString("PAT001_Lbl001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desc. Corta:.
+        /// </summary>
+        internal static string PAT001_Lbl002 {
+            get {
+                return ResourceManager.GetString("PAT001_Lbl002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Desea eliminar la patente seleccionada?.
+        /// </summary>
+        internal static string PAT001_Msg001 {
+            get {
+                return ResourceManager.GetString("PAT001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Patentes.
+        /// </summary>
+        internal static string PAT001_Title {
+            get {
+                return ResourceManager.GetString("PAT001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descripción larga debe estar completa.
+        /// </summary>
+        internal static string PAT001_Val001 {
+            get {
+                return ResourceManager.GetString("PAT001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La descripción corta debe estar completa.
+        /// </summary>
+        internal static string PAT001_Val002 {
+            get {
+                return ResourceManager.GetString("PAT001_Val002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a De&amp;talle.
+        /// </summary>
+        internal static string PED001_Btn001 {
+            get {
+                return ResourceManager.GetString("PED001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esta&amp;do.
+        /// </summary>
+        internal static string PED001_Btn002 {
+            get {
+                return ResourceManager.GetString("PED001_Btn002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente.
+        /// </summary>
+        internal static string PED001_DgrPed_cClient {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente asociado al pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cClient_tt {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cClient_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Entrega.
+        /// </summary>
+        internal static string PED001_DgrPed_cDeliveryDate {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cDeliveryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de entrega del pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cDeliveryDate_tt {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cDeliveryDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Num Pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cOrder {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cOrder_tt {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cOrder_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cOrderDate {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cOrderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha en la cual se realizó el pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cOrderDate_tt {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cOrderDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado.
+        /// </summary>
+        internal static string PED001_DgrPed_cState {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado actual del pedido.
+        /// </summary>
+        internal static string PED001_DgrPed_cState_tt {
+            get {
+                return ResourceManager.GetString("PED001_DgrPed_cState_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de entrega.
+        /// </summary>
+        internal static string PED001_DtmDelivDate_tt {
+            get {
+                return ResourceManager.GetString("PED001_DtmDelivDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de pedido.
+        /// </summary>
+        internal static string PED001_DtmOrdDate_tt {
+            get {
+                return ResourceManager.GetString("PED001_DtmOrdDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pedido.
+        /// </summary>
+        internal static string PED001_Grp01 {
+            get {
+                return ResourceManager.GetString("PED001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente:.
+        /// </summary>
+        internal static string PED001_LblClient {
+            get {
+                return ResourceManager.GetString("PED001_LblClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Entrega:.
+        /// </summary>
+        internal static string PED001_LblDelivDate {
+            get {
+                return ResourceManager.GetString("PED001_LblDelivDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Pedido:.
+        /// </summary>
+        internal static string PED001_LblOrdDate {
+            get {
+                return ResourceManager.GetString("PED001_LblOrdDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a L. Precio:.
+        /// </summary>
+        internal static string PED001_LblPriceList {
+            get {
+                return ResourceManager.GetString("PED001_LblPriceList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Desea eliminar el pedido seleccionado?.
+        /// </summary>
+        internal static string PED001_Msg001 {
+            get {
+                return ResourceManager.GetString("PED001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Unicamente se pueden eliminar pedidos en estado Pendiente?.
+        /// </summary>
+        internal static string PED001_Msg002 {
+            get {
+                return ResourceManager.GetString("PED001_Msg002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pedidos.
+        /// </summary>
+        internal static string PED001_Title {
+            get {
+                return ResourceManager.GetString("PED001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Formulario para generación de pedidos.
+        /// </summary>
+        internal static string PED001_Title_tt {
+            get {
+                return ResourceManager.GetString("PED001_Title_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La fecha de entrega no puede ser anterior a la fecha de pedido.
+        /// </summary>
+        internal static string PED001_Val001 {
+            get {
+                return ResourceManager.GetString("PED001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo cliente es obligatorio.
+        /// </summary>
+        internal static string PED001_Val002 {
+            get {
+                return ResourceManager.GetString("PED001_Val002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo lista de precio es obligatorio.
+        /// </summary>
+        internal static string PED001_Val003 {
+            get {
+                return ResourceManager.GetString("PED001_Val003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad.
+        /// </summary>
+        internal static string PED002_DgrProd_cAmount {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad asociada al producto.
+        /// </summary>
+        internal static string PED002_DgrProd_cAmount_tt {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cAmount_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sel.
+        /// </summary>
+        internal static string PED002_DgrProd_cChecked {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indicador que el item se encuentra seleccionado.
+        /// </summary>
+        internal static string PED002_DgrProd_cChecked_tt {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cChecked_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio.
+        /// </summary>
+        internal static string PED002_DgrProd_cPrice {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio asociado al producto.
+        /// </summary>
+        internal static string PED002_DgrProd_cPrice_tt {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cPrice_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto.
+        /// </summary>
+        internal static string PED002_DgrProd_cProducto {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cProducto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto asociado al articulo.
+        /// </summary>
+        internal static string PED002_DgrProd_cProducto_tt {
+            get {
+                return ResourceManager.GetString("PED002_DgrProd_cProducto_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Confirma que desea quitar todos los articulos seleccionados?.
+        /// </summary>
+        internal static string PED002_Msg001 {
+            get {
+                return ResourceManager.GetString("PED002_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Detalle Pedido.
+        /// </summary>
+        internal static string PED002_Title {
+            get {
+                return ResourceManager.GetString("PED002_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado:.
+        /// </summary>
+        internal static string PED003_LblStatus {
+            get {
+                return ResourceManager.GetString("PED003_LblStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado Pedido.
+        /// </summary>
+        internal static string PED003_Title {
+            get {
+                return ResourceManager.GetString("PED003_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoría.
+        /// </summary>
+        internal static string PROD001_DgrProd_cCategory {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoría asociada al producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cCategory_tt {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cCategory_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string PROD001_DgrProd_cDescript {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cDescript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción del producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cDescript_tt {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cDescript_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha.
+        /// </summary>
+        internal static string PROD001_DgrProd_cEffectDate {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cEffectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha efectiva del producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cEffectDate_tt {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cEffectDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modelo.
+        /// </summary>
+        internal static string PROD001_DgrProd_cModel {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de modelo asociado al producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cModel_tt {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cModel_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cProduct {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de producto.
+        /// </summary>
+        internal static string PROD001_DgrProd_cProduct_tt {
+            get {
+                return ResourceManager.GetString("PROD001_DgrProd_cProduct_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Producto.
+        /// </summary>
+        internal static string PROD001_Grp01 {
+            get {
+                return ResourceManager.GetString("PROD001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Productos.
+        /// </summary>
+        internal static string PROD001_Title {
+            get {
+                return ResourceManager.GetString("PROD001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevo Producto.
+        /// </summary>
+        internal static string PROD002_Grp01 {
+            get {
+                return ResourceManager.GetString("PROD002_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modificar Producto.
+        /// </summary>
+        internal static string PROD002_Grp02 {
+            get {
+                return ResourceManager.GetString("PROD002_Grp02", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Eliminar Producto.
+        /// </summary>
+        internal static string PROD002_Grp03 {
+            get {
+                return ResourceManager.GetString("PROD002_Grp03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Producto.
+        /// </summary>
+        internal static string PROD002_Grp04 {
+            get {
+                return ResourceManager.GetString("PROD002_Grp04", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción:.
+        /// </summary>
+        internal static string PROD002_lbl001 {
+            get {
+                return ResourceManager.GetString("PROD002_lbl001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modelo:.
+        /// </summary>
+        internal static string PROD002_lbl002 {
+            get {
+                return ResourceManager.GetString("PROD002_lbl002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoria:.
+        /// </summary>
+        internal static string PROD002_lbl003 {
+            get {
+                return ResourceManager.GetString("PROD002_lbl003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha:.
+        /// </summary>
+        internal static string PROD002_lbl004 {
+            get {
+                return ResourceManager.GetString("PROD002_lbl004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Imagen:.
+        /// </summary>
+        internal static string PROD002_lbl005 {
+            get {
+                return ResourceManager.GetString("PROD002_lbl005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto.
+        /// </summary>
+        internal static string PROD002_Title {
+            get {
+                return ResourceManager.GetString("PROD002_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Productos.
+        /// </summary>
+        internal static string PRODL_Grp01 {
+            get {
+                return ResourceManager.GetString("PRODL_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Consulta Rápida Productos.
+        /// </summary>
+        internal static string PRODL001_Title {
+            get {
+                return ResourceManager.GetString("PRODL001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad.
+        /// </summary>
+        internal static string REC001_DgrOrd_cAmount {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad asociada al articulo.
+        /// </summary>
+        internal static string REC001_DgrOrd_cAmount_tt {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cAmount_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Item.
+        /// </summary>
+        internal static string REC001_DgrOrd_cItem {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número consecutivo indicador de línea.
+        /// </summary>
+        internal static string REC001_DgrOrd_cItem_tt {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cItem_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio.
+        /// </summary>
+        internal static string REC001_DgrOrd_cPrice {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio asociado al articulo.
+        /// </summary>
+        internal static string REC001_DgrOrd_cPrice_tt {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cPrice_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto.
+        /// </summary>
+        internal static string REC001_DgrOrd_cProducto {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cProducto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de producto asocado al articulo.
+        /// </summary>
+        internal static string REC001_DgrOrd_cProducto_tt {
+            get {
+                return ResourceManager.GetString("REC001_DgrOrd_cProducto_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remito.
+        /// </summary>
+        internal static string REC001_Grp03 {
+            get {
+                return ResourceManager.GetString("REC001_Grp03", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Forma de Pago:.
+        /// </summary>
+        internal static string REC001_LblMod_Pay {
+            get {
+                return ResourceManager.GetString("REC001_LblMod_Pay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Observación:.
+        /// </summary>
+        internal static string REC001_LblObserv {
+            get {
+                return ResourceManager.GetString("REC001_LblObserv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pedido:.
+        /// </summary>
+        internal static string REC001_LblOrder {
+            get {
+                return ResourceManager.GetString("REC001_LblOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total:.
+        /// </summary>
+        internal static string REC001_LblTotal {
+            get {
+                return ResourceManager.GetString("REC001_LblTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sub Total:.
+        /// </summary>
+        internal static string REC001_LblTotSub {
+            get {
+                return ResourceManager.GetString("REC001_LblTotSub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El Pedido ingresado no existe.
+        /// </summary>
+        internal static string REC001_Msg001 {
+            get {
+                return ResourceManager.GetString("REC001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se generó el Remito N°.
+        /// </summary>
+        internal static string REC001_Msg002 {
+            get {
+                return ResourceManager.GetString("REC001_Msg002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Alta Remito.
+        /// </summary>
+        internal static string REC001_Title {
+            get {
+                return ResourceManager.GetString("REC001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo Forma de Pago es obligatorio.
+        /// </summary>
+        internal static string REC001_Val001 {
+            get {
+                return ResourceManager.GetString("REC001_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El campo Observación es obligatorio.
+        /// </summary>
+        internal static string REC001_Val002 {
+            get {
+                return ResourceManager.GetString("REC001_Val002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente.
+        /// </summary>
+        internal static string REC002_DgrRec_cClient {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de cliente.
+        /// </summary>
+        internal static string REC002_DgrRec_cClient_tt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cClient_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a F. Pago.
+        /// </summary>
+        internal static string REC002_DgrRec_cModPay {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cModPay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Forma de pago.
+        /// </summary>
+        internal static string REC002_DgrRec_cModPay_tt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cModPay_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remito.
+        /// </summary>
+        internal static string REC002_DgrRec_cReceipt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de remito.
+        /// </summary>
+        internal static string REC002_DgrRec_cReceipt_tt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cReceipt_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha.
+        /// </summary>
+        internal static string REC002_DgrRec_cReceiptDate {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cReceiptDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha del remito.
+        /// </summary>
+        internal static string REC002_DgrRec_cReceiptDate_tt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cReceiptDate_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total.
+        /// </summary>
+        internal static string REC002_DgrRec_cTotal {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Importe total del remito.
+        /// </summary>
+        internal static string REC002_DgrRec_cTotal_tt {
+            get {
+                return ResourceManager.GetString("REC002_DgrRec_cTotal_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remitos.
+        /// </summary>
+        internal static string REC002_Grp01 {
+            get {
+                return ResourceManager.GetString("REC002_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Impresión Remito.
+        /// </summary>
+        internal static string REC002_Title {
+            get {
+                return ResourceManager.GetString("REC002_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Imprimir Remito.
+        /// </summary>
+        internal static string RECR001_Title {
+            get {
+                return ResourceManager.GetString("RECR001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ubicación.
+        /// </summary>
+        internal static string RST001_Grp01 {
+            get {
+                return ResourceManager.GetString("RST001_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad Archivos.
+        /// </summary>
+        internal static string RST001_LblFiles {
+            get {
+                return ResourceManager.GetString("RST001_LblFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a En caso de requerir la restauración de un respaldo multivolumen debe seleccionar la cantidad de archivos a restaurar.
+        /// </summary>
+        internal static string RST001_LblText {
+            get {
+                return ResourceManager.GetString("RST001_LblText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La restauración se realizó correctamente, el sistema se cerrará.
+        /// </summary>
+        internal static string RST001_Msg001 {
+            get {
+                return ResourceManager.GetString("RST001_Msg001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore&apos;s.
+        /// </summary>
+        internal static string RST001_Title {
+            get {
+                return ResourceManager.GetString("RST001_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe indicar una ruta para realizar la restauración.
+        /// </summary>
+        internal static string RST001_Val001 {
+            get {
+                return ResourceManager.GetString("RST001_Val001", resourceCulture);
             }
         }
         
@@ -300,6 +1920,78 @@ namespace eSecurity.Languages {
         internal static string Splash001_MsgBox001 {
             get {
                 return ResourceManager.GetString("Splash001_MsgBox001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El sistema ya se encuentra abierto.
+        /// </summary>
+        internal static string Splash001_MsgBox002 {
+            get {
+                return ResourceManager.GetString("Splash001_MsgBox002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cargar FliPat.
+        /// </summary>
+        internal static string Test001_Btn001 {
+            get {
+                return ResourceManager.GetString("Test001_Btn001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Agregar FliaPat.
+        /// </summary>
+        internal static string Test001_Btn002 {
+            get {
+                return ResourceManager.GetString("Test001_Btn002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quitar FliaPat.
+        /// </summary>
+        internal static string Test001_Btn003 {
+            get {
+                return ResourceManager.GetString("Test001_Btn003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar FliaPat.
+        /// </summary>
+        internal static string Test001_Btn004 {
+            get {
+                return ResourceManager.GetString("Test001_Btn004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Refrescar FliaPat.
+        /// </summary>
+        internal static string Test001_Btn005 {
+            get {
+                return ResourceManager.GetString("Test001_Btn005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        internal static string Test001_DataGridView1_cFamily {
+            get {
+                return ResourceManager.GetString("Test001_DataGridView1_cFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Prueba 1.
+        /// </summary>
+        internal static string Test001_Title {
+            get {
+                return ResourceManager.GetString("Test001_Title", resourceCulture);
             }
         }
         
@@ -493,6 +2185,15 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Administrador.
+        /// </summary>
+        internal static string USR002_ChkAdmin {
+            get {
+                return ResourceManager.GetString("USR002_ChkAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bloqueado.
         /// </summary>
         internal static string USR002_ChkBloqued {
@@ -646,11 +2347,218 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cambiar Contraseña Usuario.
+        /// </summary>
+        internal static string USR003_Title {
+            get {
+                return ResourceManager.GetString("USR003_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a La confirmación de la contraseña no coincide.
         /// </summary>
         internal static string USR003_Val001 {
             get {
                 return ResourceManager.GetString("USR003_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionado.
+        /// </summary>
+        internal static string USR004_DgrFam_cChecked {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indica que la familia se encuentra agregada o no.
+        /// </summary>
+        internal static string USR004_DgrFam_cChecked_tt {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cChecked_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        internal static string USR004_DgrFam_cCodFamily {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cCodFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de familia.
+        /// </summary>
+        internal static string USR004_DgrFam_cCodFamily_tt {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cCodFamily_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string USR004_DgrFam_cFamily {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción de la familia.
+        /// </summary>
+        internal static string USR004_DgrFam_cFamily_tt {
+            get {
+                return ResourceManager.GetString("USR004_DgrFam_cFamily_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionar Usuario.
+        /// </summary>
+        internal static string USR004_Grp01 {
+            get {
+                return ResourceManager.GetString("USR004_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario Familia.
+        /// </summary>
+        internal static string USR004_Title {
+            get {
+                return ResourceManager.GetString("USR004_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe elegir algun usuario.
+        /// </summary>
+        internal static string USR004_Val001 {
+            get {
+                return ResourceManager.GetString("USR004_Val001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionado.
+        /// </summary>
+        internal static string USR005_DgrPat_cChecked {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indica que la patente se encuentra agregada o no.
+        /// </summary>
+        internal static string USR005_DgrPat_cChecked_tt {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cChecked_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Patente.
+        /// </summary>
+        internal static string USR005_DgrPat_cCodPatent {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cCodPatent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de patente.
+        /// </summary>
+        internal static string USR005_DgrPat_cCodPatent_tt {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cCodPatent_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Familia.
+        /// </summary>
+        internal static string USR005_DgrPat_cFamily {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indicador que la patente proviene de una familia.
+        /// </summary>
+        internal static string USR005_DgrPat_cFamily_tt {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cFamily_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Denegar.
+        /// </summary>
+        internal static string USR005_DgrPat_cIsDeny {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cIsDeny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Indica si la patente se encuentra denegando.
+        /// </summary>
+        internal static string USR005_DgrPat_cIsDeny_tt {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cIsDeny_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string USR005_DgrPat_cPatent {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cPatent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción de la patente.
+        /// </summary>
+        internal static string USR005_DgrPat_cPatent_tt {
+            get {
+                return ResourceManager.GetString("USR005_DgrPat_cPatent_tt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario.
+        /// </summary>
+        internal static string USR005_Grp01 {
+            get {
+                return ResourceManager.GetString("USR005_Grp01", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario Patente.
+        /// </summary>
+        internal static string USR005_Title {
+            get {
+                return ResourceManager.GetString("USR005_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debe elegir algun usuario.
+        /// </summary>
+        internal static string USR005_Val001 {
+            get {
+                return ResourceManager.GetString("USR005_Val001", resourceCulture);
             }
         }
         

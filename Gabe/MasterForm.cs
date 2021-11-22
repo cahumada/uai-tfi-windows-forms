@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Deployment.Internal;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -102,13 +105,96 @@ namespace Gabe
                     if (pError.GetError(mControl).Length > 0)
                         return true;
 
-                    if (pControl.HasChildren)
+                    if (mControl.HasChildren)
                         if (ControlErrores(mControl, pError))
                             return true;
                 }
             }
 
             return false;
+        }
+
+        internal static void CerrarInstacias()
+        {
+            foreach (var process in Process.GetProcessesByName(Assembly.GetExecutingAssembly().FullName))
+            {
+                process.Kill();
+            }
+        }
+
+        internal static void LimpiarControles(Control pControl)
+        {
+            SubLimpiarControles(pControl);
+
+            if (pControl.HasChildren)
+            {
+                foreach (Control ctrl in pControl.Controls)
+                {
+                    LimpiarControles(ctrl);
+                }
+            }
+        }
+
+        private static void SubLimpiarControles(Control pControl)
+        {
+            if (pControl.GetType() == typeof(TextBox))
+            {
+                ((TextBox)pControl).Clear();
+            }
+
+            if (pControl.GetType() == typeof(MaskedTextBox))
+            {
+                ((MaskedTextBox)pControl).Clear();
+            }
+
+            if (pControl.GetType() == typeof(DataGridView))
+            {
+                ((DataGridView)pControl).Rows.Clear();
+            }
+
+            if (pControl.GetType() == typeof(DateTimePicker))
+            {
+                ((DateTimePicker)pControl).Value = DateTime.Now;
+            }
+
+            if (pControl.GetType() == typeof(PictureBox))
+            {
+                ((PictureBox)pControl).Image = null;
+            }
+
+            if (pControl.GetType() == typeof(CheckBox))
+            {
+                ((CheckBox)pControl).Checked = false;
+            }
+
+            if (pControl.GetType() == typeof(NumericUpDown))
+            {
+                ((NumericUpDown)pControl).Value = 0;
+            }
+        }
+
+        internal static void ModificarToolTip(Control pControl, ToolTip pToolTip)
+        {
+            if (!(pControl.GetType() == typeof(DataGridView)) &&
+                  !(string.IsNullOrEmpty(Idioma.ObtenerEtiqueta(pControl.Name + "_tt"))))
+            {
+                pToolTip.SetToolTip(pControl, Idioma.ObtenerEtiqueta(pControl.Name + "_tt"));
+            }
+
+            if (pControl.HasChildren)
+            {
+                foreach (Control ctrl in pControl.Controls)
+                {
+                    if (!(ctrl.GetType() == typeof(DataGridView)) &&
+                        !(string.IsNullOrEmpty(Idioma.ObtenerEtiqueta(ctrl.Name + "_tt"))))
+                    {
+                        pToolTip.SetToolTip(ctrl, Idioma.ObtenerEtiqueta(ctrl.Name + "_tt"));
+                    }
+
+                    if (ctrl.HasChildren)
+                        ModificarToolTip(ctrl, pToolTip);
+                }
+            }
         }
         #endregion
     }

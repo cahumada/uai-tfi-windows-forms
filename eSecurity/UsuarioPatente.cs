@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,36 @@ namespace eSecurity
 {
     public class UsuarioPatente
     {
-        private UsuarioPatente_DTO _UsuarioPatente;
+        private UsuarioPatente_DTO _UsuarioPatente = new UsuarioPatente_DTO();
+
+        public long UsuarioPatenteId { 
+            get { return _UsuarioPatente.UsuarioPatenteId; }
+            set { _UsuarioPatente.UsuarioPatenteId = value; }
+        }
+
+        public Usuarios_DTO Usuario
+        {
+            get { return _UsuarioPatente.Usuario; } 
+            set { _UsuarioPatente.Usuario = value; }
+        }
+
+        public Patente_DTO Patente
+        {
+            get { return _UsuarioPatente.Patente; } 
+            set { _UsuarioPatente.Patente = value; }
+        }
+
+        public bool Denegado
+        {
+            get { return _UsuarioPatente.Denegado; }
+            set { _UsuarioPatente.Denegado = value; }
+        }
+
+        public int DVH
+        {
+            get { return _UsuarioPatente.DVH; } 
+            set { _UsuarioPatente.DVH = value; }
+        }
 
         #region Constructores
         public UsuarioPatente()
@@ -29,13 +59,7 @@ namespace eSecurity
             _UsuarioPatente = pUsuarioPatente;
         }
         #endregion
-
-        #region Propiedades
-        public long UsuarioPatenteId { get { return _UsuarioPatente.UsuarioPatenteId; } }
-        public Usuarios_DTO Usuario { get { return _UsuarioPatente.Usuario; } }
-        public Patente_DTO Patente { get { return _UsuarioPatente.Patente; } }
-        public int DVH { get { return _UsuarioPatente.DVH; } }
-        #endregion
+        
 
         #region Metodos
         public void Eliminar()
@@ -79,6 +103,18 @@ namespace eSecurity
             }
 
             return mCol;
+        }
+
+        public static bool UsuarioPatenteHabilitada(int pUsuario, int pPatente)
+        {
+            try
+            {
+                return UsuarioPatente_DAL.UsuarioPatenteHabilitada(pUsuario, pPatente);
+            }
+            catch
+            {
+                throw;
+            }
         }
 
         #endregion

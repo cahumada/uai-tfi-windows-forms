@@ -10,7 +10,35 @@ namespace eSecurity
 {
     public class Patente
     {
-        private Patente_DTO _Patente;
+        private Patente_DTO _Patente = new Patente_DTO();
+
+        public int PatenteId
+        {
+            get { return _Patente.PatenteId; }
+
+            set { _Patente.PatenteId = value; }
+        }
+
+        public string Descripcion
+        {
+            get { return _Patente.Descripcion; }
+
+            set { _Patente.Descripcion = value; }
+        }
+
+        public DateTime Fecha
+        {
+            get { return _Patente.Fecha; }
+
+            set { _Patente.Fecha = value; }
+        }
+
+        public string DescCorta
+        {
+            get { return _Patente.DescCorta; }
+
+            set { _Patente.DescCorta = value; }
+        }
 
         #region Contructores
         public Patente()

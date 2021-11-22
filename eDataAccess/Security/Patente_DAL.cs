@@ -57,7 +57,7 @@ namespace eDataAccess.Security
             try
             {
 
-                mParams.Add((DbParameter)Commons.getNewParameter("nPatent", DbType.Int32, pPatente.PatenteId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nPatente", DbType.Int32, pPatente.PatenteId, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("sDescripcion", DbType.String, pPatente.Descripcion, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("sDesc_Corta", DbType.String, pPatente.DescCorta, null, null));
 

@@ -17,9 +17,8 @@ namespace eSecurity_DTO
         public long UsuarioPatenteId { get; set; }
         public Usuarios_DTO Usuario { get; set; }
         public Patente_DTO Patente { get; set; }
+        public bool Denegado { get; set; }
         public int DVH { get; set; }
-
-        //TODO
-        //FALTA LA PROPIEDAD PARA DENEGAR UN PERMISO
+        
     }
 }

@@ -16,5 +16,7 @@ namespace eFramework
         CambiarIdioma = 5,
         Desbloquear = 6,
         BlanquearClave = 7,
+        Cancelar = 8,
+        SinCambios = 9
     }
 }

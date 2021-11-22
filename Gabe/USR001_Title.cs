@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace Gabe
     public partial class USR001_Title : Form
     {
         int codigoUsuario;
+
+        private HelpProvider helpProvider = new HelpProvider();
+        private ToolTip toolTip = new ToolTip();
 
         public USR001_Title(int pCodigoUsuario)
         {
@@ -232,6 +236,24 @@ namespace Gabe
 
             //Acualizo grilla
             ActualizarOrigen();
+
+            // *** Verifico permisos
+            // Alta Usuario
+            GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 5);
+            // Baja Usuario
+            GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 6);
+            // Desbloquear
+            USR001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 12);
+            // Blanquear Pass
+            USR001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 13);
+            // Modificar Idioma
+            USR001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 14);
+
+            helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
+            helpProvider.SetHelpKeyword(this, "Usuarios");
+            helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
+
+            MasterForm.ModificarToolTip(this, toolTip);
         }
     }
 }
