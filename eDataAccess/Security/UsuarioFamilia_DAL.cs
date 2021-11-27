@@ -31,13 +31,14 @@ namespace eDataAccess.Security
             }
         }
 
-        public static int EliminarUsuarioFamilia(long pId)
+        public static int EliminarUsuarioFamilia(int pUsuarioId, int pFamilia)
         {
             var mParams = new List<DbParameter>();
 
             try
             {
-                mParams.Add((DbParameter)Commons.getNewParameter("nUsuarioFamiliaId", DbType.Int64, pId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuarioId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pFamilia, null, null));
 
                 return Commons.ExecuteNonQuery("EliminarUsuarioFamilia", CommandType.StoredProcedure, mParams);
 
@@ -49,10 +50,9 @@ namespace eDataAccess.Security
             }
         }
 
-        public static List<UsuarioFamilia_DTO> ObtenerUsuarioFamilia(long pUsuarioId)
+        public static DataTable ObtenerUsuarioFamilia(long pUsuarioId)
         {
             var mParams = new List<DbParameter>();
-            var mCol = new List<UsuarioFamilia_DTO>();
             var mDt = new DataTable();
 
             try
@@ -63,12 +63,7 @@ namespace eDataAccess.Security
 
                 if (mDt != null)
                 {
-                    foreach (DataRow mDr in mDt.Rows)
-                    {
-                        mCol.Add(GetDTODR(mDr));
-                    }
-
-                    return mCol;
+                    return mDt;
                 }
                 return null;
             }

@@ -19,4 +19,21 @@ namespace eFramework
         Cancelar = 8,
         SinCambios = 9
     }
+
+    [Flags]
+    public enum EstadosLista
+    {
+        SinCambios = 0,
+        Agregado = 1,
+        Eliminado = 2,
+        Quitado = 3,
+        Modificado = 4
+    }
+
+    [Flags]
+    public enum TipoAgregacion
+    {
+        UnoAMuchos,
+        MuchosAMuchos
+    }
 }

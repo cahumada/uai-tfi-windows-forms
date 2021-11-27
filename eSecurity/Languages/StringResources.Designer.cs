@@ -457,7 +457,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &amp;Nuevo.
+        ///   Busca una cadena traducida similar a &amp;Agregado.
         /// </summary>
         internal static string GEN001_Btn001 {
             get {
@@ -466,7 +466,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &amp;Modificar.
+        ///   Busca una cadena traducida similar a &amp;Modificado.
         /// </summary>
         internal static string GEN001_Btn002 {
             get {
@@ -475,7 +475,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &amp;Eliminar.
+        ///   Busca una cadena traducida similar a &amp;Eliminado.
         /// </summary>
         internal static string GEN001_Btn003 {
             get {
@@ -1411,7 +1411,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nuevo Producto.
+        ///   Busca una cadena traducida similar a Agregado Producto.
         /// </summary>
         internal static string PROD002_Grp01 {
             get {
@@ -1420,7 +1420,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar Producto.
+        ///   Busca una cadena traducida similar a Modificado Producto.
         /// </summary>
         internal static string PROD002_Grp02 {
             get {
@@ -1429,7 +1429,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar Producto.
+        ///   Busca una cadena traducida similar a Eliminado Producto.
         /// </summary>
         internal static string PROD002_Grp03 {
             get {
@@ -1942,7 +1942,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Agregar FliaPat.
+        ///   Busca una cadena traducida similar a Agregado FliaPat.
         /// </summary>
         internal static string Test001_Btn002 {
             get {
@@ -1951,7 +1951,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Quitar FliaPat.
+        ///   Busca una cadena traducida similar a Quitado FliaPat.
         /// </summary>
         internal static string Test001_Btn003 {
             get {
@@ -2203,7 +2203,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nuevo Usuario.
+        ///   Busca una cadena traducida similar a Agregado Usuario.
         /// </summary>
         internal static string USR002_Grp01 {
             get {
@@ -2212,7 +2212,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar Usuario.
+        ///   Busca una cadena traducida similar a Modificado Usuario.
         /// </summary>
         internal static string USR002_Grp02 {
             get {
@@ -2221,7 +2221,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar Usuario.
+        ///   Busca una cadena traducida similar a Eliminado Usuario.
         /// </summary>
         internal static string USR002_Grp03 {
             get {
@@ -2239,7 +2239,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar Idioma.
+        ///   Busca una cadena traducida similar a Modificado Idioma.
         /// </summary>
         internal static string USR002_Grp05 {
             get {

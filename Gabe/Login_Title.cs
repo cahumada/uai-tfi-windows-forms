@@ -13,7 +13,7 @@ namespace Gabe
 {
     public partial class Login_Title : Form
     {
-        private Usuarios _Usuario = new Usuarios();
+        private Usuarios usuario = new Usuarios();
 
         public Login_Title()
         {
@@ -51,11 +51,11 @@ namespace Gabe
         {
             if (!string.IsNullOrEmpty(Login_txtUser.Text) && !string.IsNullOrEmpty(Login_txtPass.Text))
             {
-                if (_Usuario.ValidarClaveUsuario(Login_txtUser.Text, Login_txtPass.Text))
+                if (usuario.ValidarClaveUsuario(Login_txtUser.Text, Login_txtPass.Text))
                 {
                     //OCULTO EL LOGIN
                     this.Visible = false;
-                    using (var fMdi_Form = new MDI_Gabe(_Usuario))
+                    using (var fMdi_Form = new MDI_Gabe(usuario))
                     {
                         fMdi_Form.ShowDialog();
                     }

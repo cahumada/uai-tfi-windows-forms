@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace eFramework
 {
-    public class Encrypt
+    public class Encriptado
     {
         #region "Staments"
         //Clase que representa los algoritmos simetrico provisto por .net

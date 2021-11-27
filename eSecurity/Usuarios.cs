@@ -10,24 +10,32 @@ using System.Threading.Tasks;
 
 namespace eSecurity
 {
-    public class Usuarios
+    public class Usuarios : ObjetoSimple
     {
         private Usuarios_DTO _Usuario = new Usuarios_DTO();
 
         #region Contructores
+
         public Usuarios()
         {
-
+            // Se vinculan los delegados
+            VincularDelegados();
         }
 
         public Usuarios(int pId)
         {
             ObtenerUsuario(pId);
+
+            // Se vinculan los delegados
+            VincularDelegados();
         }
 
         public Usuarios(Usuarios_DTO pUsuario)
         {
             ObtenerUsuario(pUsuario);
+
+            // Se vinculan los delegados
+            VincularDelegados();
         }
         #endregion
 
@@ -81,8 +89,28 @@ namespace eSecurity
             set => _Usuario.Admin = value;
         }
 
-        public List<UsuarioFamilia> Familias => (new UsuarioFamilia()).ObtenerUsuarioFamilia(UsuarioId);
+        #region UsuarioFamilia
+
+        private ObjetoLista<Familia> UsuarioFamilias = new ObjetoLista<Familia>(TipoAgregacion.MuchosAMuchos);
+
+
+        public ObjetoLista<Familia> Familias
+        {
+            get
+            {
+                UsuarioFamilias.Cargar(true);
+
+                return UsuarioFamilias.get_ItemsVisibles();
+            }
+        }
+
+        #endregion
+
+        #region UsuarioPatente
+
         public List<UsuarioPatente> Patentes => (new UsuarioPatente()).ObtenerUsuarioPatente(UsuarioId);
+
+        #endregion
 
         #endregion
 
@@ -128,7 +156,7 @@ namespace eSecurity
             }
         }
 
-        public void Eliminar()
+        public override void Eliminar()
         {
             try
             {
@@ -151,7 +179,12 @@ namespace eSecurity
             }
         }
 
-        public void Guardar()
+        public override DataSet ObtenerDataSet()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Guardar()
         {
             try
             {
@@ -195,7 +228,7 @@ namespace eSecurity
         {
             if (UsuarioId > 0)
             {
-                string nuevaContrasena = Encrypt.GetHashMD5(pNuevaContrasena);
+                string nuevaContrasena = Encriptado.GetHashMD5(pNuevaContrasena);
 
                 Contrasena = nuevaContrasena;
 
@@ -230,7 +263,7 @@ namespace eSecurity
                 //Si el usuario NO se encuentra bloqueado
                 if (!_Usuario.Bloqueado)
                 {
-                    mEncryptPass = Encrypt.GetHashMD5(pContrasena);
+                    mEncryptPass = Encriptado.GetHashMD5(pContrasena);
 
                     //Si las claves encriptadas son iguales esta OK
                     if (mEncryptPass.TrimEnd() == _Usuario.Contrasena.TrimEnd())
@@ -253,6 +286,78 @@ namespace eSecurity
             return true;
         }
 
+        public static bool ValidarUsuarioExistente(int pUsuario)
+        {
+            return Usuarios_DAL.ValidarUsuarioExistente(pUsuario);
+        }
+
+        #region UsuarioFamilia
+
+        public int AgregarFamilia(Familia pObjeto)
+        {
+            if (pObjeto.FamiliaId > 0)
+                return UsuarioFamilias.Agregar(pObjeto);
+            else
+                return default(int);
+        }
+
+        public void QuitarFamilia(Familia pObjeto)
+        {
+            if (pObjeto.FamiliaId > 0)
+                UsuarioFamilias.Eliminar(pObjeto);
+        }
+
+        public void QuitarFamilias()
+        {
+            UsuarioFamilias.EliminarTodo();
+        }
+
+        private void AltaFamiliaUsuario(ref Familia pObjeto)
+        {
+            var usuarioFamilia = new UsuarioFamilia();
+            usuarioFamilia.AltaUsuarioFamilia(this.UsuarioId, pObjeto.FamiliaId);
+        }
+
+        private void EliminarFamiliaUsuario(ref Familia pObjeto)
+        {
+            var usuarioFamilia = new UsuarioFamilia();
+            usuarioFamilia.EliminarUsuarioFamilia(this.UsuarioId, pObjeto.FamiliaId);
+        }
+
+        private void ObtenerFamilias()
+        {
+            this.UsuarioFamilias.Cargar((new UsuarioFamilia()).ObtenerUsuarioFamilia(this.UsuarioId));
+        }
+
+        public bool ExisteFamilia(Familia pFamilia)
+        {
+            foreach (var familia in Familias)
+            {
+                if (familia.FamiliaId == pFamilia.FamiliaId)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public Familia ObtenerFamiliaIndice(int pIndice)
+        {
+            return UsuarioFamilias[pIndice];
+        }
+
+        public void PersistirFamilias()
+        {
+            UsuarioFamilias.Persistir();
+        }
+
+        #endregion
+
+        private void VincularDelegados()
+        {
+            UsuarioFamilias.RequerimientoCarga += ObtenerFamilias;
+            UsuarioFamilias.InsertarRelacionMuchosAMuchos += AltaFamiliaUsuario;
+            UsuarioFamilias.EliminarRelacionMuchosAMuchos += EliminarFamiliaUsuario;
+        }
         #endregion
     }
 }

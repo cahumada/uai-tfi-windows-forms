@@ -250,13 +250,13 @@
     <value>La descripción corta debe estar completa</value>
   </data>
   <data name="GEN001_Btn001" xml:space="preserve">
-    <value>&amp;Nuevo</value>
+    <value>&amp;Agregado</value>
   </data>
   <data name="GEN001_Btn002" xml:space="preserve">
-    <value>&amp;Modificar</value>
+    <value>&amp;Modificado</value>
   </data>
   <data name="GEN001_Btn003" xml:space="preserve">
-    <value>&amp;Eliminar</value>
+    <value>&amp;Eliminado</value>
   </data>
   <data name="GEN001_Btn004" xml:space="preserve">
     <value>&amp;Cerrar</value>
@@ -568,13 +568,13 @@
     <value>Productos</value>
   </data>
   <data name="PROD002_Grp01" xml:space="preserve">
-    <value>Nuevo Producto</value>
+    <value>Agregado Producto</value>
   </data>
   <data name="PROD002_Grp02" xml:space="preserve">
-    <value>Modificar Producto</value>
+    <value>Modificado Producto</value>
   </data>
   <data name="PROD002_Grp03" xml:space="preserve">
-    <value>Eliminar Producto</value>
+    <value>Eliminado Producto</value>
   </data>
   <data name="PROD002_Grp04" xml:space="preserve">
     <value>Consulta Producto</value>
@@ -745,10 +745,10 @@
     <value>Cargar FliPat</value>
   </data>
   <data name="Test001_Btn002" xml:space="preserve">
-    <value>Agregar FliaPat</value>
+    <value>Agregado FliaPat</value>
   </data>
   <data name="Test001_Btn003" xml:space="preserve">
-    <value>Quitar FliaPat</value>
+    <value>Quitado FliaPat</value>
   </data>
   <data name="Test001_Btn004" xml:space="preserve">
     <value>Guardar FliaPat</value>
@@ -832,19 +832,19 @@
     <value>Bloqueado</value>
   </data>
   <data name="USR002_Grp01" xml:space="preserve">
-    <value>Nuevo Usuario</value>
+    <value>Agregado Usuario</value>
   </data>
   <data name="USR002_Grp02" xml:space="preserve">
-    <value>Modificar Usuario</value>
+    <value>Modificado Usuario</value>
   </data>
   <data name="USR002_Grp03" xml:space="preserve">
-    <value>Eliminar Usuario</value>
+    <value>Eliminado Usuario</value>
   </data>
   <data name="USR002_Grp04" xml:space="preserve">
     <value>Consulta Usuario</value>
   </data>
   <data name="USR002_Grp05" xml:space="preserve">
-    <value>Modificar Idioma</value>
+    <value>Modificado Idioma</value>
   </data>
   <data name="USR002_Grp06" xml:space="preserve">
     <value>Desbloquear</value>

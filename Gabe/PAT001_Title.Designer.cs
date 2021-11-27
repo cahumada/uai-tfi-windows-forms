@@ -99,7 +99,7 @@ namespace Gabe
             this.GEN001_Btn003.Name = "GEN001_Btn003";
             this.GEN001_Btn003.Size = new System.Drawing.Size(75, 23);
             this.GEN001_Btn003.TabIndex = 8;
-            this.GEN001_Btn003.Text = "Eliminar";
+            this.GEN001_Btn003.Text = "Eliminado";
             this.GEN001_Btn003.UseVisualStyleBackColor = true;
             this.GEN001_Btn003.Click += new System.EventHandler(this.GEN001_Btn003_Click);
             // 
@@ -109,7 +109,7 @@ namespace Gabe
             this.GEN001_Btn002.Name = "GEN001_Btn002";
             this.GEN001_Btn002.Size = new System.Drawing.Size(74, 23);
             this.GEN001_Btn002.TabIndex = 7;
-            this.GEN001_Btn002.Text = "Modificar";
+            this.GEN001_Btn002.Text = "Modificado";
             this.GEN001_Btn002.UseVisualStyleBackColor = true;
             this.GEN001_Btn002.Click += new System.EventHandler(this.GEN001_Btn002_Click);
             // 
@@ -119,7 +119,7 @@ namespace Gabe
             this.GEN001_Btn001.Name = "GEN001_Btn001";
             this.GEN001_Btn001.Size = new System.Drawing.Size(75, 23);
             this.GEN001_Btn001.TabIndex = 6;
-            this.GEN001_Btn001.Text = "Nuevo";
+            this.GEN001_Btn001.Text = "Agregado";
             this.GEN001_Btn001.UseVisualStyleBackColor = true;
             this.GEN001_Btn001.Click += new System.EventHandler(this.GEN001_Btn001_Click);
             // 

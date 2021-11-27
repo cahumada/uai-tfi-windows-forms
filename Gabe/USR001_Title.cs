@@ -44,7 +44,7 @@ namespace Gabe
 
         private void GEN001_Btn001_Click(object sender, EventArgs e)
         {
-            // Nuevo
+            // Agregado
             var form = new USR002_Title(codigoUsuario, null, EstadosABM.Nuevo);
 
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -60,7 +60,7 @@ namespace Gabe
 
         private void GEN001_Btn002_Click(object sender, EventArgs e)
         {
-            // Modificar
+            // Modificado
             if (USR001_DgrUsr.SelectedRows.Count > 0)
             {
                 var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
@@ -81,7 +81,7 @@ namespace Gabe
 
         private void GEN001_Btn003_Click(object sender, EventArgs e)
         {
-            // Eliminar
+            // Eliminado
             if (USR001_DgrUsr.SelectedRows.Count > 0)
             {
                 var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
@@ -163,7 +163,7 @@ namespace Gabe
 
         private void USR001_Btn001_Click(object sender, EventArgs e)
         {
-            // Modificar Idioma
+            // Modificado Idioma
             if (USR001_DgrUsr.SelectedRows.Count > 0)
             {
                 var usuario = new Usuarios((int)USR001_DgrUsr.SelectedRows[0].Cells[0].Value);
@@ -246,7 +246,7 @@ namespace Gabe
             USR001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 12);
             // Blanquear Pass
             USR001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 13);
-            // Modificar Idioma
+            // Modificado Idioma
             USR001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 14);
 
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];

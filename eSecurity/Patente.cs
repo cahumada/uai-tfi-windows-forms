@@ -2,13 +2,15 @@
 using eSecurity_DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eSecurity
 {
-    public class Patente
+    public class Patente : ObjetoSimple
     {
         private Patente_DTO _Patente = new Patente_DTO();
 
@@ -51,6 +53,13 @@ namespace eSecurity
             ObtenerPatente(pId);
         }
 
+        public Patente(DataRow pDr)
+        {
+            _Patente.PatenteId = (Convert.IsDBNull(pDr["Id_Patente"])) ? default(int) : (int)pDr["Id_Patente"];
+            _Patente.Descripcion = (Convert.IsDBNull(pDr["Descripcion"])) ? null : pDr["Descripcion"].ToString();
+            _Patente.DescCorta = (Convert.IsDBNull(pDr["Desc_Corta"])) ? null : pDr["Desc_Corta"].ToString();
+        }
+
         public Patente(Patente_DTO pPatente)
         {
             ObtenerPatente(pPatente);
@@ -90,7 +99,7 @@ namespace eSecurity
             }
         }
 
-        public void Guardar()
+        public override void Guardar()
         {
             if (_Patente.PatenteId <= 0)
                 Patente_DAL.AltaPatente(_Patente);
@@ -98,12 +107,29 @@ namespace eSecurity
                 Patente_DAL.ModificarPatente(_Patente);
         }
 
-        public void Eliminar()
+        public override void Eliminar()
         {
             if (_Patente.PatenteId > 0)
                 Patente_DAL.EliminarPatente(_Patente.PatenteId);
         }
+
+        public override DataSet ObtenerDataSet()
+        {
+            return new DataSet();
+        }
+
         #endregion
 
+        #region Operadores
+        public static bool operator ==(Patente pPatente, Patente pPatente2)
+        {
+            return pPatente.PatenteId == pPatente2.PatenteId;
+        }
+
+        public static bool operator !=(Patente pPatente, Patente pPatente2)
+        {
+            return pPatente.PatenteId != pPatente2.PatenteId;
+        }
+        #endregion
     }
 }

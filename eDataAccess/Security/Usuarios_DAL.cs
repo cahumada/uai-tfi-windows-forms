@@ -147,7 +147,6 @@ namespace eDataAccess.Security
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

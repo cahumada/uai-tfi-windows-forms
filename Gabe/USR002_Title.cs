@@ -175,7 +175,7 @@ namespace Gabe
                 switch (estado)
                 {
                     case EstadosABM.Nuevo:
-                        usuario.Contrasena = Encrypt.GetHashMD5(contrasenaNueva);
+                        usuario.Contrasena = Encriptado.GetHashMD5(contrasenaNueva);
 
                         CargarUsuario(true);
                         usuario.Guardar();

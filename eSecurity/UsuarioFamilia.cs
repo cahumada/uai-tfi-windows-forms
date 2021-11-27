@@ -6,17 +6,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eSecurity
 {
-    public class UsuarioFamilia
+    public class UsuarioFamilia : ObjetoSimple
     {
-        private UsuarioFamilia_DTO _UsuarioFamilia;
+        private UsuarioFamilia_DTO _UsuarioFamilia = new UsuarioFamilia_DTO();
 
         #region Constructores
         public UsuarioFamilia()
         {
-
+            
         }
 
         public UsuarioFamilia(int pUsuario)
@@ -38,12 +39,17 @@ namespace eSecurity
         #endregion
 
         #region Metodos
-        public void Eliminar()
+        public override void Eliminar()
         {
-            UsuarioFamilia_DAL.EliminarUsuarioFamilia(_UsuarioFamilia.UsuarioFamiliaId);
+            UsuarioFamilia_DAL.EliminarUsuarioFamilia(_UsuarioFamilia.Usuario.UsuarioId, _UsuarioFamilia.Familia.FamiliaId);
         }
 
-        public void Guardar()
+        public override DataSet ObtenerDataSet()
+        {
+            return new DataSet();
+        }
+
+        public override void Guardar()
         {
             UsuarioFamilia_DAL.AltaUsuarioFamilia(_UsuarioFamilia.Usuario.UsuarioId, _UsuarioFamilia.Familia.FamiliaId);
         }
@@ -57,28 +63,37 @@ namespace eSecurity
             Guardar();
         }
 
-        public void EliminarUsuarioFamilia(long pUsuarioFamiliaId)
+        public void EliminarUsuarioFamilia(int pUsuarioId, int pFamiliaId)
         {
-            _UsuarioFamilia.UsuarioFamiliaId = pUsuarioFamiliaId;
+            _UsuarioFamilia.UsuarioFamiliaId = 0;
+            _UsuarioFamilia.Usuario.UsuarioId = pUsuarioId;
+            _UsuarioFamilia.Familia.FamiliaId = pFamiliaId;
 
             Eliminar();
         }
 
-        public List<UsuarioFamilia> ObtenerUsuarioFamilia(Usuarios pUsuario)
+        public DataTable ObtenerUsuarioFamilia(Usuarios pUsuario)
         {
             return ObtenerUsuarioFamilia(pUsuario.UsuarioId);
         }
 
-        public List<UsuarioFamilia> ObtenerUsuarioFamilia(int pUsuarioId)
+        public DataTable ObtenerUsuarioFamilia(int pUsuarioId)
         {
-            var mCol = new List<UsuarioFamilia>();
+            var dataTable = UsuarioFamilia_DAL.ObtenerUsuarioFamilia(pUsuarioId);
 
-            foreach (var mUsuarioFamilia in UsuarioFamilia_DAL.ObtenerUsuarioFamilia(pUsuarioId))
+
+            if (dataTable != null && dataTable.Rows.Count > 0)
             {
-                mCol.Add(new UsuarioFamilia(mUsuarioFamilia));
+                for (int i = 0; i <= dataTable.Rows.Count - 1; i++)
+                {
+                    if (!Convert.IsDBNull(dataTable.Rows[i][1]) && // [1] = Descripcion
+                        !string.IsNullOrEmpty(dataTable.Rows[i][1].ToString()))
+                        dataTable.Rows[i][1] = dataTable.Rows[i][1].ToString();
+                    // dataTable.Rows[i][1] = Encriptado.DataDecryption(dataTable.Rows[i][1].ToString()); //TODO
+                }
             }
 
-            return mCol;
+            return dataTable;
         }
         #endregion
     }

@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\UsuarioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\UsuarioControl.Designer.cs">
+      <DependentUpon>UsuarioControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAM001_Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +123,21 @@
     <Compile Include="USR002_Title.Designer.cs">
       <DependentUpon>USR002_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="USR004_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USR004_Title.Designer.cs">
+      <DependentUpon>USR004_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="USRL001_Title.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="USRL001_Title.Designer.cs">
       <DependentUpon>USRL001_Title.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controles\UsuarioControl.resx">
+      <DependentUpon>UsuarioControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FAM001_Title.resx">
       <DependentUpon>FAM001_Title.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USR002_Title.resx">
       <DependentUpon>USR002_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USR004_Title.resx">
+      <DependentUpon>USR004_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USRL001_Title.resx">
       <DependentUpon>USRL001_Title.cs</DependentUpon>
@@ -202,5 +220,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -17,7 +17,7 @@ namespace Gabe
     public partial class MDI_Gabe : Form
     {
         private DataTable _Dt;
-        private Usuarios _Usuario;
+        private Usuarios usuario;
 
         public MDI_Gabe()
         {
@@ -28,12 +28,12 @@ namespace Gabe
         {
             InitializeComponent();
 
-            _Usuario = pUsuario;
+            usuario = pUsuario;
         }
 
         private void MDI_Gabe_Load(object sender, EventArgs e)
         {
-            if (new Idioma().ObtenerIdiomaPorDefecto(_Usuario.UsuarioId))
+            if (new Idioma().ObtenerIdiomaPorDefecto(usuario.UsuarioId))
                 MasterForm.AplicarIdioma(this);
 
             WindowState = FormWindowState.Maximized;
@@ -43,21 +43,21 @@ namespace Gabe
 
             for (int nPrincipal = 0; nPrincipal < _Dt.Rows.Count; nPrincipal++)
             {
-                var _Descripcion = _Dt.Rows[nPrincipal]["Descripcion"].ToString();
-                var _Etiqueta = Idioma.ObtenerEtiqueta(_Descripcion);
+                var descripcion = _Dt.Rows[nPrincipal]["Descripcion"].ToString();
+                var etiqueta = Idioma.ObtenerEtiqueta(descripcion);
 
-                var _Menu = new ToolStripMenuItem(_Etiqueta, null, MenuClick, _Etiqueta);
+                var _Menu = new ToolStripMenuItem(etiqueta, null, MenuClick, etiqueta);
                 _Menu.DisplayStyle = ToolStripItemDisplayStyle.Text;
-                _Menu.Tag = _Etiqueta;
-                _Menu.Enabled = (_Descripcion == "MDI_Gabe_Mnu005");
+                _Menu.Tag = etiqueta;
+                _Menu.Enabled = (descripcion == "MDI_Gabe_Mnu005");
 
                 if (string.IsNullOrEmpty(_Dt.Rows[nPrincipal]["HijoDe"].ToString()))
                 {
                     if (!string.IsNullOrEmpty(_Dt.Rows[nPrincipal]["FamiliaId"].ToString()))
                     {
-                        foreach (UsuarioFamilia _Familia in _Usuario.Familias)
+                        foreach (var familia in usuario.Familias)
                         {
-                            if (_Dt.Rows[nPrincipal]["FamiliaId"].ToString() == _Familia.Familia.FamiliaId.ToString())
+                            if (_Dt.Rows[nPrincipal]["FamiliaId"].ToString() == familia.FamiliaId.ToString())
                                 _Menu.Enabled = true;
                         }
                     }
@@ -99,7 +99,7 @@ namespace Gabe
 
                     if (!string.IsNullOrEmpty(_DtCopia.Rows[nSub]["PatenteId"].ToString()))
                     {
-                        foreach (UsuarioPatente _Patente in _Usuario.Patentes)
+                        foreach (UsuarioPatente _Patente in usuario.Patentes)
                         {
                             if (_DtCopia.Rows[nSub]["PatenteId"].ToString() == _Patente.Patente.PatenteId.ToString())
                                 _SubMenu.Enabled = true;
@@ -127,7 +127,7 @@ namespace Gabe
                     var assembly = Assembly.GetExecutingAssembly();
 
                     var form = new Form();
-                    form = (Form)assembly.CreateInstance(nombreForm, true, BindingFlags.CreateInstance, null, new object[] { _Usuario.UsuarioId }, null, null);
+                    form = (Form)assembly.CreateInstance(nombreForm, true, BindingFlags.CreateInstance, null, new object[] { usuario.UsuarioId }, null, null);
 
                     if (form != null)
                     {

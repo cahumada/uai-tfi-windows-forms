@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eSecurity
 {
-    public class FamiliaPatente
+    public class FamiliaPatente: ObjetoSimple
     {
         private FamiliaPatente_DTO _FamiliaPatente;
 
@@ -21,14 +22,19 @@ namespace eSecurity
         #endregion
 
         #region Metodos
-        public void Eliminar()
+        public override void Eliminar()
         {
             FamiliaPatente_DAL.EliminarFamiliaPatente(_FamiliaPatente.FamiliaPatenteId);
         }
 
-        public void Guardar()
+        public override void Guardar()
         {
             FamiliaPatente_DAL.AltaFamiliaPatente(_FamiliaPatente.Familia.FamiliaId, _FamiliaPatente.Patente.PatenteId);
+        }
+
+        public override DataSet ObtenerDataSet()
+        {
+            return new DataSet();
         }
 
         public void AltaFamiliaPatente(int pFamiliaId, int pPatenteId)
@@ -40,9 +46,10 @@ namespace eSecurity
             Guardar();
         }
 
-        public void EliminarFamiliaPatente(long pFamiliaPatenteId)
+        public void EliminarFamiliaPatente(int pFamiliaId, int pPatenteId)
         {
-            _FamiliaPatente.FamiliaPatenteId = pFamiliaPatenteId;
+            _FamiliaPatente.Familia.FamiliaId = pFamiliaId;
+            _FamiliaPatente.Patente.PatenteId = pPatenteId;
 
             Eliminar();
         }
@@ -55,6 +62,11 @@ namespace eSecurity
         public DataTable ObtenerFamiliaPatente(int pFamiliaId)
         {
             return FamiliaPatente_DAL.ObtenerFamiliaPatente(pFamiliaId);
+        }
+
+        public bool ValidarFamiliaPatente()
+        {
+            return true;
         }
         #endregion
     }

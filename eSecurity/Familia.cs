@@ -2,13 +2,15 @@
 using eSecurity_DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eSecurity
 {
-    public class Familia
+    public class Familia: ObjetoSimple, IComparable<Familia>
     {
         private Familia_DTO _Familia = new Familia_DTO();
 
@@ -37,6 +39,12 @@ namespace eSecurity
         }
         #endregion
 
+        #region FamiliaPatente
+
+        private ObjetoLista<Patente> FamiliaPatente = new ObjetoLista<Patente>(TipoAgregacion.MuchosAMuchos);
+
+        #endregion
+
         #region Contructores
         public Familia()
         {
@@ -45,6 +53,13 @@ namespace eSecurity
         public Familia(int pId)
         {
             ObtenerFamilia(pId);
+        }
+
+        public Familia(DataRow pDr)
+        {
+            _Familia.FamiliaId = (Convert.IsDBNull(pDr["Id_Familia"])) ? default(int) : (int)pDr["Id_Familia"];
+            _Familia.Descripcion = (Convert.IsDBNull(pDr["Descripcion"])) ? null : pDr["Descripcion"].ToString();
+            _Familia.DescCorta = (Convert.IsDBNull(pDr["Desc_Corta"])) ? null : pDr["Desc_Corta"].ToString();
         }
 
         public Familia(Familia_DTO pFamilia)
@@ -86,7 +101,7 @@ namespace eSecurity
             }
         }
 
-        public void Guardar()
+        public override void Guardar()
         {
             if (_Familia.FamiliaId <= 0)
                 Familia_DAL.AltaFamilia(_Familia);
@@ -94,11 +109,79 @@ namespace eSecurity
                 Familia_DAL.ModificarFamilia(_Familia);
         }
 
-        public void Eliminar()
+        public override void Eliminar()
         {
             if (_Familia.FamiliaId > 0)
                 Familia_DAL.EliminarFamilia(_Familia.FamiliaId);
         }
+
+        public override DataSet ObtenerDataSet()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
+
+        #region FamiliaPatente
+        public int AgregarPatente(Patente pObjeto)
+        {
+            if (pObjeto.PatenteId > 0)
+                return FamiliaPatente.Agregar(pObjeto);
+            else
+                return default(int);
+        }
+
+        public void QuitarPatente(Patente pObjeto)
+        {
+            if (pObjeto.PatenteId > 0)
+                FamiliaPatente.Eliminar(pObjeto);
+        }
+
+        public void QuitarPatentes()
+        {
+            FamiliaPatente.EliminarTodo();
+        }
+
+        private void AltaFamiliaPatente(ref Patente pObjeto)
+        {
+            var familiaPatente = new FamiliaPatente();
+            familiaPatente.AltaFamiliaPatente(this.FamiliaId, pObjeto.PatenteId);
+        }
+
+        private void EliminarFamiliaPatente(ref Patente pObjeto)
+        {
+            var familiaPatente = new FamiliaPatente();
+            familiaPatente.EliminarFamiliaPatente(this.FamiliaId, pObjeto.PatenteId);
+        }
+
+        private void ObtenerPatentes()
+        {
+            this.FamiliaPatente.Cargar((new FamiliaPatente()).ObtenerFamiliaPatente(this.FamiliaId));
+        }
+
+        public Patente ObtenerPatenteIndice(Int32 pIndice)
+        {
+            return FamiliaPatente[pIndice];
+        }
+
+        public void PersistirPatentes()
+        {
+            FamiliaPatente.Persistir();
+        }
+
+        #endregion
+
+        public int CompareTo(Familia other)
+        {
+            if (FamiliaId < other.FamiliaId)
+                return 1;
+            
+            if( FamiliaId > other.FamiliaId)
+                return -1;
+
+            return 0;
+        }
+
+        
     }
 }

@@ -16,6 +16,11 @@ namespace Gabe
         int codigoUsuario;
         Usuarios usuario;
 
+        public Usuarios Usuario
+        {
+            get { return usuario; }
+        }
+
         public USRL001_Title(int pCodigoUsuario)
         {
             codigoUsuario = pCodigoUsuario;

@@ -15,7 +15,7 @@ namespace Gabe
     public class MasterForm
     {
         #region Methods
-        internal static bool AplicarIdioma(Form pForm)
+        internal static bool AplicarIdioma(Control pForm)
         {
             try
             {
