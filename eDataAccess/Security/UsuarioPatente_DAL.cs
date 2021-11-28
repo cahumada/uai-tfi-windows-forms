@@ -32,13 +32,14 @@ namespace eDataAccess.Security
             }
         }
 
-        public static int EliminarUsuarioPatente(long pId)
+        public static int EliminarUsuarioPatente(int pUsuarioId, int pPatente)
         {
             var mParams = new List<DbParameter>();
 
             try
             {
-                mParams.Add((DbParameter)Commons.getNewParameter("nUsuarioPatenteId", DbType.Int64, pId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuarioId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nPatente", DbType.String, pPatente, null, null));
 
                 return Commons.ExecuteNonQuery("EliminarUsuarioPatente", CommandType.StoredProcedure, mParams);
 
@@ -50,26 +51,20 @@ namespace eDataAccess.Security
             }
         }
 
-        public static List<UsuarioPatente_DTO> ObtenerUsuarioPatente(long pUsuarioId)
+        public static DataTable ObtenerUsuarioPatente(long pUsuarioId)
         {
             var mParams = new List<DbParameter>();
-            var mCol = new List<UsuarioPatente_DTO>();
             var mDt = new DataTable();
 
             try
             {
-                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuarioId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("@nUsuario", DbType.Int32, pUsuarioId, null, null));
 
                 mDt = Commons.ExecuteDataTable("ObtenerUsuarioPatente", CommandType.StoredProcedure, mParams);
 
                 if (mDt != null)
                 {
-                    foreach (DataRow mDr in mDt.Rows)
-                    {
-                        mCol.Add(GetDTODR(mDr));
-                    }
-
-                    return mCol;
+                    return mDt;
                 }
                 return null;
             }
@@ -136,7 +131,7 @@ namespace eDataAccess.Security
             mDTO.Usuario.Contrasena = (Convert.IsDBNull(pDr["Contrasena"])) ? "" : pDr["Contrasena"].ToString();
             mDTO.Usuario.IdiomaId = (Convert.IsDBNull(pDr["Id_Idioma"])) ? 0 : (int)pDr["Id_Idioma"];
             mDTO.Usuario.Intentos = (Convert.IsDBNull(pDr["Intentos"])) ? (short)0 : (short)pDr["Intentos"];
-            mDTO.Usuario.Bloqueado = (Convert.IsDBNull(pDr["Bloqueado"])) ? false : (bool)pDr["Bloqueado"];
+            mDTO.Usuario.Bloqueado = (!Convert.IsDBNull(pDr["Bloqueado"])) && (bool)pDr["Bloqueado"];
 
             //PATENTE
             mDTO.Patente.PatenteId = (Convert.IsDBNull(pDr["Id_Patente"])) ? 0 : (int)pDr["Id_Patente"];
@@ -146,8 +141,9 @@ namespace eDataAccess.Security
 
             //USUARIOPATENTE
             mDTO.UsuarioPatenteId = (Convert.IsDBNull(pDr["Id_UsuarioPatente"])) ? 0 : (long)pDr["Id_UsuarioPatente"];
+            mDTO.Familia = (Convert.IsDBNull(pDr["Familia"])) ? "" : pDr["Familia"].ToString();
             mDTO.DVH = (Convert.IsDBNull(pDr["DVH"])) ? 0 : (int)pDr["DVH"];
-            //mDTO.Denegado = (Convert.IsDBNull(pDr["bIsDeny"])) ? false : (bool)pDr["bIsDeny"];
+            mDTO.Denegado = (!Convert.IsDBNull(pDr["Denegado"])) && (bool)pDr["Denegado"];
 
             return mDTO;
         }

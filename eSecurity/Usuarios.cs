@@ -108,8 +108,17 @@ namespace eSecurity
 
         #region UsuarioPatente
 
-        public List<UsuarioPatente> Patentes => (new UsuarioPatente()).ObtenerUsuarioPatente(UsuarioId);
+        private ObjetoLista<UsuarioPatente> UsuarioPatentes = new ObjetoLista<UsuarioPatente>(TipoAgregacion.MuchosAMuchos);
 
+        public ObjetoLista<UsuarioPatente> Patentes
+        {
+            get
+            {
+                UsuarioPatentes.Cargar(true);
+
+                return UsuarioPatentes.get_ItemsVisibles();
+            }
+        }
         #endregion
 
         #endregion
@@ -357,7 +366,75 @@ namespace eSecurity
             UsuarioFamilias.RequerimientoCarga += ObtenerFamilias;
             UsuarioFamilias.InsertarRelacionMuchosAMuchos += AltaFamiliaUsuario;
             UsuarioFamilias.EliminarRelacionMuchosAMuchos += EliminarFamiliaUsuario;
+
+            UsuarioPatentes.RequerimientoCarga += ObtenerPatentes;
+            UsuarioPatentes.InsertarRelacionMuchosAMuchos += AltaPatenteUsuario;
+            UsuarioPatentes.EliminarRelacionMuchosAMuchos += EliminarPatenteUsuario;
         }
+        #endregion
+
+        #region UsuarioPatente
+
+        public int AgregarPatente(UsuarioPatente pObjeto)
+        {
+            if (pObjeto.Patente.PatenteId > 0)
+                return UsuarioPatentes.Agregar(pObjeto);
+            else
+                return default(int);
+        }
+
+        public void QuitarPatente(UsuarioPatente pObjeto)
+        {
+            if (pObjeto.Patente.PatenteId > 0)
+                UsuarioPatentes.Eliminar(pObjeto);
+        }
+
+        public void QuitarPatente()
+        {
+            UsuarioPatentes.EliminarTodo();
+        }
+
+        private void AltaPatenteUsuario(ref UsuarioPatente pObjeto)
+        {
+            pObjeto.AltaUsuarioPatente();
+        }
+
+        private void EliminarPatenteUsuario(ref UsuarioPatente pObjeto)
+        {
+            pObjeto.EliminarUsuarioPatente();
+        }
+
+        private void ObtenerPatentes()
+        {
+            this.UsuarioPatentes.Cargar((new UsuarioPatente()).ObtenerUsuarioPatente(this.UsuarioId));
+        }
+
+        public bool ExistePatente(Patente pPatente)
+        {
+            foreach (var patente in Patentes)
+            {
+                if (patente.Patente.PatenteId == pPatente.PatenteId)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public UsuarioPatente ObtenerPatenteIndice(int pIndice)
+        {
+            return UsuarioPatentes[pIndice];
+        }
+
+        public void CambiarEstadoPorIndice(int pIndice, bool pDenegado)
+        {
+            UsuarioPatentes[pIndice].Denegado = pDenegado;
+        }
+
+        public void PersistirPatentes()
+        {
+            UsuarioPatentes.Persistir();
+        }
+
         #endregion
     }
 }

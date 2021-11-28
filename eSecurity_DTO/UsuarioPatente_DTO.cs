@@ -18,6 +18,7 @@ namespace eSecurity_DTO
         public Usuarios_DTO Usuario { get; set; }
         public Patente_DTO Patente { get; set; }
         public bool Denegado { get; set; }
+        public string Familia { get; set; }
         public int DVH { get; set; }
         
     }

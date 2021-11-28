@@ -49,7 +49,6 @@ namespace eFramework
 
         public bool cambiosSinGuardar = false;
         public bool coleccionCargada = false;
-        private int contador = 0;
 
         private TipoAgregacion tipoAgregacion = TipoAgregacion.UnoAMuchos;
 
@@ -60,7 +59,7 @@ namespace eFramework
 
         public void Cargar(bool pExceptoQueEsteCargada = false)
         {
-            if (!this.coleccionCargada | !pExceptoQueEsteCargada)
+            if (!coleccionCargada | !pExceptoQueEsteCargada)
                 RequerimientoCarga?.Invoke();
         }
 
@@ -75,16 +74,15 @@ namespace eFramework
             if (pDataTable != null && pDataTable.Rows.Count > 0)
             {
                 foreach (DataRow pDr in pDataTable.Rows)
-                    this.AgregarElementoSinCambio((T)Activator.CreateInstance(typeof(T), BindingFlags.CreateInstance, null, new object[] { pDr }, null));
+                    AgregarElementoSinCambio((T)Activator.CreateInstance(typeof(T), BindingFlags.CreateInstance, null, new object[] { pDr }, null));
 
-                this.coleccionCargada = true;
+                coleccionCargada = true;
             }
         }
 
         protected override int GetKeyForItem(T item)
         {
-            item.IndiceLista = contador;
-            contador++;
+            item.IndiceLista = Items.Count;
             return item.IndiceLista;
         }
 
@@ -93,30 +91,30 @@ namespace eFramework
             pObjeto.EstadosLista = EstadosLista.Agregado;
             cambiosSinGuardar = true;
 
-            this.Add(pObjeto);
+            Add(pObjeto);
             ElementoAgregado?.Invoke(ref pObjeto);
 
-            pObjeto.RequerimientoLazyLoad += this.DispararRequerimientoLazyLoad;
+            pObjeto.RequerimientoLazyLoad += DispararRequerimientoLazyLoad;
             return pObjeto.IndiceLista;
         }
 
         public virtual void Eliminar(T pObjeto)
         {
             int indice;
-            if (pObjeto.IndiceLista == null)
-                indice = this.IndexOf(pObjeto);
-            else
-                indice = pObjeto.IndiceLista;
+            //if (pObjeto.IndiceLista == null)
+            indice = IndexOf(pObjeto);
+            //else
+            //    indice = pObjeto.IndiceLista;
 
-            this.Eliminar(indice);
+            Eliminar(indice);
         }
 
         public virtual void Eliminar(int pIndice)
         {
-            if (this.GetItem(pIndice).EstadosLista == EstadosLista.Agregado)
-                this.GetItem(pIndice).EstadosLista = EstadosLista.Quitado;
+            if (GetItem(pIndice).EstadosLista == EstadosLista.Agregado)
+                GetItem(pIndice).EstadosLista = EstadosLista.Quitado;
             else
-                this.GetItem(pIndice).EstadosLista = EstadosLista.Eliminado;
+                GetItem(pIndice).EstadosLista = EstadosLista.Eliminado;
 
             var objeto = GetItem(pIndice);
             ElementoEliminado?.Invoke(ref objeto);
@@ -140,21 +138,21 @@ namespace eFramework
             }
         }
 
-        public virtual new T GetItem(int pIndice)
+        public T GetItem(int pIndice)
         {
-            return base.Items[pIndice];
+            return Items[pIndice];
         }
 
-        public virtual new void SetItem(int pIndice, T value)
+        protected override void SetItem(int pIndice, T value)
         {
-            if (this.GetItem(pIndice).EstadosLista != EstadosLista.Agregado)
+            if (GetItem(pIndice).EstadosLista != EstadosLista.Agregado)
             {
                 value.EstadosLista = EstadosLista.Modificado;
             }
 
-            if (pIndice < base.Items.Count)
+            if (pIndice < Items.Count)
             {
-                base.Items[pIndice] = value;
+                Items[pIndice] = value;
             }
             else
             {
@@ -166,7 +164,7 @@ namespace eFramework
 
         public ObjetoLista<T> get_ItemsVisibles(bool pMantenerIndicesOriginales = true)
         {
-            var lista = new ObjetoLista<T>(this.tipoAgregacion);
+            var lista = new ObjetoLista<T>(tipoAgregacion);
 
             foreach (var objeto in this)
             {
@@ -188,14 +186,14 @@ namespace eFramework
         protected int AgregarElementoSinCambio(T pObjeto)
         {
             pObjeto.EstadosLista = EstadosLista.SinCambios;
-            this.Add(pObjeto);
+            Add(pObjeto);
 
             return pObjeto.IndiceLista;
         }
 
         public void Limpiar()
         {
-            this.Limpiar();
+            Limpiar();
         }
 
         public void AceptarCambios()
@@ -205,22 +203,22 @@ namespace eFramework
             lock (new object())
             {
                 int eliminados = 0;
-                for (int i = 0; i <= base.Count; i++)
+                for (int i = 0; i <= Count - 1; i++)
                 {
-                    switch (((T)this.GetItem(i - eliminados)).EstadosLista)
+                    switch (((T)GetItem(i - eliminados)).EstadosLista)
                     {
                         case EstadosLista.Agregado:
                         case EstadosLista.Modificado:
                             {
-                                ((T)this.GetItem(i - eliminados)).EstadosLista = EstadosLista.SinCambios;
+                                ((T)GetItem(i - eliminados)).EstadosLista = EstadosLista.SinCambios;
                                 break;
                             }
 
                         case EstadosLista.Eliminado:
                         case EstadosLista.Quitado:
                             {
-                                this.RemoveAt(i - eliminados);
-                                eliminados ++;
+                                RemoveAt(i - eliminados);
+                                eliminados++;
                                 reacomodar = true;
                                 break;
                             }
@@ -228,19 +226,19 @@ namespace eFramework
                 }
             }
             if (reacomodar)
-                this.ReacomodarIndices();
+                ReacomodarIndices();
         }
 
         private void ReacomodarIndices()
         {
-            foreach (var objeto in this.Items)
-                objeto.IndiceLista = this.Items.IndexOf(objeto);
+            foreach (var objeto in Items)
+                objeto.IndiceLista = Items.IndexOf(objeto);
         }
 
         public DataSet ObtenerDataSet()
         {
-            if (!this.coleccionCargada)
-                this.Cargar();
+            if (!coleccionCargada)
+                Cargar();
 
             // Dataset que se devolverá
             DataSet mDs = new DataSet();
@@ -264,7 +262,7 @@ namespace eFramework
 
             mDs.Tables[0].Columns.Add("IndiceLista", typeof(int));
 
-            foreach (ObjetoSimple pObjeto in this.Items)
+            foreach (ObjetoSimple pObjeto in Items)
             {
                 if (pObjeto.EstadosLista != EstadosLista.Eliminado && pObjeto.EstadosLista != EstadosLista.Quitado)
                 {
@@ -300,10 +298,10 @@ namespace eFramework
             {
                 var x = 0;
 
-                foreach (var objeto in this.Items)
+                foreach (var objeto in Items)
                 {
                     if (objeto.EstadosLista != EstadosLista.Eliminado && objeto.EstadosLista != EstadosLista.Quitado)
-                        x ++;
+                        x++;
                 }
                 return x;
             }
@@ -320,59 +318,59 @@ namespace eFramework
             {
                 case TipoAgregacion.UnoAMuchos:
                     {
-                        for (int i = 0; i < base.Count; i++)
+                        for (int i = 0; i < this.Items.Count; i++)
                         {
-                            var entidad = this.GetItem(i);
+                            var entidad = GetItem(i);
 
                             switch (entidad.EstadosLista)
                             {
                                 case EstadosLista.Agregado:
                                 case EstadosLista.Modificado:
-                                {
-                                    AsignarRelacionUnoAMuchos?.Invoke(ref entidad);
-                                    entidad.Guardar();
+                                    {
+                                        AsignarRelacionUnoAMuchos?.Invoke(ref entidad);
+                                        entidad.Guardar();
 
-                                    RelacionGuardada?.Invoke(ref entidad);
-                                    break;
-                                }
+                                        RelacionGuardada?.Invoke(ref entidad);
+                                        break;
+                                    }
 
                                 case EstadosLista.Eliminado:
-                                {
-                                    entidad.Eliminar();
+                                    {
+                                        entidad.Eliminar();
 
-                                    RelacionEliminada?.Invoke(ref entidad);
-                                    break;
-                                }
+                                        RelacionEliminada?.Invoke(ref entidad);
+                                        break;
+                                    }
                             }
                         }
 
-                        this.AceptarCambios();
+                        AceptarCambios();
                         break;
                     }
 
                 case TipoAgregacion.MuchosAMuchos:
                     {
-                        for (int i = 0; i < base.Count; i++)
+                        for (int i = 0; i < this.Items.Count; i++)
                         {
-                            var entidad = this.GetItem(i);
+                            var entidad = GetItem(i);
 
                             switch (entidad.EstadosLista)
                             {
                                 case EstadosLista.Agregado:
-                                {
-                                    InsertarRelacionMuchosAMuchos?.Invoke(ref entidad);
-                                    break;
-                                }
+                                    {
+                                        InsertarRelacionMuchosAMuchos?.Invoke(ref entidad);
+                                        break;
+                                    }
 
                                 case EstadosLista.Eliminado:
-                                {
-                                    EliminarRelacionMuchosAMuchos?.Invoke(ref entidad);
-                                    break;
-                                }
+                                    {
+                                        EliminarRelacionMuchosAMuchos?.Invoke(ref entidad);
+                                        break;
+                                    }
                             }
                         }
 
-                        this.AceptarCambios();
+                        AceptarCambios();
                         break;
                     }
             }

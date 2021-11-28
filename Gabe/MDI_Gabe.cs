@@ -67,6 +67,8 @@ namespace Gabe
 
                 AgregarSubMenu(_Dt.Rows[nPrincipal]["Id"].ToString(), _Menu);
             }
+
+            userLabel.Text = "| Usuario: " + usuario.Nik;
         }
 
         public void AgregarSubMenu(string pId, ToolStripMenuItem pMenu)

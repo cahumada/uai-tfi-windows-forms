@@ -162,19 +162,19 @@ namespace Gabe
                 {
                     if (e.ColumnIndex == USR004_DgrFam.Columns["USR004_DgrFam_cChecked"].Index)
                     {
-                        var familiaId = Convert.ToInt32(USR004_DgrFam.Rows[e.RowIndex].Cells["USR004_DgrFam_cIndexCollection"].Value);
+                        var indice = Convert.ToInt32(USR004_DgrFam.Rows[e.RowIndex].Cells["USR004_DgrFam_cIndexCollection"].Value);
 
                         if (Convert.ToBoolean(USR004_DgrFam.Rows[e.RowIndex].Cells["USR004_DgrFam_cChecked"].Value))
                         {
                             // Si existe en la colección se quita de la misma
-                            if (familiaId >= 0)
-                                usuario.QuitarFamilia(usuario.ObtenerFamiliaIndice(familiaId));
+                            if (indice >= 0)
+                                usuario.QuitarFamilia(usuario.ObtenerFamiliaIndice(indice));
                             else
                                 usuario.AgregarFamilia(new Familia(Convert.ToInt32(USR004_DgrFam.Rows[e.RowIndex].Cells["USR004_DgrFam_cCodFamily"].Value)));
 
                             ActualizarOrigen();
                         }
-                        else if (familiaId <= 0)
+                        else if (indice <= 0)
                         {
                             usuario.AgregarFamilia(new Familia(Convert.ToInt32(USR004_DgrFam.Rows[e.RowIndex].Cells["USR004_DgrFam_cCodFamily"].Value)));
 

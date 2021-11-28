@@ -129,6 +129,12 @@
     <Compile Include="USR004_Title.Designer.cs">
       <DependentUpon>USR004_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="USR005_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USR005_Title.Designer.cs">
+      <DependentUpon>USR005_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="USRL001_Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USR004_Title.resx">
       <DependentUpon>USR004_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USR005_Title.resx">
+      <DependentUpon>USR005_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USRL001_Title.resx">
       <DependentUpon>USRL001_Title.cs</DependentUpon>
