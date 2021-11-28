@@ -1,6 +1,7 @@
 ﻿using eDataAccess.Security;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,16 @@ namespace eSecurity
         public static int VerificarIntegridad()
         {
             return DigitoVerificador_DAL.VerificarIntegridad();
+        }
+
+        public static DataTable ObtenerErroresIntegridad()
+        {
+            return DigitoVerificador_DAL.ObtenerErroresIntegridad();
+        }
+
+        public static int ReCalcularDigitosVerificadores(int pUsuario)
+        {
+            return DigitoVerificador_DAL.ReCalcularDigitosVerificadores(pUsuario);
         }
         #endregion
     }

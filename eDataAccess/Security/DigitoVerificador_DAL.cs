@@ -39,5 +39,42 @@ namespace eDataAccess.Security
                 throw;
             }
         }
+
+        public static int ReCalcularDigitosVerificadores(int pUsuario)
+        {
+            var mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("@nUsuario", DbType.Int32, pUsuario));
+
+                return (int)Commons.ExecuteNonQuery("ReCalcularDigitosVerificadores", System.Data.CommandType.StoredProcedure, mParams);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static DataTable ObtenerErroresIntegridad()
+        {
+            DataTable mDt = new DataTable();
+
+            try
+            {
+                mDt = Commons.ExecuteDataTable("ObtenerVerificacionIntegridad", CommandType.StoredProcedure);
+
+                if (mDt != null)
+                    return mDt;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
     }
 }

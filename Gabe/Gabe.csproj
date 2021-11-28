@@ -72,6 +72,12 @@
     <Compile Include="Controles\UsuarioControl.Designer.cs">
       <DependentUpon>UsuarioControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DVI001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DVI001_Title.Designer.cs">
+      <DependentUpon>DVI001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAM001_Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Controles\UsuarioControl.resx">
       <DependentUpon>UsuarioControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DVI001_Title.resx">
+      <DependentUpon>DVI001_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FAM001_Title.resx">
       <DependentUpon>FAM001_Title.cs</DependentUpon>
