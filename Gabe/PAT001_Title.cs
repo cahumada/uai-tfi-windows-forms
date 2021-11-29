@@ -99,11 +99,10 @@ namespace Gabe
                 MasterForm.HabilitarControles(PAT001_Grp02);
 
                 MasterForm.LimpiarControles(PAT001_Grp02);
-
-                // TODO
-                GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 31);
-                GEN001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 32);
-                GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 33);
+                
+                GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 17);
+                GEN001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 18);
+                GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 19);
 
                 ErrProv.Clear();
             }
@@ -117,9 +116,9 @@ namespace Gabe
                 MasterForm.LimpiarControles(GroupBox2);
 
                 // TODO
-                GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 31);
-                GEN001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 32);
-                GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 33);
+                GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 17);
+                GEN001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 18);
+                GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 19);
 
                 ErrProv.Clear();
             }

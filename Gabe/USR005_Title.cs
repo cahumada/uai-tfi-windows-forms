@@ -135,7 +135,7 @@ namespace Gabe
                 MasterForm.HabilitarControles(USR005_Grp01, false);
 
                 GEN001_Btn009.Enabled = true;
-                GEN001_Btn010.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 17);
+                GEN001_Btn010.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 16);
 
                 ActualizarOrigen();
             }

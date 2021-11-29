@@ -79,7 +79,7 @@ namespace Gabe
 
             // *** Verifico permisos
             // Depurar Bitacora
-            BIT001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 16); //TODO
+            BIT001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 23);
 
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
             helpProvider.SetHelpKeyword(this, "Bitácora");

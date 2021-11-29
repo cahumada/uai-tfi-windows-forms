@@ -239,9 +239,9 @@ namespace Gabe
 
             // *** Verifico permisos
             // Alta Usuario
-            GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 5);
+            GEN001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 10);
             // Baja Usuario
-            GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 6);
+            GEN001_Btn003.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 11);
             // Desbloquear
             USR001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 12);
             // Blanquear Pass
