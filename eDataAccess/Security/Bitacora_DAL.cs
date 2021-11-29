@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eDataAccess.Security
 {
@@ -17,12 +18,11 @@ namespace eDataAccess.Security
 
             try
             {
-
                 mParams.Add((DbParameter)Commons.getNewParameter("nLog", DbType.Int64, pBitacora.LogId, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pBitacora.UsuarioId, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("nCriticidad", DbType.Int32, pBitacora.CriticidadId, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("nTipoMovimiento", DbType.Int32, pBitacora.MovimientoId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("FechaMovimiento", DbType.DateTime, pBitacora.FechaMovimient, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaMov", DbType.DateTime, pBitacora.FechaMovimiento, null, null));
 
                 return Commons.ExecuteNonQuery("AgregarBitacora", CommandType.StoredProcedure, mParams);
 
@@ -53,6 +53,39 @@ namespace eDataAccess.Security
             }
         }
 
+        public static int EliminarBitacora()
+        {
+            try
+            {
+                return Commons.ExecuteNonQuery("EliminarBitacoraCompleta", CommandType.StoredProcedure);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static int EliminarBitacora(DateTime pFechaDesde, DateTime pFechaHasta, Int32 pUsuario = default(int), Int32 pCriticidad = default(int))
+        {
+            List<DbParameter> mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaDesde", DbType.Date, pFechaDesde));
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaHasta", DbType.Date, pFechaHasta));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuario));
+                mParams.Add((DbParameter)Commons.getNewParameter("nCriticidad", DbType.Int32, pCriticidad));
+
+                return Commons.ExecuteNonQuery("LimpiarBitacora", CommandType.StoredProcedure, mParams);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
         public static int ModificarBitacora(Bitacora_DTO pBitacora)
         {
             var mParams = new List<DbParameter>();
@@ -61,13 +94,13 @@ namespace eDataAccess.Security
             {
 
                 mParams.Add((DbParameter)Commons.getNewParameter("nLog", DbType.Int64, pBitacora.LogId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("nUser", DbType.Int32, pBitacora.UsuarioId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("nCriticality", DbType.Int32, pBitacora.CriticidadId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("nTyp_Movement", DbType.Int32, pBitacora.MovimientoId, null, null));
-                mParams.Add((DbParameter)Commons.getNewParameter("dEffectDate", DbType.DateTime, pBitacora.FechaMovimient, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pBitacora.UsuarioId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nCriticidad", DbType.Int32, pBitacora.CriticidadId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nTipoMovimiento", DbType.Int32, pBitacora.MovimientoId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaMov", DbType.DateTime, pBitacora.FechaMovimiento, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("nDVH", DbType.Int32, pBitacora.DVH, null, null));
 
-                return Commons.ExecuteNonQuery("UpdBitacora", CommandType.StoredProcedure, mParams);
+                return Commons.ExecuteNonQuery("ActualizarBitacora", CommandType.StoredProcedure, mParams);
 
             }
             catch (Exception)
@@ -102,6 +135,33 @@ namespace eDataAccess.Security
             }
         }
 
+        public static DataTable ObtenerBitacoraReporte()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = Commons.ExecuteDataTable("ObtenerReporteBitacoras", CommandType.StoredProcedure);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dr["sTipoMovimiento"] = Convert.IsDBNull(dr["sTipoMovimiento"]) ? null : Encriptado.DataDecryption(dr["sTipoMovimiento"].ToString());
+                        dr["Nik"] = Convert.IsDBNull(dr["Nik"]) ? null : Encriptado.DataDecryption(dr["Nik"].ToString());
+                    }
+
+                    return dt;
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         public static List<Bitacora_DTO> ObtenerBitacora()
         {
             var mCol = new List<Bitacora_DTO>();
@@ -130,6 +190,68 @@ namespace eDataAccess.Security
             }
         }
 
+        public static List<Bitacora_DTO> ObtenerBitacora(DateTime pFechaDesde, DateTime pFechaHasta, Int32 pUsuario = default(int), Int32 pCriticidad = default(int))
+        {
+            DataTable dt = new DataTable();
+            List<Bitacora_DTO> mCol = new List<Bitacora_DTO>();
+            List<DbParameter> mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaDesde", DbType.Date, pFechaDesde));
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaHasta", DbType.Date, pFechaHasta));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuario));
+                mParams.Add((DbParameter)Commons.getNewParameter("nCriticidad", DbType.Int32, pCriticidad));
+
+                dt = Commons.ExecuteDataTable("ObtenerBitacoraFiltrada", CommandType.StoredProcedure, mParams);
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                        mCol.Add(GetDTODR(dr));
+                }
+
+                return mCol;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public static DataTable ObtenerBitacoraReporte(DateTime pFechaDesde, DateTime pFechaHasta, Int32 pUsuario = default(int), Int32 pCriticidad = default(int))
+        {
+            DataTable dt = new DataTable();
+            List<DbParameter> mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaDesde", DbType.Date, pFechaDesde));
+                mParams.Add((DbParameter)Commons.getNewParameter("dFechaHasta", DbType.Date, pFechaHasta));
+                mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuario));
+                mParams.Add((DbParameter)Commons.getNewParameter("nCriticidad", DbType.Int32, pCriticidad));
+
+                dt = Commons.ExecuteDataTable("ObtenerReporteBitacoraFiltrada", CommandType.StoredProcedure, mParams);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dr["sTipoMovimiento"] = Convert.IsDBNull(dr["sTipoMovimiento"]) ? null : Encriptado.DataDecryption(dr["sTipoMovimiento"].ToString());
+                        dr["Nik"] = Convert.IsDBNull(dr["Nik"]) ? null : Encriptado.DataDecryption(dr["Nik"].ToString());
+                    }
+
+                    return dt;
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         private static Bitacora_DTO GetDTODR(DataRow pDr)
         {
             var mDTO = new Bitacora_DTO();
@@ -138,7 +260,7 @@ namespace eDataAccess.Security
             mDTO.UsuarioId = (Convert.IsDBNull(pDr["Id_Usuario"])) ? 0 : (int)pDr["Id_Usuario"];
             mDTO.MovimientoId = (Convert.IsDBNull(pDr["Id_Movimiento"])) ? 0 : (int)pDr["Id_Movimiento"];
             mDTO.CriticidadId = (Convert.IsDBNull(pDr["Id_Criticidad"])) ? 0 : (int)pDr["Id_Criticidad"];
-            mDTO.FechaMovimient = (Convert.IsDBNull(pDr["Fecha_Movimiento"])) ? DateTime.MinValue : (DateTime)pDr["Fecha_Movimiento"];
+            mDTO.FechaMovimiento = (Convert.IsDBNull(pDr["Fecha_Movimiento"])) ? DateTime.MinValue : (DateTime)pDr["Fecha_Movimiento"];
             mDTO.DVH = (Convert.IsDBNull(pDr["DVH"])) ? 0 : (int)pDr["DVH"];
 
             return mDTO;

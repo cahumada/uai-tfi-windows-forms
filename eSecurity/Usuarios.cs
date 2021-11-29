@@ -173,14 +173,12 @@ namespace eSecurity
                 {
                     Usuarios_DAL.EliminarUsuario(UsuarioId);
 
-                    //TODO
-                    //    If mUserFamily.Count > 0 Then
-                    //    mUserFamily.Persistir()
-                    //End If
+                    // Persisto las colecciones
+                    if (UsuarioFamilias.Count > 0)
+                        UsuarioFamilias.Persistir();
 
-                    //If mUserPatent.Count > 0 Then
-                    //    mUserPatent.Persistir()
-                    //End If
+                    if (UsuarioPatentes.Count > 0)
+                        UsuarioPatentes.Persistir();
                 }
             }
             catch (Exception)
@@ -190,7 +188,7 @@ namespace eSecurity
 
         public override DataSet ObtenerDataSet()
         {
-            throw new NotImplementedException();
+            return new DataSet();
         }
 
         public override void Guardar()
@@ -202,17 +200,16 @@ namespace eSecurity
                 else
                     Usuarios_DAL.ModificarUsuario(_Usuario);
 
-                //TODO
-                //If mUserFamily.Count > 0 Then
-                //    mUserFamily.Persistir()
-                //End If
+                // Persisto las colecciones
+                if (UsuarioFamilias.Count > 0)
+                    UsuarioFamilias.Persistir();
 
-                //If mUserPatent.Count > 0 Then
-                //    mUserPatent.Persistir()
-                //End If
+                if (UsuarioPatentes.Count > 0)
+                    UsuarioPatentes.Persistir();
             }
             catch (Exception)
             {
+                throw;
             }
         }
 

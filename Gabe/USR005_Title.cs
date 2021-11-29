@@ -81,7 +81,7 @@ namespace Gabe
             ActualizarOrigen();
 
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
-            helpProvider.SetHelpKeyword(this, "Usuario Familia");
+            helpProvider.SetHelpKeyword(this, "Usuario Patente");
             helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
 
             MasterForm.ModificarToolTip(this, toolTip);

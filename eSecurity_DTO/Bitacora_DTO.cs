@@ -12,7 +12,7 @@ namespace eSecurity_DTO
         public int UsuarioId { get; set; }
         public int MovimientoId { get; set; }
         public int CriticidadId { get; set; }
-        public DateTime FechaMovimient { get; set; }
+        public DateTime FechaMovimiento { get; set; }
         public int DVH { get; set; }
     }
 }

@@ -63,6 +63,8 @@ namespace eDataAccess.Security
             {
                 mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuario.UsuarioId));
                 mParams.Add((DbParameter)Commons.getNewParameter("sNik", DbType.String, pUsuario.Nik));
+                mParams.Add((DbParameter)Commons.getNewParameter("nIdioma", DbType.Int32, pUsuario.IdiomaId));
+                mParams.Add((DbParameter)Commons.getNewParameter("nIntentos", DbType.Int16, pUsuario.Intentos));
                 mParams.Add((DbParameter)Commons.getNewParameter("bAdmin", DbType.Boolean, pUsuario.Bloqueado));
                 mParams.Add((DbParameter)Commons.getNewParameter("bBloqueado", DbType.Boolean, pUsuario.Bloqueado));
 

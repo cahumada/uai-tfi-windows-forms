@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BIT001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BIT001_Title.Designer.cs">
+      <DependentUpon>BIT001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\UsuarioControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="USRL001_Title.Designer.cs">
       <DependentUpon>USRL001_Title.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BIT001_Title.resx">
+      <DependentUpon>BIT001_Title.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\UsuarioControl.resx">
       <DependentUpon>UsuarioControl.cs</DependentUpon>
     </EmbeddedResource>

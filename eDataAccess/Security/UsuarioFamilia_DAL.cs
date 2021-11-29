@@ -21,7 +21,7 @@ namespace eDataAccess.Security
                 mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pUsuarioId, null, null));
                 mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pFamilia, null, null));
 
-                return Commons.ExecuteNonQuery("AltaUsuarioFamilia", CommandType.StoredProcedure, mParams);
+                return Commons.ExecuteNonQuery("AgregarUsuarioFamilia", CommandType.StoredProcedure, mParams);
 
             }
             catch (Exception)

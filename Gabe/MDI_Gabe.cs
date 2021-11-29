@@ -38,6 +38,7 @@ namespace Gabe
 
             WindowState = FormWindowState.Maximized;
             MaximizeBox = false;
+            MinimizeBox = false;
 
             _Dt = MyMenu.GenerarMenu();
 
