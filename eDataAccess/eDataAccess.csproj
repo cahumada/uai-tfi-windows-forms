@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Security\BackupRestore_DAL.cs" />
     <Compile Include="Security\Bitacora_DAL.cs" />
     <Compile Include="Commons.cs" />
     <Compile Include="MyMenu_DAL.cs" />

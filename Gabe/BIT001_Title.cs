@@ -80,8 +80,6 @@ namespace Gabe
             // *** Verifico permisos
             // Depurar Bitacora
             BIT001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 16); //TODO
-            BIT001_Btn002.Enabled = false;
-
 
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
             helpProvider.SetHelpKeyword(this, "Bitácora");
@@ -122,9 +120,6 @@ namespace Gabe
                                             bitacora.FechaMovimiento);
                 }
 
-            BIT001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 54);
-
-
         }
 
         private void ActualizarCriticidad()
@@ -138,7 +133,6 @@ namespace Gabe
             MasterForm.HabilitarControles(BIT001_Grp01, true);
             BIT001_ChkAll.Checked = false;
             BIT001_DgrBit.Rows.Clear();
-            BIT001_Btn002.Enabled = false;
         }
 
         private void GEN001_Btn005_Click(object sender, EventArgs e)

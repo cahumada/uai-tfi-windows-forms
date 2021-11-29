@@ -72,6 +72,12 @@
     <Compile Include="BIT001_Title.Designer.cs">
       <DependentUpon>BIT001_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="BKP001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BKP001_Title.Designer.cs">
+      <DependentUpon>BKP001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\UsuarioControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
     <EmbeddedResource Include="BIT001_Title.resx">
       <DependentUpon>BIT001_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BKP001_Title.resx">
+      <DependentUpon>BKP001_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\UsuarioControl.resx">
       <DependentUpon>UsuarioControl.cs</DependentUpon>
