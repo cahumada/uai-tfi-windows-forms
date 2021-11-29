@@ -123,6 +123,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RST001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RST001_Title.Designer.cs">
+      <DependentUpon>RST001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="USR003_Title.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RST001_Title.resx">
+      <DependentUpon>RST001_Title.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USR003_Title.resx">
       <DependentUpon>USR003_Title.cs</DependentUpon>
     </EmbeddedResource>

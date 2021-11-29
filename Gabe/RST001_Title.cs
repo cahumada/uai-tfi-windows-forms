@@ -12,21 +12,21 @@ using eSecurity;
 
 namespace Gabe
 {
-    public partial class BKP001_Title : Form
+    public partial class RST001_Title : Form
     {
         private int codigoUsuario;
 
         private HelpProvider helpProvider = new HelpProvider();
         private ToolTip toolTip = new ToolTip();
 
-        public BKP001_Title(int pCodigoUsuario)
+        public RST001_Title(int pCodigoUsuario)
         {
             codigoUsuario = pCodigoUsuario;
 
             InitializeComponent();
         }
 
-        private void BKP001_Title_Load(object sender, EventArgs e)
+        private void RST001_Title_Load(object sender, EventArgs e)
         {
             Limpiar();
 
@@ -37,7 +37,7 @@ namespace Gabe
             }
 
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
-            helpProvider.SetHelpKeyword(this, "Backup");
+            helpProvider.SetHelpKeyword(this, "Restore");
             helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
 
             MasterForm.ModificarToolTip(this, toolTip);
@@ -45,30 +45,30 @@ namespace Gabe
 
         public void Limpiar()
         {
-            BKP001_txtPath.Enabled = false;
-            BKP001_txtPath.Text = string.Empty;
+            RST001_txtPath.Enabled = false;
+            RST001_txtPath.Text = string.Empty;
 
-            BKP001_NumFiles.Value = 1;
-            BKP001_NumFiles.Maximum = 10;
-            BKP001_NumFiles.Minimum = 1;
+            RST001_NumFiles.Value = 1;
+            RST001_NumFiles.Maximum = 10;
+            RST001_NumFiles.Minimum = 1;
         }
 
-        private void BKP001_txtPath_Validating(object sender, CancelEventArgs e)
+        private void RST001_txtPath_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(BKP001_txtPath.Text))
+            if (string.IsNullOrEmpty(RST001_txtPath.Text))
             {
                 ErrProv.BlinkRate = 200;
                 ErrProv.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
-                ErrProv.SetError(BKP001_txtPath, Idioma.ObtenerEtiqueta("BKP001_Val001"));
+                ErrProv.SetError(RST001_txtPath, Idioma.ObtenerEtiqueta("RST001_Val001"));
             }
             else
-                ErrProv.SetError(BKP001_txtPath, "");
+                ErrProv.SetError(RST001_txtPath, "");
         }
 
         private void GEN001_Btn012_Click(object sender, EventArgs e)
         {
             if (FolderBrowserDialog1.ShowDialog() == DialogResult.OK)
-                BKP001_txtPath.Text = FolderBrowserDialog1.SelectedPath;
+                RST001_txtPath.Text = FolderBrowserDialog1.SelectedPath;
         }
 
         private void GEN001_Btn007_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace Gabe
 
         private void GEN001_Btn006_Click(object sender, EventArgs e)
         {
-            BKP001_txtPath_Validating(BKP001_txtPath, new CancelEventArgs());
+            RST001_txtPath_Validating(RST001_txtPath, new CancelEventArgs());
 
             if (!MasterForm.ControlErrores(this, ErrProv))
             {
@@ -88,8 +88,8 @@ namespace Gabe
 
                 try
                 {
-                    if (bkp.RealizarBackup(BKP001_txtPath.Text, Convert.ToInt32(BKP001_NumFiles.Value), codigoUsuario))
-                        MessageBox.Show(Idioma.ObtenerEtiqueta("BKP001_Msg001"), "Gabe", MessageBoxButtons.OK);
+                    if (bkp.RealizarRestore(RST001_txtPath.Text, Convert.ToInt32(RST001_NumFiles.Value), codigoUsuario))
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("RST001_Msg001"), "Gabe", MessageBoxButtons.OK);
 
                     Limpiar();
                 }

@@ -19,7 +19,7 @@ namespace eDataAccess.Security
                 mParams.Add((DbParameter)Commons.getNewParameter("sRuta", DbType.String, pRuta));
                 mParams.Add((DbParameter)Commons.getNewParameter("nCantidadArchivos", DbType.Int32, pCantidadArchivos));
 
-                Commons.ExecuteNonQuery("GenerateBackup", CommandType.StoredProcedure, mParams);
+                Commons.ExecuteNonQuery("GenerarBackup", CommandType.StoredProcedure, mParams);
 
                 return true;
             }
@@ -38,7 +38,7 @@ namespace eDataAccess.Security
                 mParams.Add((DbParameter)Commons.getNewParameter("sRuta", DbType.String, pRuta));
                 mParams.Add((DbParameter)Commons.getNewParameter("nCantidadArchivos", DbType.Int32, pCantidadArchivos));
 
-                Commons.ExecuteNonQuery("GenerateRestore", CommandType.StoredProcedure, mParams);
+                Commons.ExecuteNonQuery("GenerarRestore", CommandType.StoredProcedure, mParams);
 
                 return true;
             }
