@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace Gabe
         private Usuarios usuario = new Usuarios();
         private EstadosABM estado = new EstadosABM();
 
+        private HelpProvider helpProvider = new HelpProvider();
+        private ToolTip toolTip = new ToolTip();
 
         public USR003_Title(int pCodigoUsuario, Usuarios pUsuario = null, EstadosABM pEstado = EstadosABM.Nuevo)
         {
@@ -103,6 +106,12 @@ namespace Gabe
             {
                 MasterForm.AplicarIdioma(this);
             }
+
+            helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
+            helpProvider.SetHelpKeyword(this, "Contraseña");
+            helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
+
+            MasterForm.ModificarToolTip(this, toolTip);
         }
 
         private void USR003_txtPass_Validating(object sender, CancelEventArgs e)

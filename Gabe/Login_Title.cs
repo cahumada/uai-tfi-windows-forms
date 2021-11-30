@@ -61,10 +61,18 @@ namespace Gabe
                     }
                 }
                 else
-                    MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "", MessageBoxButtons.OK);
+                {
+                    if (usuario == null || usuario.UsuarioId == 0)
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "", MessageBoxButtons.OK);
+                    
+                }
+
             }
             else
                 MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg002"), "", MessageBoxButtons.OK);
+
+            if (usuario.Bloqueado)
+                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg003"), "", MessageBoxButtons.OK);
         }
     }
 }

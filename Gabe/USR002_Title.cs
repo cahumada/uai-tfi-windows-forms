@@ -20,6 +20,9 @@ namespace Gabe
         EstadosABM estado;
         private string contrasenaNueva = ConfigurationManager.AppSettings["NuevaContraseña"];
 
+        private HelpProvider helpProvider = new HelpProvider();
+        private ToolTip toolTip = new ToolTip();
+
         public USR002_Title(int pCodigoUsuario, Usuarios pUsuario = null, EstadosABM pEstado = EstadosABM.Nuevo)
         {
             codigoUsuario = pCodigoUsuario;
@@ -144,6 +147,10 @@ namespace Gabe
                 USR002_Lbl003.Visible = false;
                 USR002_NumAttemp.Visible = false;
                 USR002_ChkBloqued.Visible = false;
+
+                helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
+                helpProvider.SetHelpKeyword(this, "Modificar Idioma");
+                helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
             }
 
             if (estado == EstadosABM.Desbloquear)
@@ -152,6 +159,10 @@ namespace Gabe
                 USR002_ChkBloqued.Enabled = false;
                 USR002_Lbl004.Visible = false;
                 USR002_CmbLanguage.Visible = false;
+
+                helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
+                helpProvider.SetHelpKeyword(this, "Desbloquear");
+                helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
             }
 
             //Seteo Idioma
@@ -159,6 +170,8 @@ namespace Gabe
             {
                 MasterForm.AplicarIdioma(this);
             }
+
+            MasterForm.ModificarToolTip(this, toolTip);
         }
 
         private void USR002_txtNik_Validating(object sender, CancelEventArgs e)
@@ -179,11 +192,15 @@ namespace Gabe
 
                         CargarUsuario(true);
                         usuario.Guardar();
+                        MessageBox.Show("Se creó usuario: " + usuario.Nik + ", contraseña: " + contrasenaNueva, "Gabe",
+                            MessageBoxButtons.OK);
                         break;
 
                     case EstadosABM.Modificar:
                         CargarUsuario(true);
                         usuario.Guardar();
+                        MessageBox.Show("Se modificó usuario: " + usuario.Nik, "Gabe",
+                            MessageBoxButtons.OK);
                         break;
 
                     case EstadosABM.Eliminar:
@@ -193,6 +210,8 @@ namespace Gabe
                                 MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 usuario.Eliminar();
+                                MessageBox.Show("Se eliminó usuario", "Gabe",
+                                    MessageBoxButtons.OK);
                             }
                         }
                         break;
@@ -201,6 +220,9 @@ namespace Gabe
                         if (usuario.UsuarioId > 0)
                         {
                             usuario.ActualizarIdioma(Convert.ToInt16(USR002_CmbLanguage.SelectedValue));
+
+                            MessageBox.Show("Se modificó el idioma del usuario: " + usuario.Nik, "Gabe",
+                                MessageBoxButtons.OK);
                         }
                         break;
 
@@ -208,6 +230,8 @@ namespace Gabe
                         if (usuario.UsuarioId > 0)
                         {
                             usuario.Desbloquear();
+                            MessageBox.Show("Se desbloqueó el usuario: " + usuario.Nik, "Gabe",
+                                MessageBoxButtons.OK);
                         }
                         break;
                 }

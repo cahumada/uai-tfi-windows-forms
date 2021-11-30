@@ -274,11 +274,20 @@ namespace eSecurity
                     //Si las claves encriptadas son iguales esta OK
                     if (mEncryptPass.TrimEnd() == _Usuario.Contrasena.TrimEnd())
                     {
+                        _Usuario.Intentos = 0;
+                        _Usuario.Bloqueado = false;
+                            
+                        Guardar();
+
                         return true;
                     }
 
                     //Se incrementa en 1 el intento de logueo
                     _Usuario.Intentos++;
+                    
+                    // Se bloquea usuario
+                    if (_Usuario.Intentos >= 3)
+                        _Usuario.Bloqueado = true;
 
                     Guardar();
                 }
