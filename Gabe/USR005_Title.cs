@@ -174,8 +174,8 @@ namespace Gabe
                     var indice = Convert.ToInt32(USR005_DgrPat.Rows[e.RowIndex].Cells["USR005_DgrPat_cIndexCollection"].Value);
 
                     // Si lo que se modifica es el checkbox de denegar y no proviende de una familia
-                    if (e.ColumnIndex == USR005_DgrPat.Columns["USR005_DgrPat_cIsDeny"].Index 
-                        && !string.IsNullOrEmpty(USR005_DgrPat.Rows[e.RowIndex].Cells[1].Value.ToString())) 
+                    if (e.ColumnIndex == USR005_DgrPat.Columns["USR005_DgrPat_cIsDeny"].Index
+                        && !string.IsNullOrEmpty(USR005_DgrPat.Rows[e.RowIndex].Cells[1].Value.ToString()))
                     {
                         var seleccionado = Convert.ToBoolean(USR005_DgrPat.Rows[e.RowIndex].Cells[2].Value); // USR005_DgrPat_cChecked
                         var denegado = Convert.ToBoolean(USR005_DgrPat.Rows[e.RowIndex].Cells[5].Value); // USR005_DgrPat_cIsDeny
@@ -214,7 +214,7 @@ namespace Gabe
 
                     // Si lo que se esta cambiando es el checkbox de selección de patente y no proviene de una familia
                     if (e.ColumnIndex == USR005_DgrPat.Columns["USR005_DgrPat_cChecked"].Index
-                    && string.IsNullOrEmpty(USR005_DgrPat.Rows[e.RowIndex].Cells[1].Value.ToString()))
+                    && (USR005_DgrPat.Rows[e.RowIndex].Cells[1].Value == null || string.IsNullOrEmpty(USR005_DgrPat.Rows[e.RowIndex].Cells[1].Value.ToString())))
                     {
                         var seleccionado = !Convert.ToBoolean(USR005_DgrPat.Rows[e.RowIndex].Cells[2].Value); // USR005_DgrPat_cChecked
                         var denegado = Convert.ToBoolean(USR005_DgrPat.Rows[e.RowIndex].Cells[5].Value); // USR005_DgrPat_cIsDeny
@@ -241,7 +241,7 @@ namespace Gabe
                             ActualizarOrigen();
                         }
                     }
-                    
+
                 }
             }
         }
