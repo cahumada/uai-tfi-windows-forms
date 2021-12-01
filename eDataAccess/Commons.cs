@@ -55,7 +55,7 @@ namespace eDataAccess
             return mParam;
         }
 
-        public static object ExecuteScalar(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null)
+        public static object ExecuteScalar(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null, bool pIsExecuteInMaster = false)
         {
             using (IDbConnection oCon = Commons.getProviderFactory().CreateConnection())
             {
@@ -78,6 +78,10 @@ namespace eDataAccess
                     try
                     {
                         oCon.Open();
+
+                        if (pIsExecuteInMaster)
+                            oCon.ChangeDatabase("master");
+
                         return oCmd.ExecuteScalar();
                     }
                     catch (Exception)
@@ -94,7 +98,7 @@ namespace eDataAccess
             }
         }
 
-        public static int ExecuteNonQuery(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null)
+        public static int ExecuteNonQuery(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null, bool pIsExecuteInMaster = false)
         {
             using (IDbConnection oCon = Commons.getProviderFactory().CreateConnection())
             {
@@ -117,6 +121,10 @@ namespace eDataAccess
                     try
                     {
                         oCon.Open();
+
+                        if (pIsExecuteInMaster)
+                            oCon.ChangeDatabase("master");
+
                         return oCmd.ExecuteNonQuery();
                     }
                     catch (Exception)
@@ -133,11 +141,12 @@ namespace eDataAccess
             }
         }
 
-        public static DataTable ExecuteDataTable(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null)
+        public static DataTable ExecuteDataTable(string pQuery, CommandType pCmdType, List<DbParameter> pParamList = null, bool pIsExecuteInMaster = false)
         {
             using (IDbConnection oCon = Commons.getProviderFactory().CreateConnection())
             {
                 oCon.ConnectionString = Commons.getConexionString();
+
                 DbDataAdapter oAdap = Commons.getProviderFactory().CreateDataAdapter();
                 var oDt = new DataTable();
 
@@ -158,6 +167,10 @@ namespace eDataAccess
                     try
                     {
                         oCon.Open();
+
+                        if (pIsExecuteInMaster)
+                            oCon.ChangeDatabase("master");
+
                         oAdap.SelectCommand = (DbCommand)oCmd;
 
                         oAdap.Fill(oDt);
