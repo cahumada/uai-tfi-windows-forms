@@ -63,20 +63,20 @@ namespace Gabe
                 else
                 {
                     if (usuario.Intentos > 0 && !usuario.Bloqueado) // Mensaje de intentos
-                        MessageBox.Show(string.Format(Idioma.ObtenerEtiqueta("Login_Msg004"), usuario.Intentos.ToString()), "", MessageBoxButtons.OK);
+                        MessageBox.Show(string.Format(Idioma.ObtenerEtiqueta("Login_Msg004"), usuario.Intentos.ToString()), "Gabe", MessageBoxButtons.OK);
 
                     // Usuario y contraseña inválida
-                    MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "", MessageBoxButtons.OK);
+                    MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "Gabe", MessageBoxButtons.OK);
 
 
                     if (usuario.Bloqueado) // Usuario bloqueado
-                        MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg003"), "", MessageBoxButtons.OK);
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg003"), "Gabe", MessageBoxButtons.OK);
 
                 }
 
             }
             else
-                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg002"), "", MessageBoxButtons.OK); // Debe completar el usuario y contraseña1
+                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg002"), "Gabe", MessageBoxButtons.OK); // Debe completar el usuario y contraseña1
         }
     }
 }

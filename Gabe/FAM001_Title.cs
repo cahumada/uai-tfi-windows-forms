@@ -178,9 +178,17 @@ namespace Gabe
                 {
                     familia = new Familia((int)FAM001_DgrFam.SelectedRows[0].Cells[0].Value);
 
-                    familia.Eliminar();
+                    try
+                    {
+                        familia.Eliminar();
 
-                    ActualizarOrigen();
+                        ActualizarOrigen();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("FAM001_Msg002"), "Gabe", MessageBoxButtons.OK);
+                    }
+
                 }
             }
         }

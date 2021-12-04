@@ -430,6 +430,15 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error la familia tiene patentes y/o usuarios vinculados.
+        /// </summary>
+        internal static string FAM001_Msg002 {
+            get {
+                return ResourceManager.GetString("FAM001_Msg002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Familias.
         /// </summary>
         internal static string FAM001_Title {

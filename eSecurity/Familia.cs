@@ -10,31 +10,32 @@ using eFramework;
 
 namespace eSecurity
 {
-    public class Familia: ObjetoSimple, IComparable<Familia>
+    public class Familia : ObjetoSimple, IComparable<Familia>
     {
         private Familia_DTO _Familia = new Familia_DTO();
 
         #region Propiedades
-        public int FamiliaId { 
+        public int FamiliaId
+        {
             get { return _Familia.FamiliaId; }
             set { _Familia.FamiliaId = value; }
         }
 
         public string Descripcion
         {
-            get { return _Familia.Descripcion; } 
+            get { return _Familia.Descripcion; }
             set { _Familia.Descripcion = value; }
         }
 
         public string DescCorta
         {
-            get { return _Familia.DescCorta; } 
+            get { return _Familia.DescCorta; }
             set { _Familia.DescCorta = value; }
         }
 
         public DateTime Fecha
         {
-            get { return _Familia.Fecha; } 
+            get { return _Familia.Fecha; }
             set { _Familia.Fecha = value; }
         }
         #endregion
@@ -113,6 +114,7 @@ namespace eSecurity
         {
             if (_Familia.FamiliaId > 0)
                 Familia_DAL.EliminarFamilia(_Familia.FamiliaId);
+
         }
 
         public override DataSet ObtenerDataSet()
@@ -175,13 +177,13 @@ namespace eSecurity
         {
             if (FamiliaId < other.FamiliaId)
                 return 1;
-            
-            if( FamiliaId > other.FamiliaId)
+
+            if (FamiliaId > other.FamiliaId)
                 return -1;
 
             return 0;
         }
 
-        
+
     }
 }
