@@ -81,6 +81,9 @@ namespace Gabe
             // Depurar Bitacora
             BIT001_Btn001.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 23);
 
+            // Deshabilito imprimir
+            BIT001_Btn002.Enabled = false;
+
             helpProvider.HelpNamespace = ConfigurationManager.AppSettings["HelpFile"];
             helpProvider.SetHelpKeyword(this, "Bitácora");
             helpProvider.SetHelpNavigator(this, HelpNavigator.KeywordIndex);
@@ -120,6 +123,7 @@ namespace Gabe
                                             bitacora.FechaMovimiento);
                 }
 
+            BIT001_Btn002.Enabled = BIT001_Btn002.Enabled = UsuarioPatente.UsuarioPatenteHabilitada(codigoUsuario, 24); // Imprimir Bitacora
         }
 
         private void ActualizarCriticidad()
@@ -189,6 +193,29 @@ namespace Gabe
                 BIT001_Dtm02.Enabled = true;
                 BIT001_UsrCtrl.Enabled = true;
                 BIT001_CmbCriticality.Enabled = true;
+            }
+        }
+
+        private void BIT001_Btn002_Click(object sender, EventArgs e)
+        {
+            DataTable dt;
+            BITR001_Title form = new BITR001_Title(codigoUsuario);
+
+            if (BIT001_DgrBit.Rows.Count > 0)
+            {
+                if (BIT001_ChkAll.Checked)
+                    dt = (new Bitacora()).ObtenerBitacoraReporte();
+                else
+                    dt = (new Bitacora()).ObtenerBitacoraReporte(fechaDesde, fechahasta, usuarioBusqueda, criticidad);
+
+                form.DataSource = dt;
+
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.MaximizeBox = false;
+                // No permite expandir el formulario
+                form.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+                form.ShowDialog(this);
             }
         }
     }

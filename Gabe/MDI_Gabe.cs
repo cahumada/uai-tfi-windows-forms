@@ -137,6 +137,7 @@ namespace Gabe
                         form.MdiParent = this;
                         form.StartPosition = FormStartPosition.CenterScreen;
                         form.MaximizeBox = false;
+                        form.FormBorderStyle = FormBorderStyle.FixedSingle;
 
                         form.Show();
                     }

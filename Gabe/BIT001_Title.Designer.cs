@@ -46,6 +46,7 @@ namespace Gabe
             this.BIT001_Grp01 = new System.Windows.Forms.GroupBox();
             this.BIT001_UsrCtrl = new Gabe.Controles.UsuarioControl();
             this.GroupBox3 = new System.Windows.Forms.GroupBox();
+            this.BIT001_Btn002 = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BIT001_DgrBit)).BeginInit();
             this.BIT001_Grp01.SuspendLayout();
@@ -135,7 +136,7 @@ namespace Gabe
             // 
             // GEN001_Btn009
             // 
-            this.GEN001_Btn009.Location = new System.Drawing.Point(97, 19);
+            this.GEN001_Btn009.Location = new System.Drawing.Point(178, 19);
             this.GEN001_Btn009.Name = "GEN001_Btn009";
             this.GEN001_Btn009.Size = new System.Drawing.Size(75, 23);
             this.GEN001_Btn009.TabIndex = 4;
@@ -165,6 +166,7 @@ namespace Gabe
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.BIT001_Btn002);
             this.GroupBox1.Controls.Add(this.GEN001_Btn009);
             this.GroupBox1.Controls.Add(this.BIT001_Btn001);
             this.GroupBox1.Controls.Add(this.GEN001_Btn004);
@@ -203,6 +205,7 @@ namespace Gabe
             // 
             // BIT001_UsrCtrl
             // 
+            this.BIT001_UsrCtrl.CodigoUsuario = 1;
             this.BIT001_UsrCtrl.Estado = eFramework.EstadosABM.Consulta;
             this.BIT001_UsrCtrl.Location = new System.Drawing.Point(371, 25);
             this.BIT001_UsrCtrl.Name = "BIT001_UsrCtrl";
@@ -217,6 +220,16 @@ namespace Gabe
             this.GroupBox3.Size = new System.Drawing.Size(691, 299);
             this.GroupBox3.TabIndex = 3;
             this.GroupBox3.TabStop = false;
+            // 
+            // BIT001_Btn002
+            // 
+            this.BIT001_Btn002.Location = new System.Drawing.Point(97, 19);
+            this.BIT001_Btn002.Name = "BIT001_Btn002";
+            this.BIT001_Btn002.Size = new System.Drawing.Size(75, 23);
+            this.BIT001_Btn002.TabIndex = 6;
+            this.BIT001_Btn002.Text = "Imprimir";
+            this.BIT001_Btn002.UseVisualStyleBackColor = true;
+            this.BIT001_Btn002.Click += new System.EventHandler(this.BIT001_Btn002_Click);
             // 
             // BIT001_Title
             // 
@@ -257,5 +270,6 @@ namespace Gabe
         internal System.Windows.Forms.GroupBox BIT001_Grp01;
         internal System.Windows.Forms.GroupBox GroupBox3;
         private Controles.UsuarioControl BIT001_UsrCtrl;
+        internal System.Windows.Forms.Button BIT001_Btn002;
     }
 }
