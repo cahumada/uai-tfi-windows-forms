@@ -72,6 +72,12 @@
     <Compile Include="BIT001_Title.Designer.cs">
       <DependentUpon>BIT001_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="BITR001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BITR001_Title.Designer.cs">
+      <DependentUpon>BITR001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="BKP001_Title.cs">
       <SubType>Form</SubType>
     </Compile>

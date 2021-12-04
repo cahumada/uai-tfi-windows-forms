@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eFramework;
 
 namespace eDataAccess
 {
@@ -16,7 +17,7 @@ namespace eDataAccess
 
         internal static string getConexionString()
         {
-            return ConfigurationManager.ConnectionStrings[CONEXION_POR_DEFAULT].ConnectionString.ToString();
+            return Encriptado.DataDecryption(ConfigurationManager.ConnectionStrings[CONEXION_POR_DEFAULT].ConnectionString.ToString());
         }
 
         internal static string getMyProvider()
