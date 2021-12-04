@@ -53,26 +53,30 @@ namespace Gabe
             {
                 if (usuario.ValidarClaveUsuario(Login_txtUser.Text, Login_txtPass.Text))
                 {
-                    //OCULTO EL LOGIN
+                    // Oculta el login
                     this.Visible = false;
-                    using (var fMdi_Form = new MDI_Gabe(usuario))
+                    using (var mdiGabe = new MDI_Gabe(usuario))
                     {
-                        fMdi_Form.ShowDialog();
+                        mdiGabe.ShowDialog();
                     }
                 }
                 else
                 {
-                    if (usuario == null || usuario.UsuarioId == 0)
-                        MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "", MessageBoxButtons.OK);
-                    
+                    if (usuario.Intentos > 0 && !usuario.Bloqueado) // Mensaje de intentos
+                        MessageBox.Show(string.Format(Idioma.ObtenerEtiqueta("Login_Msg004"), usuario.Intentos.ToString()), "", MessageBoxButtons.OK);
+
+                    // Usuario y contraseña inválida
+                    MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg001"), "", MessageBoxButtons.OK);
+
+
+                    if (usuario.Bloqueado) // Usuario bloqueado
+                        MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg003"), "", MessageBoxButtons.OK);
+
                 }
 
             }
             else
-                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg002"), "", MessageBoxButtons.OK);
-
-            if (usuario.Bloqueado)
-                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg003"), "", MessageBoxButtons.OK);
+                MessageBox.Show(Idioma.ObtenerEtiqueta("Login_Msg002"), "", MessageBoxButtons.OK); // Debe completar el usuario y contraseña1
         }
     }
 }

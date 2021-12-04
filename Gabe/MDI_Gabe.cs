@@ -104,7 +104,7 @@ namespace Gabe
                     {
                         foreach (UsuarioPatente _Patente in usuario.Patentes)
                         {
-                            if (_DtCopia.Rows[nSub]["PatenteId"].ToString() == _Patente.Patente.PatenteId.ToString())
+                            if (_DtCopia.Rows[nSub]["PatenteId"].ToString() == _Patente.Patente.PatenteId.ToString() && !_Patente.Denegado) // Si tiene la patente vinculada y no está denegada
                                 _SubMenu.Enabled = true;
                         }
                     }

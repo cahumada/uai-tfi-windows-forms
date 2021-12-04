@@ -366,17 +366,7 @@ namespace eSecurity
         }
 
         #endregion
-
-        private void VincularDelegados()
-        {
-            UsuarioFamilias.RequerimientoCarga += ObtenerFamilias;
-            UsuarioFamilias.InsertarRelacionMuchosAMuchos += AltaFamiliaUsuario;
-            UsuarioFamilias.EliminarRelacionMuchosAMuchos += EliminarFamiliaUsuario;
-
-            UsuarioPatentes.RequerimientoCarga += ObtenerPatentes;
-            UsuarioPatentes.InsertarRelacionMuchosAMuchos += AltaPatenteUsuario;
-            UsuarioPatentes.EliminarRelacionMuchosAMuchos += EliminarPatenteUsuario;
-        }
+        
         #endregion
 
         #region UsuarioPatente
@@ -442,5 +432,16 @@ namespace eSecurity
         }
 
         #endregion
+
+        private void VincularDelegados()
+        {
+            UsuarioFamilias.RequerimientoCarga += ObtenerFamilias;
+            UsuarioFamilias.InsertarRelacionMuchosAMuchos += AltaFamiliaUsuario;
+            UsuarioFamilias.EliminarRelacionMuchosAMuchos += EliminarFamiliaUsuario;
+
+            UsuarioPatentes.RequerimientoCarga += ObtenerPatentes;
+            UsuarioPatentes.InsertarRelacionMuchosAMuchos += AltaPatenteUsuario;
+            UsuarioPatentes.EliminarRelacionMuchosAMuchos += EliminarPatenteUsuario;
+        }
     }
 }

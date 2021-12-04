@@ -191,7 +191,7 @@ namespace Gabe
 
                             USR005_DgrPat.Rows[e.RowIndex].Cells[5].Value = denegado;
 
-                            if (indice > 0)
+                            if (indice >= 0)
                             {
                                 usuario.CambiarEstadoPorIndice(indice, Convert.ToBoolean(USR005_DgrPat.Rows[e.RowIndex].Cells[5].Value));
 

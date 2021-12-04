@@ -333,6 +333,9 @@
   <data name="Login_Msg003" xml:space="preserve">
     <value>El usuario se encuentra bloqueado, contacte al administrador del sistema</value>
   </data>
+  <data name="Login_Msg004" xml:space="preserve">
+    <value>Intentos: {0}, luego de 3 intentos el usuario será bloqueado</value>
+  </data>
   <data name="Login_Title" xml:space="preserve">
     <value>Iniciar</value>
   </data>
@@ -416,192 +419,6 @@
   </data>
   <data name="PAT001_Val002" xml:space="preserve">
     <value>La descripción corta debe estar completa</value>
-  </data>
-  <data name="PED001_Btn001" xml:space="preserve">
-    <value>De&amp;talle</value>
-  </data>
-  <data name="PED001_Btn002" xml:space="preserve">
-    <value>Esta&amp;do</value>
-  </data>
-  <data name="PED001_DgrPed_cClient" xml:space="preserve">
-    <value>Cliente</value>
-  </data>
-  <data name="PED001_DgrPed_cClient_tt" xml:space="preserve">
-    <value>Cliente asociado al pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cDeliveryDate" xml:space="preserve">
-    <value>Fecha Entrega</value>
-  </data>
-  <data name="PED001_DgrPed_cDeliveryDate_tt" xml:space="preserve">
-    <value>Fecha de entrega del pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cOrder" xml:space="preserve">
-    <value>Num Pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cOrderDate" xml:space="preserve">
-    <value>Fecha Pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cOrderDate_tt" xml:space="preserve">
-    <value>Fecha en la cual se realizó el pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cOrder_tt" xml:space="preserve">
-    <value>Número de pedido</value>
-  </data>
-  <data name="PED001_DgrPed_cState" xml:space="preserve">
-    <value>Estado</value>
-  </data>
-  <data name="PED001_DgrPed_cState_tt" xml:space="preserve">
-    <value>Estado actual del pedido</value>
-  </data>
-  <data name="PED001_DtmDelivDate_tt" xml:space="preserve">
-    <value>Fecha de entrega</value>
-  </data>
-  <data name="PED001_DtmOrdDate_tt" xml:space="preserve">
-    <value>Fecha de pedido</value>
-  </data>
-  <data name="PED001_Grp01" xml:space="preserve">
-    <value>Pedido</value>
-  </data>
-  <data name="PED001_LblClient" xml:space="preserve">
-    <value>Cliente:</value>
-  </data>
-  <data name="PED001_LblDelivDate" xml:space="preserve">
-    <value>Fecha Entrega:</value>
-  </data>
-  <data name="PED001_LblOrdDate" xml:space="preserve">
-    <value>Fecha Pedido:</value>
-  </data>
-  <data name="PED001_LblPriceList" xml:space="preserve">
-    <value>L. Precio:</value>
-  </data>
-  <data name="PED001_Msg001" xml:space="preserve">
-    <value>¿Desea eliminar el pedido seleccionado?</value>
-  </data>
-  <data name="PED001_Msg002" xml:space="preserve">
-    <value>¿Unicamente se pueden eliminar pedidos en estado Pendiente?</value>
-  </data>
-  <data name="PED001_Title" xml:space="preserve">
-    <value>Pedidos</value>
-  </data>
-  <data name="PED001_Title_tt" xml:space="preserve">
-    <value>Formulario para generación de pedidos</value>
-  </data>
-  <data name="PED001_Val001" xml:space="preserve">
-    <value>La fecha de entrega no puede ser anterior a la fecha de pedido</value>
-  </data>
-  <data name="PED001_Val002" xml:space="preserve">
-    <value>El campo cliente es obligatorio</value>
-  </data>
-  <data name="PED001_Val003" xml:space="preserve">
-    <value>El campo lista de precio es obligatorio</value>
-  </data>
-  <data name="PED002_DgrProd_cAmount" xml:space="preserve">
-    <value>Cantidad</value>
-  </data>
-  <data name="PED002_DgrProd_cAmount_tt" xml:space="preserve">
-    <value>Cantidad asociada al producto</value>
-  </data>
-  <data name="PED002_DgrProd_cChecked" xml:space="preserve">
-    <value>Sel</value>
-  </data>
-  <data name="PED002_DgrProd_cChecked_tt" xml:space="preserve">
-    <value>Indicador que el item se encuentra seleccionado</value>
-  </data>
-  <data name="PED002_DgrProd_cPrice" xml:space="preserve">
-    <value>Precio</value>
-  </data>
-  <data name="PED002_DgrProd_cPrice_tt" xml:space="preserve">
-    <value>Precio asociado al producto</value>
-  </data>
-  <data name="PED002_DgrProd_cProducto" xml:space="preserve">
-    <value>Producto</value>
-  </data>
-  <data name="PED002_DgrProd_cProducto_tt" xml:space="preserve">
-    <value>Producto asociado al articulo</value>
-  </data>
-  <data name="PED002_Msg001" xml:space="preserve">
-    <value>¿Confirma que desea quitar todos los articulos seleccionados?</value>
-  </data>
-  <data name="PED002_Title" xml:space="preserve">
-    <value>Detalle Pedido</value>
-  </data>
-  <data name="PED003_LblStatus" xml:space="preserve">
-    <value>Estado:</value>
-  </data>
-  <data name="PED003_Title" xml:space="preserve">
-    <value>Estado Pedido</value>
-  </data>
-  <data name="PROD001_DgrProd_cCategory" xml:space="preserve">
-    <value>Categoría</value>
-  </data>
-  <data name="PROD001_DgrProd_cCategory_tt" xml:space="preserve">
-    <value>Categoría asociada al producto</value>
-  </data>
-  <data name="PROD001_DgrProd_cDescript" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="PROD001_DgrProd_cDescript_tt" xml:space="preserve">
-    <value>Descripción del producto</value>
-  </data>
-  <data name="PROD001_DgrProd_cEffectDate" xml:space="preserve">
-    <value>Fecha</value>
-  </data>
-  <data name="PROD001_DgrProd_cEffectDate_tt" xml:space="preserve">
-    <value>Fecha efectiva del producto</value>
-  </data>
-  <data name="PROD001_DgrProd_cModel" xml:space="preserve">
-    <value>Modelo</value>
-  </data>
-  <data name="PROD001_DgrProd_cModel_tt" xml:space="preserve">
-    <value>Tipo de modelo asociado al producto</value>
-  </data>
-  <data name="PROD001_DgrProd_cProduct" xml:space="preserve">
-    <value>Producto</value>
-  </data>
-  <data name="PROD001_DgrProd_cProduct_tt" xml:space="preserve">
-    <value>Código de producto</value>
-  </data>
-  <data name="PROD001_Grp01" xml:space="preserve">
-    <value>Consulta Producto</value>
-  </data>
-  <data name="PROD001_Title" xml:space="preserve">
-    <value>Productos</value>
-  </data>
-  <data name="PROD002_Grp01" xml:space="preserve">
-    <value>Agregado Producto</value>
-  </data>
-  <data name="PROD002_Grp02" xml:space="preserve">
-    <value>Modificado Producto</value>
-  </data>
-  <data name="PROD002_Grp03" xml:space="preserve">
-    <value>Eliminado Producto</value>
-  </data>
-  <data name="PROD002_Grp04" xml:space="preserve">
-    <value>Consulta Producto</value>
-  </data>
-  <data name="PROD002_lbl001" xml:space="preserve">
-    <value>Descripción:</value>
-  </data>
-  <data name="PROD002_lbl002" xml:space="preserve">
-    <value>Modelo:</value>
-  </data>
-  <data name="PROD002_lbl003" xml:space="preserve">
-    <value>Categoria:</value>
-  </data>
-  <data name="PROD002_lbl004" xml:space="preserve">
-    <value>Fecha:</value>
-  </data>
-  <data name="PROD002_lbl005" xml:space="preserve">
-    <value>Imagen:</value>
-  </data>
-  <data name="PROD002_Title" xml:space="preserve">
-    <value>Producto</value>
-  </data>
-  <data name="PRODL001_Title" xml:space="preserve">
-    <value>Consulta Rápida Productos</value>
-  </data>
-  <data name="PRODL_Grp01" xml:space="preserve">
-    <value>Productos</value>
   </data>
   <data name="REC001_DgrOrd_cAmount" xml:space="preserve">
     <value>Cantidad</value>
@@ -740,27 +557,6 @@
   </data>
   <data name="Splash_BtnCancel" xml:space="preserve">
     <value>&amp;Cerrar</value>
-  </data>
-  <data name="Test001_Btn001" xml:space="preserve">
-    <value>Cargar FliPat</value>
-  </data>
-  <data name="Test001_Btn002" xml:space="preserve">
-    <value>Agregado FliaPat</value>
-  </data>
-  <data name="Test001_Btn003" xml:space="preserve">
-    <value>Quitado FliaPat</value>
-  </data>
-  <data name="Test001_Btn004" xml:space="preserve">
-    <value>Guardar FliaPat</value>
-  </data>
-  <data name="Test001_Btn005" xml:space="preserve">
-    <value>Refrescar FliaPat</value>
-  </data>
-  <data name="Test001_DataGridView1_cFamily" xml:space="preserve">
-    <value>Familia</value>
-  </data>
-  <data name="Test001_Title" xml:space="preserve">
-    <value>Prueba 1</value>
   </data>
   <data name="USR001_Btn001" xml:space="preserve">
     <value>Mod. &amp;Idioma</value>
