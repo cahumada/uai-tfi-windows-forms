@@ -384,6 +384,9 @@
   <data name="MDI_Gabe_Mnu022" xml:space="preserve">
     <value>Recálcular DV</value>
   </data>
+  <data name="MDI_Gabe_Mnu023" xml:space="preserve">
+    <value>Familia Patente</value>
+  </data>
   <data name="PAT001_DgrPat_cDescript" xml:space="preserve">
     <value>Descripción</value>
   </data>

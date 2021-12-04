@@ -31,14 +31,15 @@ namespace eDataAccess.Security
             }
         }
 
-        public static int EliminarFamiliaPatente(long pFamiliaPatenteId)
+        public static int EliminarFamiliaPatente(int pFamiliaId, int pPatenteId)
         {
             var mParams = new List<DbParameter>();
 
             try
             {
 
-                mParams.Add((DbParameter)Commons.getNewParameter("nFamilyPatentId", DbType.Int64, pFamiliaPatenteId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pFamiliaId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nPatente", DbType.Int32, pPatenteId, null, null));
 
                 return Commons.ExecuteNonQuery("EliminarFamiliaPatente", CommandType.StoredProcedure, mParams);
 
@@ -57,7 +58,7 @@ namespace eDataAccess.Security
 
             try
             {
-                mParams.Add((DbParameter)Commons.getNewParameter("nFamily", DbType.Int32, pFamiliId, null, null));
+                mParams.Add((DbParameter)Commons.getNewParameter("nFamilia", DbType.Int32, pFamiliId, null, null));
 
                 mDt = Commons.ExecuteDataTable("ObtenerFamiliaPatente", CommandType.StoredProcedure, mParams);
 

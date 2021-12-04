@@ -12,19 +12,37 @@ namespace eSecurity
 {
     public class FamiliaPatente: ObjetoSimple
     {
-        private FamiliaPatente_DTO _FamiliaPatente;
+        private FamiliaPatente_DTO _FamiliaPatente = new FamiliaPatente_DTO();
 
         #region Propiedades
-        public long FamiliaPatenteId { get { return _FamiliaPatente.FamiliaPatenteId; } }
-        public Familia_DTO Familia { get { return _FamiliaPatente.Familia; } }
-        public Patente_DTO Patente { get { return _FamiliaPatente.Patente; } }
-        public int DVH { get { return _FamiliaPatente.DVH; } }
+
+        public long FamiliaPatenteId
+        {
+            get { return _FamiliaPatente.FamiliaPatenteId; }
+            set { _FamiliaPatente.FamiliaPatenteId = value; }
+        }
+
+        public Familia_DTO Familia
+        {
+            get { return _FamiliaPatente.Familia; }
+            set { _FamiliaPatente.Familia = value; }
+        }
+
+        public Patente_DTO Patente
+        {
+            get { return _FamiliaPatente.Patente; }
+            set { _FamiliaPatente.Patente = value; }
+        }
+        public int DVH { 
+            get { return _FamiliaPatente.DVH; } 
+            set { _FamiliaPatente.DVH = value; }
+        }
         #endregion
 
         #region Metodos
         public override void Eliminar()
         {
-            FamiliaPatente_DAL.EliminarFamiliaPatente(_FamiliaPatente.FamiliaPatenteId);
+            FamiliaPatente_DAL.EliminarFamiliaPatente(_FamiliaPatente.Familia.FamiliaId, _FamiliaPatente.Patente.PatenteId);
         }
 
         public override void Guardar()

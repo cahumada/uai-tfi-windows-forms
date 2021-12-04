@@ -145,11 +145,11 @@ namespace eDataAccess.Security
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        dr["sTipoMovimiento"] = Convert.IsDBNull(dr["sTipoMovimiento"]) ? null : Encriptado.DataDecryption(dr["sTipoMovimiento"].ToString());
-                        dr["Nik"] = Convert.IsDBNull(dr["Nik"]) ? null : Encriptado.DataDecryption(dr["Nik"].ToString());
-                    }
+                    //foreach (DataRow dr in dt.Rows)
+                    //{
+                    //    dr["sTipoMovimiento"] = Convert.IsDBNull(dr["sTipoMovimiento"]) ? null : Encriptado.DataDecryption(dr["sTipoMovimiento"].ToString());
+                    //    dr["Nik"] = Convert.IsDBNull(dr["Nik"]) ? null : Encriptado.DataDecryption(dr["Nik"].ToString());
+                    //}
 
                     return dt;
                 }

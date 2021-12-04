@@ -862,6 +862,15 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Familia Patente.
+        /// </summary>
+        internal static string MDI_Gabe_Mnu023 {
+            get {
+                return ResourceManager.GetString("MDI_Gabe_Mnu023", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descripción.
         /// </summary>
         internal static string PAT001_DgrPat_cDescript {

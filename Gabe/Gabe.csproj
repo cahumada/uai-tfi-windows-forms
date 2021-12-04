@@ -109,6 +109,12 @@
     <Compile Include="FAM001_Title.Designer.cs">
       <DependentUpon>FAM001_Title.cs</DependentUpon>
     </Compile>
+    <Compile Include="FAMPAT001_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAMPAT001_Title.Designer.cs">
+      <DependentUpon>FAMPAT001_Title.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gabe_Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAM001_Title.resx">
       <DependentUpon>FAM001_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAMPAT001_Title.resx">
+      <DependentUpon>FAMPAT001_Title.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gabe_Splash.resx">
       <DependentUpon>Gabe_Splash.cs</DependentUpon>

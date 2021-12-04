@@ -44,16 +44,31 @@ namespace eSecurity
 
         private ObjetoLista<Patente> FamiliaPatente = new ObjetoLista<Patente>(TipoAgregacion.MuchosAMuchos);
 
+        public ObjetoLista<Patente> Patentes
+        {
+            get
+            {
+                FamiliaPatente.Cargar(true);
+
+                return FamiliaPatente.get_ItemsVisibles();
+            }
+        }
+
         #endregion
 
         #region Contructores
         public Familia()
         {
+            // Se vinculan los delegados
+            VincularDelegados();
         }
 
         public Familia(int pId)
         {
             ObtenerFamilia(pId);
+
+            // Se vinculan los delegados
+            VincularDelegados();
         }
 
         public Familia(DataRow pDr)
@@ -61,11 +76,17 @@ namespace eSecurity
             _Familia.FamiliaId = (Convert.IsDBNull(pDr["Id_Familia"])) ? default(int) : (int)pDr["Id_Familia"];
             _Familia.Descripcion = (Convert.IsDBNull(pDr["Descripcion"])) ? null : pDr["Descripcion"].ToString();
             _Familia.DescCorta = (Convert.IsDBNull(pDr["Desc_Corta"])) ? null : pDr["Desc_Corta"].ToString();
+
+            // Se vinculan los delegados
+            VincularDelegados();
         }
 
         public Familia(Familia_DTO pFamilia)
         {
             ObtenerFamilia(pFamilia);
+
+            // Se vinculan los delegados
+            VincularDelegados();
         }
         #endregion
 
@@ -156,17 +177,17 @@ namespace eSecurity
             familiaPatente.EliminarFamiliaPatente(this.FamiliaId, pObjeto.PatenteId);
         }
 
-        private void ObtenerPatentes()
+        private void ObtenerFamiliaPatentes()
         {
             this.FamiliaPatente.Cargar((new FamiliaPatente()).ObtenerFamiliaPatente(this.FamiliaId));
         }
 
-        public Patente ObtenerPatenteIndice(Int32 pIndice)
+        public Patente ObtenerFamiliaPatenteIndice(Int32 pIndice)
         {
             return FamiliaPatente[pIndice];
         }
 
-        public void PersistirPatentes()
+        public void PersistirFamiliaPatentes()
         {
             FamiliaPatente.Persistir();
         }
@@ -184,6 +205,12 @@ namespace eSecurity
             return 0;
         }
 
-
+        private void VincularDelegados()
+        {
+            FamiliaPatente.RequerimientoCarga += ObtenerFamiliaPatentes;
+            FamiliaPatente.InsertarRelacionMuchosAMuchos += AltaFamiliaPatente;
+            FamiliaPatente.EliminarRelacionMuchosAMuchos += EliminarFamiliaPatente;
+            
+        }
     }
 }
