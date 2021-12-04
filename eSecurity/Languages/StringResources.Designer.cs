@@ -421,7 +421,7 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¿Desea eliminar la familia seleccionada?.
+        ///   Busca una cadena traducida similar a ¿Desea eliminar la familia seleccionada, si confirma todas las patentes y/o usuarios vinculados se eliminarán?.
         /// </summary>
         internal static string FAM001_Msg001 {
             get {

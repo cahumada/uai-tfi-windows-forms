@@ -238,7 +238,7 @@
     <value>Desc. Corta:</value>
   </data>
   <data name="FAM001_Msg001" xml:space="preserve">
-    <value>¿Desea eliminar la familia seleccionada?</value>
+    <value>¿Desea eliminar la familia seleccionada, si confirma todas las patentes y/o usuarios vinculados se eliminarán?</value>
   </data>
   <data name="FAM001_Msg002" xml:space="preserve">
     <value>Error la familia tiene patentes y/o usuarios vinculados</value>
