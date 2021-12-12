@@ -185,68 +185,66 @@ namespace Gabe
 
             if (!MasterForm.ControlErrores(this, ErrProv))
             {
-                if (!Usuarios.ValidarNikExistente(USR002_txtNik.Text))
+                switch (estado)
                 {
-
-                    switch (estado)
-                    {
-                        case EstadosABM.Nuevo:
-                            usuario.Contrasena = Encriptado.GetHashMD5(contrasenaNueva);
-
-                            CargarUsuario(true);
-                            usuario.Guardar();
-                            MessageBox.Show("Se creó usuario: " + usuario.Nik + ", contraseña: " + contrasenaNueva,
-                                "Gabe",
+                    case EstadosABM.Nuevo:
+                        if (Usuarios.ValidarNikExistente(USR002_txtNik.Text))
+                        {
+                            MessageBox.Show(Idioma.ObtenerEtiqueta("USR002_Val005"), "Gabe",
                                 MessageBoxButtons.OK);
                             break;
+                        }
 
-                        case EstadosABM.Modificar:
-                            CargarUsuario(true);
-                            usuario.Guardar();
-                            MessageBox.Show("Se modificó usuario: " + usuario.Nik, "Gabe",
+                        usuario.Contrasena = Encriptado.GetHashMD5(contrasenaNueva);
+
+                        CargarUsuario(true);
+                        usuario.Guardar();
+                        MessageBox.Show("Se creó usuario: " + usuario.Nik + ", contraseña: " + contrasenaNueva,
+                            "Gabe",
+                            MessageBoxButtons.OK);
+                        break;
+
+                    case EstadosABM.Modificar:
+                        CargarUsuario(true);
+                        usuario.Guardar();
+                        MessageBox.Show("Se modificó usuario: " + usuario.Nik, "Gabe",
+                            MessageBoxButtons.OK);
+                        break;
+
+                    case EstadosABM.Eliminar:
+                        if (usuario.UsuarioId > 0)
+                        {
+                            if (MessageBox.Show(Idioma.ObtenerEtiqueta("USR002_Val004"), "Gabe",
+                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                usuario.Eliminar();
+                                MessageBox.Show("Se eliminó usuario", "Gabe",
+                                    MessageBoxButtons.OK);
+                            }
+                        }
+
+                        break;
+
+                    case EstadosABM.CambiarIdioma:
+                        if (usuario.UsuarioId > 0)
+                        {
+                            usuario.ActualizarIdioma(Convert.ToInt16(USR002_CmbLanguage.SelectedValue));
+
+                            MessageBox.Show("Se modificó el idioma del usuario: " + usuario.Nik, "Gabe",
                                 MessageBoxButtons.OK);
-                            break;
+                        }
 
-                        case EstadosABM.Eliminar:
-                            if (usuario.UsuarioId > 0)
-                            {
-                                if (MessageBox.Show(Idioma.ObtenerEtiqueta("USR002_Val004"), "Gabe",
-                                    MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
-                                    usuario.Eliminar();
-                                    MessageBox.Show("Se eliminó usuario", "Gabe",
-                                        MessageBoxButtons.OK);
-                                }
-                            }
+                        break;
 
-                            break;
+                    case EstadosABM.Desbloquear:
+                        if (usuario.UsuarioId > 0)
+                        {
+                            usuario.Desbloquear();
+                            MessageBox.Show("Se desbloqueó el usuario: " + usuario.Nik, "Gabe",
+                                MessageBoxButtons.OK);
+                        }
 
-                        case EstadosABM.CambiarIdioma:
-                            if (usuario.UsuarioId > 0)
-                            {
-                                usuario.ActualizarIdioma(Convert.ToInt16(USR002_CmbLanguage.SelectedValue));
-
-                                MessageBox.Show("Se modificó el idioma del usuario: " + usuario.Nik, "Gabe",
-                                    MessageBoxButtons.OK);
-                            }
-
-                            break;
-
-                        case EstadosABM.Desbloquear:
-                            if (usuario.UsuarioId > 0)
-                            {
-                                usuario.Desbloquear();
-                                MessageBox.Show("Se desbloqueó el usuario: " + usuario.Nik, "Gabe",
-                                    MessageBoxButtons.OK);
-                            }
-
-                            break;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(Idioma.ObtenerEtiqueta("USR002_Val005"), "Gabe",
-                        MessageBoxButtons.OK);
+                        break;
                 }
 
                 this.Close();
