@@ -205,7 +205,6 @@ namespace Gabe
             // 
             // BIT001_UsrCtrl
             // 
-            this.BIT001_UsrCtrl.CodigoUsuario = 1;
             this.BIT001_UsrCtrl.Estado = eFramework.EstadosABM.Consulta;
             this.BIT001_UsrCtrl.Location = new System.Drawing.Point(371, 25);
             this.BIT001_UsrCtrl.Name = "BIT001_UsrCtrl";

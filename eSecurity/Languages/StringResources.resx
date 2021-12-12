@@ -669,6 +669,9 @@
   <data name="USR002_Val004" xml:space="preserve">
     <value>¿Desea confirmar la eliminación del usuario?</value>
   </data>
+  <data name="USR002_Val005" xml:space="preserve">
+    <value>El usuario ya existe</value>
+  </data>
   <data name="USR003_Grp01" xml:space="preserve">
     <value>Blanquear Contraseña</value>
   </data>

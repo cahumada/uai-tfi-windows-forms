@@ -1717,6 +1717,15 @@ namespace eSecurity.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El usuario ya existe.
+        /// </summary>
+        internal static string USR002_Val005 {
+            get {
+                return ResourceManager.GetString("USR002_Val005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Blanquear Contraseña.
         /// </summary>
         internal static string USR003_Grp01 {

@@ -138,11 +138,34 @@ namespace eDataAccess.Security
             {
                 mParams.Add((DbParameter)Commons.getNewParameter("nUsuario", DbType.Int32, pId));
 
-                int? mExists = Commons.ExecuteNonQuery("ValidarUsuarioExistente", CommandType.StoredProcedure, mParams);
+                var mExists = (int?)Commons.ExecuteScalar("ValidarUsuarioExistente", CommandType.StoredProcedure, mParams);
 
                 if (mExists != null)
                 {
-                    return (mExists == 1) ? true : false;
+                    return (mExists == 1);
+                }
+
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static bool ValidarNikExistente(string pNik)
+        {
+            var mParams = new List<DbParameter>();
+
+            try
+            {
+                mParams.Add((DbParameter)Commons.getNewParameter("sNik", DbType.String, pNik));
+
+                var mExists = (int?)Commons.ExecuteScalar("ValidarNikExistente", CommandType.StoredProcedure, mParams);
+
+                if (mExists != null)
+                {
+                    return (mExists == 1);
                 }
 
                 return false;
@@ -164,7 +187,7 @@ namespace eDataAccess.Security
 
                 mDt = Commons.ExecuteDataTable("ObtenerUsuario", CommandType.StoredProcedure, mParams);
 
-                if (mDt != null)
+                if (mDt != null && mDt.Rows.Count > 0)
                 {
                     return GetDTODR(mDt.Rows[0]);
                 }

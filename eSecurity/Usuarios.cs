@@ -306,6 +306,12 @@ namespace eSecurity
             return Usuarios_DAL.ValidarUsuarioExistente(pUsuario);
         }
 
+        public static bool ValidarNikExistente(string pNik)
+        {
+            return Usuarios_DAL.ValidarNikExistente(pNik);
+        }
+
+
         #region UsuarioFamilia
 
         public int AgregarFamilia(Familia pObjeto)
